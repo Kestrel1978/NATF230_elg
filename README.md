@@ -1,2 +1,2 @@
-# NATF230
+# NATF230 - Elgoppgaven
 Interaktiv læringssti for elgforvaltning og jaktstatistikk.
