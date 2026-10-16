@@ -398,6 +398,129 @@
             margin: 1rem 0;
             font-size: 0.93rem;
         }
+
+        /* Frivillig gruppearbeid / sammenligning */
+        .group-project-panel { border:1px solid #a5b4fc; border-left:4px solid #4f46e5; background:#eef2ff; border-radius:12px; padding:1.4rem; margin:1.4rem 0; }
+        .group-project-panel h3 { margin-top:0; color:#312e81; }
+        .group-project-panel p { margin:0.5rem 0 1rem; font-size:0.95rem; }
+        .group-project-actions { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; align-items:start; margin-top:0.8rem; }
+        .group-project-actions .action-btn { margin:0; }
+        .group-project-open { min-width:0; }
+        .group-project-open label { font-weight:600; }
+        .group-project-open input[type=file] { background:#fff; }
+        .group-feature-panel { border:1px solid #c4b5fd; border-left:4px solid var(--student); background:#f8f7ff; border-radius:12px; padding:1.4rem; margin:1.4rem 0; }
+        .group-feature-panel h3 {margin-top:0; color:#4338ca;}
+        .group-feature-panel .action-btn {margin-top:0.4rem;}
+        .group-howto {display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem; margin-bottom:1.5rem;}
+        .group-howto > div {border:1px solid var(--border-color);border-radius:10px;padding:1rem;background:#fff;}
+        .group-howto strong {display:block;margin:0.3rem 0;}
+        .group-howto p {margin:0;color:var(--text-muted);font-size:0.85rem;}
+        .group-step-num {display:inline-flex;border-radius:50%;height:1.65rem;width:1.65rem;align-items:center;justify-content:center;background:#e0f2fe;color:#0369a1;font-weight:700;}
+        .group-feedback {font-size:0.9rem; margin-top:0.75rem;color:#475569;white-space:pre-wrap;}
+        .group-feedback.error {color:#b91c1c;}
+        .group-feedback.success {color:#047857;}
+        .group-file-list {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.7rem;margin-top:1rem;}
+        .group-file-entry {border:1px solid var(--border-color);border-radius:8px;padding:0.9rem;background:#fff;min-width:0;}
+        .group-file-entry strong {display:block;overflow-wrap:anywhere;}
+        .group-file-entry small {display:block;color:var(--text-muted);margin:0.35rem 0 0.7rem;}
+        .group-file-entry button {cursor:pointer;border:1px solid #fecaca;background:#fff1f2;border-radius:6px;color:#991b1b;padding:0.35rem 0.7rem;font:inherit;font-size:0.85rem;}
+        .group-table-scroll {overflow-x:auto; margin:1rem 0;}
+        .group-table {width:100%;border-collapse:collapse;font-size:0.9rem;min-width:550px;}
+        .group-table th,.group-table td {padding:0.75rem;border:1px solid var(--border-color);text-align:left;vertical-align:top;}
+        .group-table th {background:#f1f5f9;color:#0f172a;}
+        .group-table tbody tr:nth-child(even) {background:#f8fafc;}
+        .group-table td:not(:first-child) {font-variant-numeric:tabular-nums;}
+        .group-chart-wrap {margin:1rem 0;padding:0.7rem;border:1px solid var(--border-color);border-radius:10px;height:360px;position:relative;}
+        .group-chart-wrap canvas {margin:0!important;max-height:100%;}
+        .group-caption {font-size:0.9rem;color:var(--text-muted);line-height:1.6;}
+        .group-report-actions {display:flex;flex-wrap:wrap;align-items:stretch;gap:0.75rem;margin:1rem 0;}
+        .group-report-actions .action-btn {width:auto;flex:2;min-width:210px;margin:0;}
+        .group-report-actions .reset-btn {flex:1;min-width:160px;text-align:center;}
+        .group-report-preview {border:1px solid var(--border-color);padding:1.5rem;border-radius:10px;margin-top:1.2rem;background:#fff;max-height:700px;overflow:auto;}
+        .group-report-preview h1 {font-size:1.5rem;text-align:left;}
+        .group-report-preview h2 {display:block;margin-top:1.6rem;font-size:1.15rem;}
+        .group-report-preview img {max-width:100%;height:auto;}
+        /* Direkte nedlasting av alle figurer, også til grupperapport */
+        .figure-toolbar {display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;margin:0.65rem 0 1.65rem;}
+        .figure-download-btn {background:#f0f9ff;color:#0369a1;border:1px solid #7dd3fc;border-radius:8px;padding:0.6rem 1rem;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:background .2s;}
+        .figure-download-btn:hover {background:#e0f2fe;}
+        .figure-toolbar .figure-hint {font-size:0.82rem;color:var(--text-muted);flex:1;min-width:130px;}
+        .group-draft-notice {padding:1rem 1.25rem;border:2px solid #b91c1c;border-radius:10px;background:#fff7f7;color:#7f1d1d;margin:1rem 0;}
+        .group-draft-notice strong {font-size:1.03rem;letter-spacing:.02em;display:block;}
+        .group-draft-notice p {margin:.45rem 0 0;line-height:1.6;font-size:.9rem;}
+        .group-report-preview .report-draft-banner {border:2px solid #b91c1c;border-radius:8px;background:#fff7f7;color:#7f1d1d;padding:1rem;margin-bottom:1.4rem;}
+        .group-report-preview .report-draft-banner p {margin:.35rem 0 0;font-size:.93rem;}
+        .group-report-preview .report-figure-download {display:inline-block;padding:.3rem .55rem;border-radius:6px;border:1px solid #bae6fd;background:#f0f9ff;font-size:.82rem;margin-top:.35rem;}
+        @media(max-width:620px){.step-container{padding:1.3rem;}.group-report-actions .action-btn,.group-report-actions .reset-btn{width:100%;flex:1 1 100%;}.group-chart-wrap{height:300px;}}
+
+/* Automatisk gjenopptakelse og manuelle prosjektkopier */
+.autosave-intro {background:#ecfdf5;border:1px solid #a7f3d0;border-left:4px solid #059669;border-radius:12px;padding:1.1rem 1.3rem;margin:1.3rem 0;color:#064e3b;font-size:0.94rem;}
+.autosave-intro p{margin:.35rem 0 .55rem;}
+.autosave-controls{display:flex;gap:.65rem;align-items:center;flex-wrap:wrap;margin-top:.6rem;}
+.autosave-status{display:block;font-size:.86rem;color:#166534;margin-top:.45rem;line-height:1.4;}
+.autosave-status.warning{color:#9a3412;}
+.checkpoint-panel{margin:1.8rem 0 0;padding:1rem 1.15rem;background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;}
+.checkpoint-panel strong{display:block;color:#0f172a;margin-bottom:.25rem;}
+.checkpoint-panel p{font-size:.85rem;color:#475569;margin:.3rem 0 .7rem;}
+.checkpoint-actions{display:flex;gap:.6rem;flex-wrap:wrap;}
+.checkpoint-actions button,.autosave-controls button{border:1px solid #94a3b8;background:#fff;color:#334155;border-radius:8px;padding:.55rem .9rem;font:600 .86rem 'Inter',sans-serif;cursor:pointer;}
+.checkpoint-actions button:hover,.autosave-controls button:hover{background:#e2e8f0;}
+.autosave-clear{color:#991b1b!important;border-color:#fca5a5!important;}
+@media(max-width:640px){.checkpoint-actions button{flex:1 1 100%;}}
+
+/* Samlet oversikt over de åtte Excel-filene fra Hjorteviltregisteret */
+.hjorte-filnotat {
+    margin: 1.1rem 0 1rem;
+    padding: 1.2rem;
+    background: #eff6ff;
+    border: 1px solid #93c5fd;
+    border-left: 5px solid #2563eb;
+    border-radius: 10px;
+    color: #1e3a8a;
+}
+.hjorte-filnotat h3 {
+    margin: 0 0 .45rem;
+    color: #1e3a8a;
+    font-size: 1.08rem;
+}
+.hjorte-filnotat p { margin: .35rem 0 .8rem; }
+.hjorte-filgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: .75rem;
+    margin: .8rem 0;
+}
+.hjorte-filgruppe {
+    padding: .8rem .9rem;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #334155;
+}
+.hjorte-filgruppe.aktiv {
+    border: 2px solid #0284c7;
+    background: #f0f9ff;
+}
+.hjorte-filgruppe h4 {
+    font-size: .98rem;
+    margin: 0 0 .4rem;
+    color: #0f172a;
+}
+.hjorte-filgruppe ol { margin: .35rem 0 0 1.35rem; padding: 0; }
+.hjorte-filgruppe li { margin-bottom: .55rem; font-size: .88rem; line-height: 1.4; }
+.hjorte-filgruppe code {
+    display: block;
+    margin-top: .12rem;
+    overflow-wrap: anywhere;
+    font-size: .83rem;
+    color: #334155;
+}
+.hjorte-filnotat .hjorte-filfot {
+    margin: .8rem 0 0;
+    font-size: .88rem;
+    color: #1e40af;
+}
+
     </style>
 </head>
 <body>
@@ -412,6 +535,7 @@
         <button id="nav3" onclick="showStep(3)">3. tetthet</button>
         <button id="nav4" onclick="showStep(4)">4. kjøttutbytte</button>
         <button id="nav5" onclick="showStep(5)">5. rapport</button>
+        <button id="nav6" onclick="showStep(6)">6. sammenlign kommuner</button>
     </div>
 
     <div id="step0" class="step-container active-step">
@@ -435,6 +559,20 @@
             <p class="download-hint">Zip-filen inneholder SSB-filen til oppgave 1 og filene fra Hjorteviltregisteret som trengs i oppgave 2, 3 og 4.</p>
         </div>
 
+        <p class="dataset-note"><strong>Jobber dere i gruppe?</strong> Gjør oppgave 1–5 for hver deres kommune. I oppgave 5 kan hver student eksportere resultatene, og under fanen «6. sammenlign kommuner» kan dere lage ett felles <strong>rapportutkast i Word</strong> med tabeller og grafer.</p>
+
+
+<div class="autosave-intro" aria-label="Lagring av studentarbeid">
+    <strong>💾 Arbeidet lagres automatisk på denne enheten</strong>
+    <p>Når du skriver, laster inn data eller regner, lagres fremdriften lokalt i denne nettleseren. Åpner du samme læringssti igjen her, forsøker den å fortsette der du slapp. <strong>Last også ned en prosjektfil (.json) etter viktige trinn.</strong> Den kan åpnes på en annen PC, og er en tryggere reservekopi. Prosjektfil er ikke det samme som rapportutkast.</p>
+    <p><strong>Viktig:</strong> Lokal lagring kan forsvinne ved sletting av nettstedsdata, privat nettlesing eller bytte av nettleser/enhet. Direkte åpning av en HTML-fil kan gi ulik lagringsstøtte. På delte maskiner må du være oppmerksom på at neste bruker kan se tidligere arbeid.</p>
+    <span id="saveStatusTop" class="autosave-status" role="status" aria-live="polite">Undersøker om denne nettleseren støtter lokal lagring …</span>
+    <div class="autosave-controls">
+        <button type="button" onclick="lastNedKommuneProsjekt(0)">⬇ Last ned prosjektkopi</button>
+        <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+        <button class="autosave-clear" type="button" onclick="slettLokaltArbeid()">Start på nytt / slett lokal lagring</button>
+    </div>
+</div>
         <div class="lesson-map" aria-label="læringssti">
             <div class="lesson-step"><span class="step-number">1</span><strong>Beskriv utviklingen</strong><p>Fellingstall gir et langsiktig bilde av hvordan bestanden har endret seg.</p></div>
             <div class="lesson-step"><span class="step-number">2</span><strong>Tolk kondisjon</strong><p>Kalveproduksjon, slaktevekter og ku/okse-forhold viser om stammen er produktiv.</p></div>
@@ -462,6 +600,15 @@
         <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem;">
             <button class="action-btn btn-success" onclick="showStep(1)" style="font-size: 1.1rem; padding: 1rem 2rem;">Start dataanalysen &rarr;</button>
         </div>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(0)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep0" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
 
     <div id="step1" class="step-container">
@@ -488,6 +635,7 @@
         
         <textarea id="dataOppg1" rows="5" placeholder="Format: Årstall, Antall (Grafen oppdateres automatisk når du fyller inn tall)" oninput="tegnGraf1()"></textarea>
         <canvas id="chartOppg1"></canvas>
+        <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('chartOppg1')">⬇ Last ned figur (PNG)</button><span class="figure-hint">Historisk felling – med kommunenavn, årstall og figurtekst.</span></div>
         
         <button class="math-toggle-btn" id="btnToggleCalc1" onclick="toggleDisplay('calcDetails1')" style="display: none;">
             <span class="math-icon">🧮</span> Vis dataoppsummering og formler
@@ -501,6 +649,15 @@
         </div>
 
         <button class="action-btn btn-success" onclick="showStep(2)">Gå videre til oppgave 2 &rarr;</button>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(1)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep1" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
 
     <div id="step2" class="step-container">
@@ -563,16 +720,32 @@
                 <li><strong>Slaktevekt per alder og kjønn</strong>. Ligger under kolonnen <strong>"Jaktmateriale - elg"</strong>. (Du <strong>MÅ</strong> laste ned denne samlede filen for at vi automatisk skal kunne regne ut totalt kjøttutbytte i oppgave 4).</li>
             </ul>
             Trykk på knappen under og velg <strong>alle de 4 Excel-filene du lastet ned samtidig</strong> (bruk Ctrl / Cmd for å merke flere). Grafene tegnes automatisk.
-            <div class="dataset-note">
-                <strong>Viktig om filnavn:</strong> Filene fra Hjorteviltregisteret må beholdes med nøyaktig disse navnene:
-                <ul class="file-name-list">
-                    <li><code>Elg_SettKalvPerKu.xlsx</code></li>
-                    <li><code>Elg_SettKalvPerKalvku.xlsx</code></li>
-                    <li><code>Elg_SettKuPerOkse.xlsx</code></li>
-                    <li><code>Elg_Slaktevekt.xlsx</code></li>
-                </ul>
-                Læringsstien sjekker filnavnene når du laster opp. Feil navn kan gjøre at feil data kobles til feil beregning.
-            </div>
+            <aside class="hjorte-filnotat" aria-label="Sjekkliste for åtte Excel-filer fra Hjorteviltregisteret">
+                <h3>📋 Sjekkliste: 8 Excel-filer fra Hjorteviltregisteret</h3>
+                <p>For hele læringsstien skal dere laste ned <strong>åtte forskjellige Excel-filer (.xlsx) for samme kommune</strong> fra <a href="https://www.hjorteviltregisteret.no/Statistikk/Elg" target="_blank" rel="noopener noreferrer">Hjorteviltregisteret</a>. Fire brukes i oppgave 2 og fire i oppgave 3. <strong>Ikke last opp alle åtte samtidig.</strong></p>
+                <div class="hjorte-filgrid">
+                <section class="hjorte-filgruppe aktiv" aria-label="Filer til oppgave 2">
+                    <h4>Oppgave 2 – last opp disse fire her</h4>
+                    <ol>
+                    <li><strong>Sett kalv per ku</strong><code>Elg_SettKalvPerKu.xlsx</code></li>
+                    <li><strong>Sett kalv per kalvku</strong><code>Elg_SettKalvPerKalvku.xlsx</code></li>
+                    <li><strong>Sett ku per okse</strong><code>Elg_SettKuPerOkse.xlsx</code></li>
+                    <li><strong>Slaktevekt per alder og kjønn</strong><code>Elg_Slaktevekt.xlsx</code></li>
+                    </ol>
+                </section>
+                <section class="hjorte-filgruppe" aria-label="Filer til oppgave 3">
+                    <h4>Oppgave 3 – brukes i neste oppgave</h4>
+                    <ol>
+                    <li><strong>Sette elg</strong><code>Elg_Sett.xlsx</code></li>
+                    <li><strong>Felte elg</strong><code>Elg_Felt.xlsx</code></li>
+                    <li><strong>Felt elg per jegerdag</strong><code>Elg_FeltPerJegerdag.xlsx</code></li>
+                    <li><strong>Sett elg per jegerdag</strong><code>Elg_SettPerJegerdag.xlsx</code></li>
+                    </ol>
+                </section>
+                </div>
+                <p class="hjorte-filfot"><strong>Viktig:</strong> Behold filnavnene nøyaktig som angitt. Marker og last opp <strong>bare de fire filene for oppgave 2</strong> i feltet nedenfor (Ctrl/Cmd for flere filer). SSB-filen i oppgave 1 kommer i tillegg.</p>
+            </aside>
+
             <br>
             <input type="file" id="csvUploadHjort" accept=".xlsx" multiple style="margin-top: 1rem;">
             <div id="hjortFeedback" style="color:#d35400; font-weight:500; margin-top:0.5rem; font-size: 0.9rem;">Venter på filer...</div>
@@ -594,10 +767,16 @@
         <textarea id="dataOppg2" rows="5" placeholder="Skjult databoks for prosessering" style="display: none;"></textarea>
         
         <div style="display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;">
-            <div style="flex:1; min-width:300px;"><canvas id="chartOppg2a"></canvas></div>
-            <div style="flex:1; min-width:300px;"><canvas id="chartOppg2b"></canvas></div>
+            <div style="flex:1; min-width:300px;"><canvas id="chartOppg2a"></canvas>
+                <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('chartOppg2a')">⬇ Last ned figur (PNG)</button></div>
+            </div>
+            <div style="flex:1; min-width:300px;"><canvas id="chartOppg2b"></canvas>
+                <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('chartOppg2b')">⬇ Last ned figur (PNG)</button></div>
+            </div>
         </div>
-        <div style="margin-top: 1.5rem;"><canvas id="chartOppg2c" style="max-height: 250px;"></canvas></div>
+        <div style="margin-top: 1.5rem;"><canvas id="chartOppg2c" style="max-height: 250px;"></canvas>
+            <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('chartOppg2c')">⬇ Last ned figur (PNG)</button></div>
+        </div>
 
         <button class="math-toggle-btn" id="btnToggleCalc2" onclick="toggleDisplay('calcDetails2')" style="display: none;">
             <span class="math-icon">🧮</span> Vis snitt, formler og trendutvikling
@@ -615,6 +794,15 @@
         </div>
 
         <button class="action-btn btn-success" onclick="showStep(3)">Gå videre til oppgave 3 &rarr;</button>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(2)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep2" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
 
     <div id="step3" class="step-container">
@@ -641,16 +829,32 @@
                 <li><strong>Felt elg per jegerdag</strong> (Ligger under kolonnen: <strong>"Sette og felte elg"</strong>)</li>
             </ul>
             Last opp <strong>alle de 4 filene</strong> under samtidig (bruk Ctrl/Cmd for å merke dem i mappen din). Vi tegner da en graf hvor du selv drar en tidslinje for å finne en stabil 3-års bolk. Gjennomsnittet for perioden overføres automatisk til kalkulatoren.</p>
-            <div class="dataset-note">
-                <strong>Viktig om filnavn:</strong> Filene fra Hjorteviltregisteret må beholdes med nøyaktig disse navnene:
-                <ul class="file-name-list">
-                    <li><code>Elg_Sett.xlsx</code></li>
-                    <li><code>Elg_Felt.xlsx</code></li>
-                    <li><code>Elg_SettPerJegerdag.xlsx</code></li>
-                    <li><code>Elg_FeltPerJegerdag.xlsx</code></li>
-                </ul>
-                Læringsstien sjekker filnavnene når du laster opp.
-            </div>
+            <aside class="hjorte-filnotat" aria-label="Sjekkliste for åtte Excel-filer fra Hjorteviltregisteret">
+                <h3>📋 Sjekkliste: 8 Excel-filer fra Hjorteviltregisteret</h3>
+                <p>For hele læringsstien skal dere laste ned <strong>åtte forskjellige Excel-filer (.xlsx) for samme kommune</strong> fra <a href="https://www.hjorteviltregisteret.no/Statistikk/Elg" target="_blank" rel="noopener noreferrer">Hjorteviltregisteret</a>. Fire brukes i oppgave 2 og fire i oppgave 3. <strong>Ikke last opp alle åtte samtidig.</strong></p>
+                <div class="hjorte-filgrid">
+                <section class="hjorte-filgruppe" aria-label="Filer til oppgave 2">
+                    <h4>Oppgave 2 – allerede brukt i oppgave 2</h4>
+                    <ol>
+                    <li><strong>Sett kalv per ku</strong><code>Elg_SettKalvPerKu.xlsx</code></li>
+                    <li><strong>Sett kalv per kalvku</strong><code>Elg_SettKalvPerKalvku.xlsx</code></li>
+                    <li><strong>Sett ku per okse</strong><code>Elg_SettKuPerOkse.xlsx</code></li>
+                    <li><strong>Slaktevekt per alder og kjønn</strong><code>Elg_Slaktevekt.xlsx</code></li>
+                    </ol>
+                </section>
+                <section class="hjorte-filgruppe aktiv" aria-label="Filer til oppgave 3">
+                    <h4>Oppgave 3 – last opp disse fire her</h4>
+                    <ol>
+                    <li><strong>Sette elg</strong><code>Elg_Sett.xlsx</code></li>
+                    <li><strong>Felte elg</strong><code>Elg_Felt.xlsx</code></li>
+                    <li><strong>Felt elg per jegerdag</strong><code>Elg_FeltPerJegerdag.xlsx</code></li>
+                    <li><strong>Sett elg per jegerdag</strong><code>Elg_SettPerJegerdag.xlsx</code></li>
+                    </ol>
+                </section>
+                </div>
+                <p class="hjorte-filfot"><strong>Viktig:</strong> Behold filnavnene nøyaktig som angitt. Marker og last opp <strong>bare de fire filene for oppgave 3</strong> i feltet nedenfor (Ctrl/Cmd for flere filer). SSB-filen i oppgave 1 kommer i tillegg.</p>
+            </aside>
+
             <input type="file" id="csvUploadOppg3" accept=".xlsx" multiple>
             <div id="hjortFeedback3" style="color:#d35400; font-weight:500; margin-top:0.5rem; font-size: 0.9rem;">Venter på filer...</div>
 
@@ -678,6 +882,7 @@
                     Valgt referanseperiode: <span id="oppg3SliderLabel">-</span>
                 </div>
             </div>
+            <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('chartOppg3')">⬇ Last ned figur (PNG)</button><span class="figure-hint">Valgt referanseperiode markeres også i den nedlastede figuren.</span></div>
         </div>
         
         <div class="info-box success-box" style="margin-top: 2.5rem;">
@@ -802,6 +1007,15 @@
 
             <button class="action-btn btn-success" onclick="showStep(4)">Gå videre til oppgave 4 &rarr;</button>
         </div>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(3)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep3" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
 
     <div id="step4" class="step-container">
@@ -914,6 +1128,15 @@
         </div>
 
         <button class="action-btn btn-success" onclick="showStep(5)">Gå til konklusjon og rapport &rarr;</button>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(4)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep4" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
 
     <div id="step5" class="step-container">
@@ -935,11 +1158,117 @@
             <textarea id="ref6" rows="6" placeholder="Skriv den endelige konklusjonen din her..."></textarea>
         </div>
 
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; margin-top: 2rem;">Når du er ferdig med alle tekstene, trykk på knappen under for å generere det komplette utkastet til notatet. Kopier teksten inn i Word/Google Docs og legg ved grafene du har lagret (Høyreklikk på grafene og velg "Lagre bilde som").</p>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; margin-top: 2rem;">Når du er ferdig med alle tekstene, trykk på knappen under for å generere notatutkastet. Kopier teksten inn i Word/Google Docs. Under hver graf finner du nå knappen <strong>«Last ned figur (PNG)»</strong>. Sett inn de nedlastede figurene i notatet. For felles grupperapport kan dere også bruke sammenligningsfanen.</p>
         
         <button class="action-btn btn-success" onclick="genererRapport()" style="margin-top: 0; margin-bottom: 2rem;">📄 Generer formelt notat</button>
         <div id="printArea"></div>
+        <div class="group-feature-panel">
+            <h3>📦 Bruk resultatene i en grupperapport</h3>
+            <p>Arbeider dere med forskjellige kommuner? Hver student fullfører sin egen kommune og laster ned <strong>én resultatfil (.json)</strong>. Del filene med gruppa. Resultatfilen inneholder årsserier, beregnede nøkkeltall og egne refleksjonstekster – <strong>ikke</strong> de opprinnelige Excel-filene.</p>
+            <button type="button" class="action-btn" onclick="eksporterKommunedata()">⬇ Last ned kommuneresultater (.json)</button>
+            <button type="button" class="reset-btn" onclick="showStep(6)" style="margin-top:0.85rem; width:100%;">Gå til felles sammenligning →</button>
+            <div id="exportFeedback" class="group-feedback" role="status" aria-live="polite"></div>
+        </div>
+        <div class="checkpoint-panel">
+            <strong>💾 Prosjektkopi etter dette trinnet</strong>
+            <p>Fremdriften lagres automatisk lokalt. Last gjerne ned en prosjektkopi nå, så kan du åpne analysen igjen senere – også på en annen datamaskin.</p>
+            <div class="checkpoint-actions">
+                <button type="button" onclick="lastNedKommuneProsjekt(5)">⬇ Last ned prosjektfil (.json)</button>
+                <button type="button" onclick="apneKommuneProsjekt()">📂 Åpne prosjektfil</button>
+            </div>
+            <span id="saveStatusStep5" class="autosave-status" aria-live="polite"></span>
+        </div>
     </div>
+
+
+    <!-- OPPGAVE 6: FRIVILLIG FELLES ANALYSE FOR GRUPPER -->
+    <div id="step6" class="step-container">
+        <h2>6. Sammenlign kommuner – felles rapportutkast</h2>
+        <div class="viltet-note">
+            <h3>🎓 To arbeidsmåter – samme læringssti</h3>
+            <p>Jobber du alene, bruker du fortsatt <strong>oppgave 5</strong> for kommunerapporten. Jobber dere i gruppe, gjør alle oppgavene 1–5 for hver sin kommune. Deretter samler dere resultatfilene her. Ingen behøver å laste inn hverandres SSB- eller Excel-filer på nytt.</p>
+        </div>
+        <div class="group-howto">
+            <div><span class="group-step-num">1</span><strong>Fullfør egen kommune</strong><p>Gjør beregningene og skriv vurderingene i oppgavene 1–5.</p></div>
+            <div><span class="group-step-num">2</span><strong>Eksporter resultatfil</strong><p>I oppgave 5 trykker hver student «Last ned kommuneresultater».</p></div>
+            <div><span class="group-step-num">3</span><strong>Sett sammen gruppas data</strong><p>Én student laster inn de 2–3 JSON-filene her og lager felles rapport.</p></div>
+        </div>
+        <div class="group-project-panel">
+            <h3>💾 Lagre gruppearbeidet og fortsett senere</h3>
+            <p>Arbeidet lagres også automatisk lokalt i nettleseren. I tillegg kan dere lagre <strong>alle innleste kommuner, gruppas tekster og valgt graf</strong> i én prosjektfil (.json). Filen kan deles mellom gruppemedlemmer og åpnes igjen på en annen datamaskin. Dere slipper å laste inn kommunenes resultatfiler på nytt.</p>
+            <div class="input-group">
+                <label for="groupProjectName">Navn på gruppearbeidet (valgfritt)</label>
+                <input type="text" id="groupProjectName" maxlength="120" placeholder="For eksempel: Elgforvaltning – gruppe 3">
+            </div>
+            <div class="group-project-actions">
+                <button type="button" class="action-btn" onclick="lagreGruppeprosjekt()">⬇ Lagre gruppearbeid (.json)</button>
+                <div class="group-project-open">
+                    <label for="groupProjectOpen">Åpne tidligere lagret gruppearbeid (.json)</label>
+                    <input type="file" id="groupProjectOpen" accept=".json,application/json">
+                </div>
+            </div>
+            <div id="groupAutoSaveStatus" class="autosave-status" role="status" aria-live="polite">Automatisk lagring kontrolleres …</div>
+            <div id="groupProjectFeedback" class="group-feedback" role="status" aria-live="polite">Endringene lagres automatisk i denne nettleseren. Last også ned en prosjektfil når dere avslutter eller skal bytte datamaskin.</div>
+            <p class="group-caption">Prosjektfilen inneholder også studentenes individuelle refleksjoner og eventuelle navn. Oppbevar og del den som et arbeidsdokument. Dette er <strong>ikke</strong> rapportutkastet i Word – det lastes ned separat nedenfor.</p>
+        </div>
+        <div class="group-feature-panel">
+            <h3>📂 Last inn resultatfiler fra opptil tre kommuner</h3>
+            <p>Velg <strong>2 eller 3 .json-filer</strong> fra de individuelle analysene. Filene behandles lokalt i nettleseren; de sendes ikke til en server av denne funksjonen.</p>
+            <label for="groupImport">Velg resultatfiler (.json)</label>
+            <input type="file" id="groupImport" accept=".json,application/json" multiple>
+            <div id="groupImportFeedback" class="group-feedback" role="status" aria-live="polite">Ingen kommuner lastet inn ennå.</div>
+            <div id="groupFileList" class="group-file-list"></div>
+        </div>
+        <div id="groupComparison" style="display:none;">
+            <h3>1. Nøkkeltall side om side</h3>
+            <p class="group-caption">Snitt for kondisjon og kjønnsrate: de fem siste tilgjengelige årene for hver kommune (periodene kan være ulike). Tetthet og kjøttutbytte vises med egne årstall. «Mangler» betyr at studenten ikke har beregnet eller lastet inn verdien.</p>
+            <div class="group-table-scroll"><table id="groupKeyTable" class="group-table"></table></div>
+            <div id="groupYearWarning" class="model-warning" style="display:none;"></div>
+            <h3>2. Sammenlign utviklingen i en felles graf</h3>
+            <p class="group-caption">Kommunene vises med forskjellige farger. År med manglende verdier kobles ikke sammen; vi interpolerer ikke data.</p>
+            <div class="input-group">
+                <label for="groupMetric">Velg det studentene ønsker å sammenligne</label>
+                <select id="groupMetric" onchange="oppdaterGruppegraf()">
+                    <option value="felte">Felte elg – antall per år</option>
+                    <option value="kalvPerKu" selected>Sett kalv per ku</option>
+                    <option value="kalvPerKalvku">Sett kalv per kalvku</option>
+                    <option value="vektKalv">Slaktevekt kalv (kg)</option>
+                    <option value="vektUng">Slaktevekt 1,5-åring (kg)</option>
+                    <option value="kuPerOkse">Sett ku per okse</option>
+                    <option value="feltPerJegerdag">Felt elg per jegerdag</option>
+                    <option value="settPerJegerdag">Sett elg per jegerdag (kun før 2018)</option>
+                </select>
+            </div>
+            <div class="group-chart-wrap"><canvas id="groupChart" aria-label="Sammenligningsgraf for kommunene"></canvas></div>
+            <div id="groupChartStatus" class="group-feedback" role="status" aria-live="polite"></div>
+            <div class="figure-toolbar"><button type="button" class="figure-download-btn" onclick="lastNedFigur('groupChart')">⬇ Last ned figur (PNG)</button><span class="figure-hint">Lagre figuren med alle kommunene, navn, årstall og kilder.</span></div>
+            <div class="model-warning" style="margin-top:1.4rem;">Sammenlign <strong>relative utviklingstrekk</strong> før dere trekker konklusjoner. Rå fellingstall påvirkes av kommunestørrelse og jaktinnsats. «Sett elg per jegerdag» er her avgrenset til <strong>før 2018</strong> på grunn av metodeendringen; «felt per jegerdag» kan vises over en lengre periode. Modelltall for 1000 vinterdyr må ikke forveksles med kommunenes faktiske bestand.</div>
+        </div>
+        <div id="groupWritingPanel" style="display:none;">
+            <h3>3. Skriv gruppas egen sammenlignende tolkning</h3>
+            <p>Resultattabellen og figurene settes automatisk inn i rapportutkastet. <strong>Dere må selv tolke forskjellene.</strong> Bruk de individuelle vurderingene som grunnlag, men ikke lim sammen tre separate rapporter.</p>
+            <div class="input-group"><label for="groupAuthors">Gruppemedlemmer</label><input type="text" id="groupAuthors" placeholder="Navn på studentene"></div>
+            <div class="input-group"><label for="groupIntro">Innledning og kommunenes habitat</label><textarea id="groupIntro" rows="4" placeholder="Beskriv kommunene, forskjeller i habitat og hva dere sammenligner."></textarea></div>
+            <div class="input-group"><label for="groupHistory">Sammenligning av historisk utvikling</label><textarea id="groupHistory" rows="4" placeholder="Hvordan er utviklingen lik og ulik? Hvilke feilkilder finnes i fellingstallene?"></textarea></div>
+            <div class="input-group"><label for="groupCondition">Kondisjon, reproduksjon og kjønnsrate</label><textarea id="groupCondition" rows="4" placeholder="Hvem har høyest kalv per ku, og hva kan forklare forskjellene? Vurder vekter og kjønnsrate."></textarea></div>
+            <div class="input-group"><label for="groupDensity">Tetthet og metodeforbehold</label><textarea id="groupDensity" rows="4" placeholder="Sammenlign elg/km², valg av referanseperioder, arealgrunnlag og registreringsmetoder."></textarea></div>
+            <div class="input-group"><label for="groupMeat">Jaktutbytte og avskytingsstrategier</label><textarea id="groupMeat" rows="4" placeholder="Sammenlign kg/km² og drøft modelløvelsen med 1000 dyr, uten å blande modell og faktiske tall."></textarea></div>
+            <div class="input-group"><label for="groupMethods">Datakvalitet, årstall og feilkilder</label><textarea id="groupMethods" rows="4" placeholder="Kommenter om måleår, datagrunnlag, oppdagbarhet og usikkerhet er sammenlignbare."></textarea></div>
+            <div class="input-group"><label for="groupConclusion">Felles konklusjon og differensierte forvaltningsråd</label><textarea id="groupConclusion" rows="5" placeholder="Hvilke råd vil dere gi for hver av kommunene? Forklar forskjellene."></textarea></div>
+            <h3>4. Generer Word-utkast til felles rapport</h3>
+            <div class="group-draft-notice"><strong>UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING</strong><p>Word-dokumentet er en automatisk sammenstilling, ikke en ferdig faglig rapport. Gruppa må selv kontrollere tall og figurer, supplere faglige drøftinger, vurdere usikkerhet, fullføre kildehenvisninger og bearbeide språk, struktur og konklusjoner.</p></div>
+            <p class="group-caption">Generer en forhåndsvisning og last deretter ned et <strong>redigerbart Word-dokument (.docx)</strong> med nøkkeltall, fem sammenligningsfigurer der data finnes, gruppetekster og individuelle refleksjoner som vedlegg. Dokumentet er tydelig merket <strong>UTKAST</strong> både på forsiden og i toppteksten på hver side.</p>
+            <div class="group-report-actions">
+                <button class="action-btn btn-success" type="button" onclick="genererGrupperapport()">📄 Generer rapportutkast</button>
+                <button class="reset-btn" id="groupDownloadReport" type="button" style="display:none;" onclick="lastNedGrupperapport()">⬇ Last ned UTKAST i Word (.docx)</button>
+                <button class="reset-btn" id="groupCopyReport" type="button" style="display:none;" onclick="kopierGrupperapport()">Kopier rapporttekst</button>
+            </div>
+            <div id="groupReportFeedback" class="group-feedback" role="status" aria-live="polite"></div>
+            <div id="groupReportPreview" class="group-report-preview" style="display:none;"></div>
+        </div>
+    </div>
+
+    <input type="file" id="kommuneProjectOpen" accept=".json,application/json" style="display:none" aria-label="Åpne individuell prosjektfil">
 
     <div id="factModal" class="modal-overlay">
         <div class="modal-content">
@@ -2545,6 +2874,107 @@
         }
 
 
+        // --- Eksport av figurer i rapportvennlig oppløsning ---
+        // Gjengir Chart.js-seriene i en egen stor, hvit PNG, med full tittel, akser og kilde.
+        const figurBeskrivelser = {
+            chartOppg1: {title:'Historisk felling av elg', axis:'Antall felte elg', file:'historisk_felling',
+                note:'Fellingstall påvirkes av bestand, kvoter og jaktinnsats; de er ikke direkte bestandstellinger.'},
+            chartOppg2a: {title:'Reproduksjon i elgbestanden', axis:'Kalver per ku / kalvku', file:'reproduksjon',
+                note:'Sett kalv per ku og sett kalv per kalvku er to forskjellige mål på reproduksjon.'},
+            chartOppg2b: {title:'Slaktevekter for elg', axis:'Gjennomsnittlig slaktevekt (kg)', file:'slaktevekter',
+                note:'Vekten er et mål på kroppslig utvikling; tolk trender i lys av registreringsgrunnlaget.'},
+            chartOppg2c: {title:'Kjønnsrate i elgbestanden', axis:'Sett ku per okse', file:'kjonnsrate',
+                note:'Høyere verdi betyr flere observerte kuer per observert okse.'},
+            chartOppg3: {title:'Jaktindekser og valgt referanseperiode', axis:'Sett elg per jegerdag', file:'jaktindekser_referanse',
+                note:'Referanseperioden (røde punkter) velges av studenten. Merk ulike y-akser og metodiske forbehold.'}
+        };
+        function figurPeriode(labels) {
+            const years=(labels||[]).map(v=>{
+                const m=String(v).match(/(?:19|20)\d{2}/);return m?Number(m[0]):null;
+            }).filter(v=>v!==null);
+            if(!years.length)return '';
+            const min=Math.min(...years),max=Math.max(...years);
+            return min===max?String(min):min+'-'+max;
+        }
+        function figurLinjer(ctx,text,x,y,maxWidth,lineHeight,maxLines) {
+            const words=String(text).split(/\s+/); let row='',lines=0;
+            for(let i=0;i<words.length;i++){
+                const test=row?row+' '+words[i]:words[i];
+                if(ctx.measureText(test).width>maxWidth && row){
+                    ctx.fillText(row,x,y+lines*lineHeight);lines++;row=words[i];
+                    if(lines>=maxLines)return;
+                }else row=test;
+            }
+            if(row && lines<maxLines)ctx.fillText(row,x,y+lines*lineHeight);
+        }
+        function lastNedFigur(id) {
+            try {
+                const displayed=Chart.getChart(document.getElementById(id));
+                if(!displayed || !displayed.data || !displayed.data.datasets ||
+                   !displayed.data.datasets.some(d=>(d.data||[]).some(v=>v!==null && v!==undefined && Number.isFinite(Number(typeof v==='object'?v.y:v))))) {
+                    alert('Det finnes ikke noen grafdata å laste ned ennå. Last opp data og tegn grafen først.');return;
+                }
+                const isGroup=id==='groupChart';
+                const selected=document.getElementById('groupMetric')?.value;
+                const info=isGroup?
+                    {title:gruppeMetricLabels[selected]||'Kommunesammenligning',
+                     axis:gruppeMetricLabels[selected]||'Verdi',file:'sammenligning_'+selected,
+                     note:'Felles årsserier fra studentenes kommunedata. Sjekk sammenlignbarhet mellom år og metoder.'}:
+                    figurBeskrivelser[id];
+                if(!info)throw Error('Ukjent figurnavn');
+                const name=isGroup?gruppeData.map(x=>x.kommune).join(', '):
+                    (globalKommune&&globalKommune!=='Ikke lastet inn enda'?globalKommune:'Ukjent kommune');
+                const period=figurPeriode(displayed.data.labels);
+                const subtitle=info.title+' – '+name+(period?' ('+period+')':'');
+                const data=JSON.parse(JSON.stringify(displayed.data));
+                const dual=id==='chartOppg3';
+                const scales={x:{title:{display:true,text:'År',font:{size:15}},ticks:{maxTicksLimit:15}},
+                    y:{title:{display:true,text:dual?'Sett elg per jegerdag':info.axis,font:{size:15}}}};
+                if(dual){
+                    scales.y.position='left';
+                    scales.y1={type:'linear',position:'right',
+                        title:{display:true,text:'Felt elg per jegerdag',font:{size:15}},grid:{drawOnChartArea:false}};
+                }
+                // Høy pikseltetthet oppnås ved å tegne grafen på nytt, ikke bare strekke et skjermbilde.
+                const plotCanvas=document.createElement('canvas');plotCanvas.width=1200;plotCanvas.height=570;
+                const plot=new Chart(plotCanvas.getContext('2d'),{
+                    type:displayed.config.type,data,
+                    options:{responsive:false,animation:false,devicePixelRatio:2,
+                        layout:{padding:{left:14,right:14,top:12,bottom:8}},
+                        plugins:{legend:{display:true,position:'bottom',labels:{padding:18}},
+                            title:{display:true,text:subtitle,font:{size:20},padding:{bottom:16}}},
+                        scales}
+                });
+                plot.update('none');
+                const exportCanvas=document.createElement('canvas');
+                exportCanvas.width=plot.canvas.width;exportCanvas.height=plot.canvas.height+252;
+                const ctx=exportCanvas.getContext('2d');
+                ctx.fillStyle='#ffffff';ctx.fillRect(0,0,exportCanvas.width,exportCanvas.height);
+                ctx.drawImage(plot.canvas,0,0);
+                plot.destroy();
+                const y=exportCanvas.height-222;
+                ctx.strokeStyle='#cbd5e1';ctx.lineWidth=2;
+                ctx.beginPath();ctx.moveTo(44,y-15);ctx.lineTo(exportCanvas.width-44,y-15);ctx.stroke();
+                ctx.textBaseline='top';ctx.fillStyle='#334155';ctx.font='bold 28px Arial, sans-serif';
+                figurLinjer(ctx,'Figur: '+info.title+' – '+name+'.',48,y,exportCanvas.width-96,37,2);
+                ctx.font='25px Arial, sans-serif';ctx.fillStyle='#475569';
+                const selection=(id==='chartOppg3')?document.getElementById('oppg3SliderLabel')?.textContent?.trim():'';
+                const note=info.note + (selection && selection!=='-'?' Valgt referanseperiode: '+selection+'.':'');
+                figurLinjer(ctx,note,48,y+87,exportCanvas.width-96,33,2);
+                ctx.font='21px Arial, sans-serif';ctx.fillStyle='#64748b';
+                ctx.fillText('Kilder: '+(isGroup?'SSB og Hjorteviltregisteret via studentenes resultatfiler.':
+                    (id==='chartOppg1'?'SSB.':'Hjorteviltregisteret.')),48,exportCanvas.height-29);
+                const filename='elg_'+gruppeFilnavn(isGroup?'sammenligning_'+name:name)+'_'+
+                    gruppeFilnavn(info.file)+(period?'_'+period:'')+'.png';
+                const a=document.createElement('a');a.download=filename;
+                a.href=exportCanvas.toDataURL('image/png');
+                document.body.appendChild(a);a.click();a.remove();
+            } catch(error){
+                console.error('Figurnedlasting feilet:',error);
+                alert('Kunne ikke laste ned figuren. Sjekk at grafen er tegnet og prøv igjen.');
+            }
+        }
+
         // --- RAPPORT ---
         function getRefText(id) { let el = document.getElementById(id); return (el && el.value.trim() !== "") ? el.value.trim() : "Ingen tekst skrevet."; }
 
@@ -2605,7 +3035,963 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
+
+        // === GRUPPEMODUL: Eksport, innlesing, sammenligning og grupperapport ===
+        // Versjonert lokalt JSON-format: ingen nettverksforespørsler og ingen Excel-filer trengs ved sammenslåing.
+        const gruppeSchema = 'elg-laeringssti-kommune';
+        const gruppeProsjektSchema = 'elg-laeringssti-gruppearbeid';
+        const gruppeFellesFeltIds = ['groupAuthors','groupIntro','groupHistory','groupCondition','groupDensity','groupMeat','groupMethods','groupConclusion'];
+        const gruppeColors = ['#0284c7','#b45309','#7c3aed'];
+        const gruppeMetricLabels = {
+            felte:'Felte elg (antall)', kalvPerKu:'Sett kalv per ku',
+            kalvPerKalvku:'Sett kalv per kalvku', vektKalv:'Slaktevekt kalv (kg)',
+            vektUng:'Slaktevekt 1,5-åring (kg)', kuPerOkse:'Sett ku per okse',
+            feltPerJegerdag:'Felt elg per jegerdag', settPerJegerdag:'Sett elg per jegerdag (før 2018)'
+        };
+        const gruppeMetricKeys = Object.keys(gruppeMetricLabels);
+        const gruppeTextIds = ['ref0','ref1','ref2','ref2b','ref3','ref4','ref5','ref6'];
+        const gruppeReflectionLabels = ['Innledning / habitat','Historisk bestandsendring','Kondisjon',
+            'Kjønnsrate','Bestandstetthet','Kjøttutbytte / avskytingsregime',
+            'Metodeutfordringer','Konklusjon og forvaltningsråd'];
+        let gruppeData = [];
+        let gruppeChart = null;
+        let gruppeRapportHtml = '';
+        let gruppeRapportTekst = '';
+
+        function gruppeNum(value) {
+            if(value === null || value === undefined || value === '') return null;
+            const n = Number(value);
+            return Number.isFinite(n) ? n : null;
+        }
+        function gruppeInputNum(id) {
+            const el=document.getElementById(id);
+            return el ? gruppeNum(el.value) : null;
+        }
+        function gruppeSeriesFromChart(chart, index) {
+            if(!chart || !chart.data || !chart.data.datasets[index]) return [];
+            const dataset=chart.data.datasets[index].data;
+            return chart.data.labels.map((year,i) => {
+                const y=parseInt(year,10);
+                return (y>=1900 && y<=2200) ? {year:y,value:gruppeNum(dataset[i])} : null;
+            }).filter(Boolean);
+        }
+        function gruppeFiveYearAvg(series, labels) {
+            // Bruker siste 5 kalenderår/oppføringer i kondisjonsgrafen, samme metode som oppgave 4.
+            if(!labels || !labels.length) return null;
+            const recentYears=labels.slice(-5).map(y=>parseInt(y,10));
+            const values=series.filter(p=>recentYears.includes(p.year) && p.value !== null).map(p=>p.value);
+            return values.length ? values.reduce((a,b)=>a+b,0)/values.length : null;
+        }
+        function gruppeHentLokaleResultater() {
+            const kommune = (globalKommune || '').trim();
+            if(!kommune || kommune==='Ikke lastet inn enda') throw Error('Last inn data for én kommune før du eksporterer. Kommunenavnet må vises i læringsstien.');
+            const serie = {
+                felte:gruppeSeriesFromChart(chart1,0),
+                kalvPerKu:gruppeSeriesFromChart(chart2a,0),
+                kalvPerKalvku:gruppeSeriesFromChart(chart2a,1),
+                vektKalv:gruppeSeriesFromChart(chart2b,0),
+                vektUng:gruppeSeriesFromChart(chart2b,1),
+                kuPerOkse:gruppeSeriesFromChart(chart2c,0),
+                feltPerJegerdag:globalOppg3AllData.map(x=>({year:gruppeNum(x.year),value:gruppeNum(x.feltDag)})).filter(x=>x.year!==null),
+                settPerJegerdag:globalOppg3AllData.filter(x=>x.year<2018).map(x=>({year:gruppeNum(x.year),value:gruppeNum(x.settDag)})).filter(x=>x.year!==null)
+            };
+            if(!serie.felte.length && !serie.kalvPerKu.length && !serie.feltPerJegerdag.length) {
+                throw Error('Ingen bearbeidede dataserier er funnet. Last først opp kommunedata i oppgave 1–3.');
+            }
+            const condYears=chart2a?.data?.labels || [];
+            const snitt={
+                kalvPerKu:gruppeFiveYearAvg(serie.kalvPerKu,condYears),
+                kalvPerKalvku:gruppeFiveYearAvg(serie.kalvPerKalvku,condYears),
+                vektKalv:gruppeFiveYearAvg(serie.vektKalv,condYears),
+                vektUng:gruppeFiveYearAvg(serie.vektUng,condYears),
+                kuPerOkse:gruppeFiveYearAvg(serie.kuPerOkse,condYears)
+            };
+            const refleksjoner={};
+            gruppeTextIds.forEach(id=>{refleksjoner[id] = (document.getElementById(id)?.value || '').trim();});
+            return {
+                schema:gruppeSchema,version:1,kommune,eksportert:new Date().toISOString(),
+                serier:serie,
+                snitt,
+                beregnet: {
+                    referansePeriode:(document.getElementById('oppg3SliderLabel')?.textContent || '').trim(),
+                    kalvPerKalvkuReferanse:gruppeNum(fasitKalv),
+                    referanseBestand:gruppeNum(fasitRef),
+                    estimertBestand:gruppeNum(fjorBestand),
+                    bestandAar: fjorBestandYear===null ? null : String(fjorBestandYear),
+                    tetthet:gruppeNum(tetthetRes),
+                    arealDaa:gruppeInputNum('arealDaa'),
+                    totalKjottKg:gruppeInputNum('totalkg'),
+                    kjottKgPerKm2:gruppeNum(kjottAKm2),
+                    kjottAar:kjottFjorYear===null ? null : String(kjottFjorYear),
+                    modellSimulering:kjottBText || ''
+                },
+                refleksjoner
+            };
+        }
+        function gruppeFilnavn(navn) {
+            return String(navn).normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+                .replace(/[^a-zA-Z0-9_-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,60) || 'kommune';
+        }
+        function gruppeLastNedBlob(name,content,mime) {
+            const blob=new Blob([content],{type:mime});
+            const url=URL.createObjectURL(blob);
+            const a=document.createElement('a');a.href=url;a.download=name;
+            document.body.appendChild(a);a.click();a.remove();
+            window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+        }
+        function gruppeMelding(id,message,kind) {
+            const el=document.getElementById(id);
+            if(el){el.textContent=message;el.className='group-feedback'+(kind?' '+kind:'');}
+        }
+        function eksporterKommunedata() {
+            try {
+                const data=gruppeHentLokaleResultater();
+                gruppeLastNedBlob('elgresultater_'+gruppeFilnavn(data.kommune)+'.json',
+                    JSON.stringify(data,null,2),'application/json;charset=utf-8');
+                const mangler=[];
+                if(!data.serier.kalvPerKu.length)mangler.push('kondisjonsdata');
+                if(data.beregnet.tetthet===null)mangler.push('tetthetsberegning');
+                if(data.beregnet.kjottKgPerKm2===null)mangler.push('kjøttutbytte per km²');
+                gruppeMelding('exportFeedback','Resultatfilen for '+data.kommune+' er lastet ned.'+
+                    (mangler.length?' Mangler fortsatt: '+mangler.join(', ')+'. Dere kan eksportere en ny fil når dette er ferdig.':''),'success');
+            }catch(err){gruppeMelding('exportFeedback',err.message,'error');}
+        }
+        function gruppeValiderFil(data) {
+            if(!data || typeof data!=='object' || data.schema!==gruppeSchema || data.version!==1)
+                throw Error(data?.schema===gruppeProsjektSchema ?
+                    'Dette er en lagret gruppearbeid-fil. Bruk «Åpne tidligere lagret gruppearbeid» ovenfor.' :
+                    'Filen har ikke et gjenkjennbart elgresultatformat (versjon 1).');
+            if(typeof data.kommune!=='string' || !data.kommune.trim() || data.kommune.length>120)
+                throw Error('Mangler gyldig kommunenavn i resultatfilen.');
+            if(!data.serier || typeof data.serier!=='object' || !data.beregnet || typeof data.beregnet!=='object')
+                throw Error('Resultatfilen mangler data eller nøkkeltall.');
+            const cleaned={schema:gruppeSchema,version:1,
+                kommune:data.kommune.trim(),eksportert:String(data.eksportert||''),
+                serier:{},snitt:{},beregnet:{},refleksjoner:{}};
+            for(const key of gruppeMetricKeys){
+                const rows=data.serier[key];
+                if(rows!==undefined && !Array.isArray(rows))throw Error('Ugyldig tidsserie: '+key);
+                cleaned.serier[key]=(rows||[]).slice(0,200).map(p=>{
+                    const year=gruppeNum(p?.year),value=gruppeNum(p?.value);
+                    return year!==null && Number.isInteger(year) && year>=1900 && year<=2200 ? {year,value} : null;
+                }).filter(Boolean);
+            }
+            for(const key of ['kalvPerKu','kalvPerKalvku','vektKalv','vektUng','kuPerOkse'])
+                cleaned.snitt[key]=gruppeNum(data.snitt?.[key]);
+            for(const key of ['kalvPerKalvkuReferanse','referanseBestand','estimertBestand','tetthet','arealDaa','totalKjottKg','kjottKgPerKm2'])
+                cleaned.beregnet[key]=gruppeNum(data.beregnet[key]);
+            for(const key of ['bestandAar','kjottAar','referansePeriode','modellSimulering'])
+                cleaned.beregnet[key]=String(data.beregnet[key]??'').slice(0,key==='modellSimulering'?8000:100);
+            for(const key of gruppeTextIds)
+                cleaned.refleksjoner[key]=String(data.refleksjoner?.[key]??'').slice(0,10000);
+            return cleaned;
+        }
+        // Prosjektfiler samler en hel gruppes arbeidsøkt. De er separate fra resultater for én kommune.
+        function gruppeMarkerUlagret(){
+            gruppeMelding('groupProjectFeedback',
+                'Endringene lagres automatisk lokalt. Last også ned en prosjektfil som reservekopi eller for å dele med andre.');
+        }
+        function gruppeProsjektTekster(){
+            const felter={};
+            gruppeFellesFeltIds.forEach(id=>{ felter[id]=document.getElementById(id).value; });
+            return felter;
+        }
+        function lagreGruppeprosjekt(){
+            try {
+                if(!gruppeData.length) throw Error('Last inn minst én kommunes resultatfil før du lagrer et gruppeprosjekt.');
+                const navn=document.getElementById('groupProjectName').value.trim().slice(0,120);
+                const prosjekt={
+                    schema:gruppeProsjektSchema,
+                    version:1,
+                    prosjektnavn:navn,
+                    sistLagret:new Date().toISOString(),
+                    kommuner:gruppeData,
+                    valgtIndikator:document.getElementById('groupMetric').value,
+                    fellesTekster:gruppeProsjektTekster()
+                };
+                const filnavn='elg_gruppearbeid_'+gruppeFilnavn(navn||gruppeData.map(d=>d.kommune).join('_'))+'.json';
+                gruppeLastNedBlob(filnavn,JSON.stringify(prosjekt,null,2),'application/json;charset=utf-8');
+                gruppeMelding('groupProjectFeedback',
+                    'Nedlasting startet: '+filnavn+'. Prosjektfilen inneholder '+gruppeData.length+' kommune(r), valgte graf og alle gruppetekstene. Automatisk lagring er også aktiv i denne nettleseren.',
+                    'success');
+            } catch(err){
+                gruppeMelding('groupProjectFeedback','Kunne ikke lagre: '+err.message,'error');
+            }
+        }
+        function gruppeValiderProsjekt(data){
+            if(!data || typeof data!=='object' || Array.isArray(data) || data.schema!==gruppeProsjektSchema || data.version!==1)
+                throw Error('Dette er ikke en lagret gruppearbeid-fil fra læringsstien (versjon 1).');
+            if(!Array.isArray(data.kommuner) || data.kommuner.length<1 || data.kommuner.length>3)
+                throw Error('Prosjektfilen må inneholde mellom én og tre kommuner.');
+            const kommuner=data.kommuner.map(gruppeValiderFil);
+            const navnene=kommuner.map(d=>d.kommune.toLocaleLowerCase('nb-NO'));
+            if(new Set(navnene).size!==navnene.length)
+                throw Error('Prosjektfilen inneholder samme kommune flere ganger.');
+            if(typeof data.prosjektnavn!=='string' && data.prosjektnavn!==undefined)
+                throw Error('Ugyldig prosjektnavn.');
+            const prosjektnavn=String(data.prosjektnavn||'').slice(0,120);
+            const valgtIndikator=gruppeMetricKeys.includes(data.valgtIndikator)?data.valgtIndikator:'kalvPerKu';
+            if(data.fellesTekster!==undefined && (!data.fellesTekster || typeof data.fellesTekster!=='object' || Array.isArray(data.fellesTekster)))
+                throw Error('Prosjektfilen har ugyldige tekstfelter.');
+            const fellesTekster={};
+            for(const id of gruppeFellesFeltIds){
+                const verdi=data.fellesTekster?.[id];
+                if(verdi!==undefined && typeof verdi!=='string') throw Error('Ugyldig tekstfelt: '+id);
+                fellesTekster[id]=(verdi||'').slice(0,40000);
+            }
+            return {kommuner,prosjektnavn,valgtIndikator,fellesTekster,sistLagret:String(data.sistLagret||'')};
+        }
+        document.getElementById('groupProjectOpen').addEventListener('change',async event=>{
+            const file=event.target.files?.[0];
+            if(!file) return;
+            try{
+                if(!file.name.toLowerCase().endsWith('.json'))throw Error('Prosjektfilen må være en .json-fil.');
+                if(file.size>12*1024*1024)throw Error('Prosjektfilen kan ikke være større enn 12 MB.');
+                const prosjekt=gruppeValiderProsjekt(JSON.parse(await file.text()));
+                const harArbeid=gruppeData.length>0 || document.getElementById('groupProjectName').value.trim() ||
+                    gruppeFellesFeltIds.some(id=>document.getElementById(id).value.trim());
+                if(harArbeid && !window.confirm('Åpning av prosjektfilen erstatter kommunene og alle gruppetekstene som nå står på skjermen. Fortsette?')){
+                    gruppeMelding('groupProjectFeedback','Åpning avbrutt. Dagens gruppearbeid er beholdt.');
+                    return;
+                }
+                gruppeData=prosjekt.kommuner;
+                document.getElementById('groupProjectName').value=prosjekt.prosjektnavn;
+                document.getElementById('groupMetric').value=prosjekt.valgtIndikator;
+                gruppeFellesFeltIds.forEach(id=>{document.getElementById(id).value=prosjekt.fellesTekster[id];});
+                gruppeOppdaterVisning();
+                gruppeMelding('groupImportFeedback',gruppeData.length+' kommune(r) hentet fra lagret gruppearbeid.','success');
+                gruppeMelding('groupProjectFeedback',
+                    'Gruppearbeidet er åpnet fra '+file.name+'. '+gruppeData.length+' kommune(r) og alle gruppetekstene er gjenopprettet. Fortsett å skrive; endringene lagres automatisk på denne enheten. Last ned en ny prosjektfil ved overføring eller avslutning.',
+                    'success');
+            }catch(err){
+                gruppeMelding('groupProjectFeedback','Kunne ikke åpne prosjektet: '+err.message,'error');
+            }finally{ event.target.value=''; }
+        });
+        [...gruppeFellesFeltIds,'groupProjectName'].forEach(id=>{
+            document.getElementById(id).addEventListener('input',gruppeMarkerUlagret);
+        });
+        document.getElementById('groupMetric').addEventListener('change',gruppeMarkerUlagret);
+
+        document.getElementById('groupImport').addEventListener('change',async event=>{
+            const files=Array.from(event.target.files||[]);
+            if(!files.length) return;
+            let notes=[];
+            for(const file of files){
+                if(gruppeData.length>=3){notes.push('Maksimum tre kommuner. Fjern en kommune før du laster flere.');break;}
+                try{
+                    if(!file.name.toLowerCase().endsWith('.json'))throw Error('Bare .json-filer kan lastes inn.');
+                    if(file.size>2*1024*1024)throw Error('Filen er større enn 2 MB.');
+                    const parsed=gruppeValiderFil(JSON.parse(await file.text()));
+                    if(gruppeData.some(d=>d.kommune.toLocaleLowerCase('nb-NO')===parsed.kommune.toLocaleLowerCase('nb-NO')))
+                        throw Error(parsed.kommune+' er allerede lastet inn. Fjern den først for å erstatte.');
+                    gruppeData.push(parsed);
+                    notes.push(parsed.kommune+' lagt til.');
+                }catch(err){notes.push(file.name+': '+err.message);}
+            }
+            event.target.value='';
+            gruppeMelding('groupImportFeedback',notes.join('\n')+'\n'+gruppeData.length+' av 3 kommuner registrert.',
+                notes.some(x=>/ikke|Bare|større|Maksimum|allerede|Ugyldig|mangler/i.test(x))?'error':'success');
+            gruppeOppdaterVisning();
+            if(files.length) gruppeMarkerUlagret();
+        });
+        function gruppeFjernKommune(index){
+            gruppeData.splice(index,1);
+            gruppeMelding('groupImportFeedback',gruppeData.length+' av 3 kommuner registrert.');
+            gruppeOppdaterVisning();
+            gruppeMarkerUlagret();
+        }
+        function gruppeFmt(number,dec=2){
+            return number===null || !Number.isFinite(number) ? 'Mangler' :
+                number.toLocaleString('nb-NO',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+        }
+        function gruppeTabellModell() {
+            return [
+                ['Kalv per ku, siste 5 år',d=>gruppeFmt(d.snitt.kalvPerKu)],
+                ['Kalv per kalvku, siste 5 år',d=>gruppeFmt(d.snitt.kalvPerKalvku)],
+                ['Slaktevekt kalv (kg), siste 5 år',d=>gruppeFmt(d.snitt.vektKalv,1)],
+                ['Slaktevekt 1,5-åring (kg), siste 5 år',d=>gruppeFmt(d.snitt.vektUng,1)],
+                ['Ku per okse, siste 5 år',d=>gruppeFmt(d.snitt.kuPerOkse)],
+                ['Valgt referanseperiode',d=>d.beregnet.referansePeriode||'Mangler'],
+                ['Estimert bestand (dyr)',d=>gruppeFmt(d.beregnet.estimertBestand,0)+' ('+(d.beregnet.bestandAar||'?')+')'],
+                ['Bestandstetthet (elg/km²)',d=>gruppeFmt(d.beregnet.tetthet)+' ('+(d.beregnet.bestandAar||'?')+')'],
+                ['Tellende elgareal (km²)',d=>gruppeFmt(d.beregnet.arealDaa===null?null:d.beregnet.arealDaa/1000,1)],
+                ['Samlet kjøttutbytte (kg)',d=>gruppeFmt(d.beregnet.totalKjottKg,0)+' ('+(d.beregnet.kjottAar||'?')+')'],
+                ['Kjøttutbytte (kg/km²)',d=>gruppeFmt(d.beregnet.kjottKgPerKm2)+' ('+(d.beregnet.kjottAar||'?')+')']
+            ];
+        }
+        function gruppeTabellHtml(){
+            const header='<thead><tr><th>Nøkkeltall</th>'+gruppeData.map(d=>'<th>'+escapeHtml(d.kommune)+'</th>').join('')+'</tr></thead>';
+            const rows=gruppeTabellModell().map(([name,fn])=>'<tr><th scope="row">'+escapeHtml(name)+'</th>'+
+                gruppeData.map(d=>'<td>'+escapeHtml(fn(d))+'</td>').join('')+'</tr>').join('');
+            return header+'<tbody>'+rows+'</tbody>';
+        }
+        function gruppeSjekkAar(){
+            const issue=[];
+            const metrics=[['bestandAar','bestandstetthet'],['kjottAar','kjøttutbytte']];
+            for(const [field,label] of metrics){
+                const years=gruppeData.map(d=>d.beregnet[field]).filter(Boolean);
+                if(new Set(years).size>1)issue.push('Årstallene for '+label+' er forskjellige ('+years.join(', ')+').');
+            }
+            const refYears=gruppeData.map(d=>d.beregnet.referansePeriode).filter(Boolean);
+            if(new Set(refYears).size>1)issue.push('Referanseperiodene er ikke like; tetthetsestimatene bygger på ulike perioder.');
+            return issue;
+        }
+        function gruppeOppdaterVisning(){
+            const list=document.getElementById('groupFileList');list.replaceChildren();
+            gruppeData.forEach((item,i)=>{
+                const box=document.createElement('div');box.className='group-file-entry';
+                const head=document.createElement('strong');head.textContent=item.kommune;
+                const foot=document.createElement('small');
+                foot.textContent='Felling: '+item.serier.felte.length+' år · Kondisjon: '+item.serier.kalvPerKu.length+' år';
+                const del=document.createElement('button');del.type='button';del.textContent='Fjern kommune';
+                del.addEventListener('click',()=>gruppeFjernKommune(i));
+                box.append(head,foot,del);list.appendChild(box);
+            });
+            const ready=gruppeData.length>=2;
+            document.getElementById('groupComparison').style.display=ready?'block':'none';
+            document.getElementById('groupWritingPanel').style.display=ready?'block':'none';
+            document.getElementById('groupReportPreview').style.display='none';
+            document.getElementById('groupDownloadReport').style.display='none';
+            document.getElementById('groupCopyReport').style.display='none';
+            gruppeRapportHtml='';gruppeRapportTekst='';
+            if(gruppeChart){gruppeChart.destroy();gruppeChart=null;}
+            if(ready){
+                document.getElementById('groupKeyTable').innerHTML=gruppeTabellHtml();
+                const issues=gruppeSjekkAar();
+                const warning=document.getElementById('groupYearWarning');
+                warning.style.display=issues.length?'block':'none';
+                warning.textContent=issues.length?'Viktig før dere konkluderer: '+issues.join(' '):'';
+                oppdaterGruppegraf();
+            }
+        }
+        function gruppeLagDatasett(key){
+            const years=[...new Set(gruppeData.flatMap(d=>d.serier[key].map(p=>p.year)))].sort((a,b)=>a-b);
+            // Ingen kobling av observasjoner over manglende år eller bakover i tid.
+            const datasets=gruppeData.map((d,i)=>{
+                const values=new Map(d.serier[key].map(p=>[p.year,p.value]));
+                return {label:d.kommune,data:years.map(y=>values.has(y)?values.get(y):null),
+                    borderColor:gruppeColors[i],backgroundColor:gruppeColors[i],borderWidth:2,
+                    pointRadius:2,pointHoverRadius:5,spanGaps:false,tension:0.12};
+            });
+            return {years,datasets};
+        }
+        function oppdaterGruppegraf(){
+            if(gruppeData.length<2)return;
+            const key=document.getElementById('groupMetric').value;
+            const {years,datasets}=gruppeLagDatasett(key);
+            if(gruppeChart){gruppeChart.destroy();gruppeChart=null;}
+            if(!years.length){
+                gruppeMelding('groupChartStatus','Ingen årstall for denne indikatoren i de opplastede filene.','error');
+                return;
+            }
+            gruppeChart=new Chart(document.getElementById('groupChart'),{
+                type:'line',data:{labels:years,datasets},
+                options:{responsive:true,maintainAspectRatio:false,animation:false,
+                    interaction:{mode:'nearest',intersect:false},
+                    scales:{x:{title:{display:true,text:'År'}},y:{title:{display:true,text:gruppeMetricLabels[key]}}},
+                    plugins:{legend:{display:true,position:'bottom'},title:{display:true,text:gruppeMetricLabels[key]}}}
+            });
+            const counts=gruppeData.map(d=>d.kommune+': '+d.serier[key].filter(p=>p.value!==null).length+' observasjoner');
+            gruppeMelding('groupChartStatus',counts.join(' · '));
+        }
+        function lastNedGruppegraf(){lastNedFigur('groupChart');}
+        function gruppeRapportIllustrasjon(metric) {
+            const {years,datasets}=gruppeLagDatasett(metric);
+            if(!years.length || !datasets.some(d=>d.data.some(x=>x!==null)))return '';
+            // Lag illustrasjonen lokalt fra opplastede resultater; ingen ekstern bilderessurs i rapporten.
+            const cv=document.createElement('canvas');cv.width=980;cv.height=400;
+            const ctx=cv.getContext('2d');
+            const graph=new Chart(ctx,{type:'line',data:{labels:years,datasets},options:{responsive:false,animation:false,
+                devicePixelRatio:2,plugins:{legend:{display:true,position:'bottom'},
+                title:{display:true,text:gruppeMetricLabels[metric]}},
+                scales:{x:{title:{display:true,text:'År'}},y:{title:{display:true,text:gruppeMetricLabels[metric]}}}}});
+            graph.update('none');
+            const img=cv.toDataURL('image/png');graph.destroy();return img;
+        }
+        function gruppeSkrivFelt(id) {
+            return (document.getElementById(id)?.value || '').trim();
+        }
+        function gruppeRapportAvsnitt(text){
+            return text ? '<p>'+escapeHtml(text).replace(/\n/g,'<br>')+'</p>':
+                '<p class="placeholder">[Gruppa må fylle inn den faglige drøftingen.]</p>';
+        }
+        function gruppeRapportFigur(key,num){
+            const img=gruppeRapportIllustrasjon(key);
+            return img?'<figure><img src="'+img+'" alt="'+escapeHtml(gruppeMetricLabels[key])+'"><figcaption>Figur '+num+': '+escapeHtml(gruppeMetricLabels[key])+' i de valgte kommunene. Kilde: studentenes innlastede kommuneresultater.</figcaption><a class="report-figure-download" href="'+img+'" download="elg_sammenligning_'+gruppeFilnavn(key)+'.png">⬇ Last ned figur (PNG)</a></figure>':'';
+        }
+        function gruppeRapportIndividuell(){
+            return gruppeData.map(d=>{
+                const notes=gruppeTextIds.map((id,i)=>{
+                    const t=d.refleksjoner[id];
+                    return t ? '<h4>'+escapeHtml(gruppeReflectionLabels[i])+'</h4>'+gruppeRapportAvsnitt(t):'';
+                }).filter(Boolean).join('');
+                return '<section class="appendix"><h3>'+escapeHtml(d.kommune)+'</h3>'+ (notes||'<p>Ingen refleksjonstekster eksportert.</p>')+'</section>';
+            }).join('');
+        }
+        function gruppeByggRapport(){
+            const names=gruppeData.map(d=>d.kommune).join(', ');
+            const issues=gruppeSjekkAar();
+            const warning=issues.length?'<p><strong>År og metodeforbehold:</strong> '+escapeHtml(issues.join(' '))+'</p>':'';
+            const date=new Date().toLocaleDateString('nb-NO');
+            const authors=gruppeSkrivFelt('groupAuthors')||'Ikke oppgitt';
+            const table='<table class="results">'+gruppeTabellHtml()+'</table>';
+            const figures=[['felte',1],['kalvPerKu',2],['vektKalv',3],['kuPerOkse',4],['feltPerJegerdag',5]]
+                .map(([key,n])=>gruppeRapportFigur(key,n)).filter(Boolean).join('');
+            const article=`<div class="report-draft-banner"><strong>UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING</strong><p>Automatisk sammenstilt arbeidsdokument. Kontroller beregninger, figurer, kilder og metode; skriv ferdige faglige drøftinger, og revider språk og struktur før innlevering.</p></div><header><h1>UTKAST: Sammenlignende elgforvaltningsnotat</h1>
+                <p><strong>Kommuner:</strong> ${escapeHtml(names)}<br><strong>Dato:</strong> ${escapeHtml(date)}<br><strong>Studenter:</strong> ${escapeHtml(authors)}</p></header>
+                <h2>1. Innledning og habitat</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupIntro'))}
+                <h2>2. Historisk utvikling</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupHistory'))}
+                ${gruppeRapportFigur('felte',1)}
+                <h2>3. Reproduksjon, kondisjon og kjønnsrate</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupCondition'))}
+                ${gruppeRapportFigur('kalvPerKu',2)}${gruppeRapportFigur('vektKalv',3)}${gruppeRapportFigur('kuPerOkse',4)}
+                <h2>4. Tetthet og arealgrunnlag</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupDensity'))}
+                <h2>5. Kjøttutbytte og avskytingsstrategier</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupMeat'))}
+                <h2>6. Sammenlignende nøkkeltall</h2>${table}
+                <p>Femårssnittene bygger på de fem siste årgangene i kondisjonsdataene i hver enkelt resultatfil. Tetthet og kjøttutbytte kommer fra beregningene i læringsstien. Sammenlign årstall, telleareal og metodevalg før dere trekker slutninger.</p>
+                <h2>7. Metodeusikkerhet og datakvalitet</h2>${warning}
+                ${gruppeRapportAvsnitt(gruppeSkrivFelt('groupMethods'))}
+                <h3>Felt elg per jegerdag</h3>${gruppeRapportFigur('feltPerJegerdag',5)}
+                <h2>8. Konklusjon og forvaltningsråd</h2>${gruppeRapportAvsnitt(gruppeSkrivFelt('groupConclusion'))}
+                <h2>Vedlegg: studentenes opprinnelige kommunale vurderinger</h2>
+                <p>Tekstene under er studentenes egne refleksjoner slik de ble eksportert fra kommuneanalysene. De erstatter ikke gruppas sammenlignende drøfting.</p>
+                ${gruppeRapportIndividuell()}
+                <footer><p>Kilder til tall og grafer: SSB og Hjorteviltregisteret, slik de er lest inn i den interaktive læringsstien. Kommunale beregninger er modellestimater, ikke direkte bestandstellinger. Modellsimulering i oppgave 4B gjelder en standardisert bestand på 1000 vinterdyr.</p></footer>`;
+            const css=`.report-draft-banner{border:2px solid #b91c1c;background:#fff7f7;color:#7f1d1d;padding:1rem;margin-bottom:1.4rem}.report-draft-banner p{margin:.35rem 0 0}*{box-sizing:border-box}body{max-width:960px;margin:0 auto;padding:2.2rem;font-family:Arial,sans-serif;line-height:1.65;color:#182335}h1{font-size:1.8rem}h2{font-size:1.25rem;border-bottom:1px solid #cad5e4;padding-bottom:.4rem;margin-top:2rem}h3{font-size:1.1rem;margin-top:1.6rem}.results{width:100%;border-collapse:collapse;font-size:.85rem}.results th,.results td{border:1px solid #cbd5e1;padding:.55rem;text-align:left}.results th{background:#f1f5f9}.results td{font-variant-numeric:tabular-nums}figure{margin:1.5rem 0;break-inside:avoid}figure img{width:100%;max-width:980px;height:auto}figcaption{color:#64748b;font-size:.8rem}.report-figure-download{display:inline-block;background:#eff6ff;border:1px solid #7dd3fc;border-radius:6px;padding:.35rem .6rem;margin-top:.35rem;color:#0369a1;text-decoration:none;font-size:.84rem}.placeholder{color:#9a3412;font-style:italic}.appendix{border-top:1px solid #cbd5e1;padding-top:1rem}footer{border-top:1px solid #cbd5e1;margin-top:3rem;font-size:.83rem;color:#475569}@media print{body{padding:0}h2{break-after:avoid}figure{page-break-inside:avoid}.report-figure-download{display:none}}`;
+            return {article,html:'<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UTKAST – sammenlignende elgforvaltningsnotat</title><style>'+css+'</style></head><body>'+article+'</body></html>'};
+        }
+        function genererGrupperapport(){
+            if(gruppeData.length<2){gruppeMelding('groupReportFeedback','Last inn minst to resultatfiler.','error');return;}
+            try{
+                const result=gruppeByggRapport();
+                gruppeRapportHtml=result.html;
+                const preview=document.getElementById('groupReportPreview');
+                preview.innerHTML=result.article;preview.style.display='block';
+                gruppeRapportTekst=preview.innerText;
+                document.getElementById('groupDownloadReport').style.display='block';
+                document.getElementById('groupCopyReport').style.display='block';
+                gruppeMelding('groupReportFeedback','UTKAST er generert for gjennomgang. Word-filen må bearbeides faglig og språklig videre før innlevering.','success');
+            }catch(err){gruppeMelding('groupReportFeedback','Kunne ikke generere rapport: '+err.message,'error');console.error(err);}
+        }
+        // --- WORD-EKSPORT UTEN EKSTERNT DOKUMENTBIBLIOTEK ---
+        // Bygger en gyldig Office Open XML (.docx) lokalt fra de innleste kommuneresultatene.
+        // Filen er redigerbar i Word; den inneholder tekst, en ekte Word-tabell og innfelte PNG-figurer.
+        function wordXml(text){
+            return String(text??'').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+                .replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
+        }
+        function wordP(text,style='Normal'){
+            return '<w:p><w:pPr><w:pStyle w:val="'+style+'"/></w:pPr><w:r><w:t xml:space="preserve">'+wordXml(text)+'</w:t></w:r></w:p>';
+        }
+        function wordAvsnitt(text){
+            if(!String(text||'').trim())return wordP('[MÅ FYLLES UT: Skriv egen faglig drøfting og kontroller grunnlaget.]','Missing');
+            return String(text).replace(/\r\n?/g,'\n').split(/\n+/).map(t=>wordP(t)).join('');
+        }
+        function wordTabell(){
+            const cols=1+gruppeData.length;
+            const widths=gruppeData.length===2?[4200,2650,2650]:[3700,1900,1900,1900];
+            const rows=[['Nøkkeltall',...gruppeData.map(d=>d.kommune)],
+                ...gruppeTabellModell().map(([name,fn])=>[name,...gruppeData.map(fn)])];
+            const cells=rows.map((row,ri)=>'<w:tr>'+(ri===0?'<w:trPr><w:tblHeader w:val="1"/></w:trPr>':'')+
+                row.map((v,i)=>'<w:tc><w:tcPr><w:tcW w:w="'+widths[i]+'" w:type="dxa"/>'+
+                    (ri===0?'<w:shd w:fill="DBEAFE"/>':'')+'</w:tcPr>'+wordP(v,ri===0?'TableHeader':'TableBody')+'</w:tc>').join('')+'</w:tr>').join('');
+            const grid=widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join('');
+            return '<w:tbl><w:tblPr><w:tblW w:w="0" w:type="auto"/>'+ 
+                '<w:tblBorders><w:top w:val="single" w:sz="5" w:color="CBD5E1"/>'+ 
+                '<w:left w:val="single" w:sz="5" w:color="CBD5E1"/>'+ 
+                '<w:bottom w:val="single" w:sz="5" w:color="CBD5E1"/>'+ 
+                '<w:right w:val="single" w:sz="5" w:color="CBD5E1"/>'+ 
+                '<w:insideH w:val="single" w:sz="3" w:color="E2E8F0"/>'+ 
+                '<w:insideV w:val="single" w:sz="3" w:color="E2E8F0"/></w:tblBorders>'+ 
+                '<w:tblCellMar><w:top w:w="100" w:type="dxa"/><w:bottom w:w="100" w:type="dxa"/>'+ 
+                '<w:left w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar>'+ 
+                '</w:tblPr><w:tblGrid>'+grid+'</w:tblGrid>'+cells+'</w:tbl>';
+        }
+        function wordDataUriBytes(dataUri){
+            const b64=dataUri.split(',')[1]||'';
+            const bin=atob(b64);const bytes=new Uint8Array(bin.length);
+            for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+            return bytes;
+        }
+        function wordFigurXml(num,label,relId){
+            // A4 med 1,25 cm sidemarger: bildebredde ca. 15,2 cm.
+            const w=5430000, h=2220000;
+            const x=wordXml(label);
+            return '<w:p><w:pPr><w:spacing w:before="140" w:after="60"/></w:pPr><w:r><w:drawing>'+ 
+              '<wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="'+w+'" cy="'+h+'"/>'+ 
+              '<wp:docPr id="'+num+'" name="Figur '+num+'" descr="'+x+'"/>'+ 
+              '<wp:cNvGraphicFramePr><a:graphicFrameLocks noChangeAspect="1"/></wp:cNvGraphicFramePr>'+ 
+              '<a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'+ 
+              '<pic:pic><pic:nvPicPr><pic:cNvPr id="0" name="figur'+num+'.png"/><pic:cNvPicPr/></pic:nvPicPr>'+ 
+              '<pic:blipFill><a:blip r:embed="'+relId+'"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill>'+ 
+              '<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="'+w+'" cy="'+h+'"/></a:xfrm>'+ 
+              '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic>'+ 
+              '</a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>'+
+              wordP('Figur '+num+': '+label+' i de valgte kommunene. Kilde: studentenes innlastede kommuneresultater.','Caption');
+        }
+        function wordStylesXml(){
+            const w='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+            return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles xmlns:w="'+w+'">'+
+              '<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Aptos" w:hAnsi="Aptos"/>'+ 
+              '<w:sz w:val="21"/><w:color w:val="263445"/></w:rPr></w:rPrDefault></w:docDefaults>'+ 
+              '<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/>'+ 
+              '<w:pPr><w:spacing w:after="130" w:line="290" w:lineRule="auto"/></w:pPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/>'+ 
+              '<w:pPr><w:spacing w:before="180" w:after="180"/><w:keepNext/></w:pPr>'+ 
+              '<w:rPr><w:b/><w:sz w:val="34"/><w:color w:val="172B46"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/>'+ 
+              '<w:pPr><w:spacing w:before="260" w:after="110"/><w:keepNext/></w:pPr>'+ 
+              '<w:rPr><w:b/><w:sz w:val="25"/><w:color w:val="17456B"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/>'+ 
+              '<w:pPr><w:spacing w:before="170" w:after="90"/><w:keepNext/></w:pPr>'+ 
+              '<w:rPr><w:b/><w:sz w:val="22"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Heading3"><w:name w:val="heading 3"/>'+ 
+              '<w:pPr><w:spacing w:before="120" w:after="60"/><w:keepNext/></w:pPr>'+ 
+              '<w:rPr><w:b/><w:sz w:val="20"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Draft"><w:name w:val="Draft warning"/>'+ 
+              '<w:pPr><w:spacing w:after="120"/></w:pPr><w:rPr><w:b/><w:color w:val="A31D1D"/><w:sz w:val="25"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Missing"><w:name w:val="To complete"/>'+ 
+              '<w:rPr><w:i/><w:color w:val="9A3412"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="Caption"/>'+ 
+              '<w:pPr><w:spacing w:after="180"/></w:pPr><w:rPr><w:i/><w:sz w:val="18"/><w:color w:val="64748B"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="TableHeader"><w:name w:val="Table header"/>'+ 
+              '<w:rPr><w:b/><w:sz w:val="17"/></w:rPr></w:style>'+ 
+              '<w:style w:type="paragraph" w:styleId="TableBody"><w:name w:val="Table body"/>'+ 
+              '<w:rPr><w:sz w:val="17"/></w:rPr></w:style></w:styles>';
+        }
+        // Minimal ZIP (lagring uten komprimering). Unngår en ekstra nettilkobling / CDN for Word-eksport.
+        function wordZipBlob(entries){
+            const utf8=new TextEncoder();const locals=[],centrals=[];let offset=0;
+            const table=new Uint32Array(256);
+            for(let i=0;i<256;i++){let c=i;for(let k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);table[i]=c>>>0;}
+            const crc32=data=>{let c=0xFFFFFFFF;for(const b of data)c=table[(c^b)&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;};
+            const now=new Date();const yr=Math.max(1980,now.getFullYear());
+            const dosTime=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1);
+            const dosDate=((yr-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();
+            for(const [name,content] of entries){
+                const nameBytes=utf8.encode(name);
+                const data=(content instanceof Uint8Array)?content:utf8.encode(String(content));
+                const crc=crc32(data);const local=new Uint8Array(30+nameBytes.length);const lv=new DataView(local.buffer);
+                lv.setUint32(0,0x04034B50,true);lv.setUint16(4,20,true);lv.setUint16(6,0x0800,true);
+                lv.setUint16(8,0,true);lv.setUint16(10,dosTime,true);lv.setUint16(12,dosDate,true);
+                lv.setUint32(14,crc,true);lv.setUint32(18,data.length,true);lv.setUint32(22,data.length,true);
+                lv.setUint16(26,nameBytes.length,true);local.set(nameBytes,30);
+                locals.push(local,data);
+                const central=new Uint8Array(46+nameBytes.length);const cv=new DataView(central.buffer);
+                cv.setUint32(0,0x02014B50,true);cv.setUint16(4,20,true);cv.setUint16(6,20,true);
+                cv.setUint16(8,0x0800,true);cv.setUint16(10,0,true);cv.setUint16(12,dosTime,true);
+                cv.setUint16(14,dosDate,true);cv.setUint32(16,crc,true);
+                cv.setUint32(20,data.length,true);cv.setUint32(24,data.length,true);
+                cv.setUint16(28,nameBytes.length,true);cv.setUint32(42,offset,true);
+                central.set(nameBytes,46);centrals.push(central);offset+=local.length+data.length;
+            }
+            const centLen=centrals.reduce((n,a)=>n+a.length,0);
+            const end=new Uint8Array(22);const ev=new DataView(end.buffer);
+            ev.setUint32(0,0x06054B50,true);ev.setUint16(8,entries.length,true);
+            ev.setUint16(10,entries.length,true);ev.setUint32(12,centLen,true);ev.setUint32(16,offset,true);
+            return new Blob([...locals,...centrals,end],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+        }
+        function gruppeByggWordUtkast(){
+            if(gruppeData.length<2)throw Error('Last inn minst to kommuneresultater først.');
+            const ns='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+            const now=new Date();
+            const dato=now.toLocaleDateString('nb-NO');
+            const names=gruppeData.map(d=>d.kommune).join(', ');
+            const authors=gruppeSkrivFelt('groupAuthors')||'[Fyll inn gruppemedlemmer]';
+            const media=[],imageRels=[];let bildnr=0;
+            let body='';
+            const add=t=>{body+=t;};
+            const h=(text,level=1)=>add(wordP(text,'Heading'+level));
+            const sec=(heading,id)=>{h(heading);add(wordAvsnitt(gruppeSkrivFelt(id)));};
+            const figur=(key,n)=>{
+                const img=gruppeRapportIllustrasjon(key);
+                if(!img)return;
+                const relId='rId'+(10+n),filename='figur'+n+'.png';bildnr++;
+                media.push(['word/media/'+filename,wordDataUriBytes(img)]);
+                imageRels.push('<Relationship Id="'+relId+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/'+filename+'"/>');
+                add(wordFigurXml(n,gruppeMetricLabels[key],relId));
+            };
+            add(wordP('UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING','Draft'));
+            add(wordP('Dette dokumentet er automatisk sammenstilt fra studentenes data og tekster. Det er ikke en ferdig faglig rapport.','Normal'));
+            add(wordP('Før innlevering: Kontroller tall og figurer, kvalitetssikre metode og kildegrunnlag, utdyp sammenlignende drøftinger, bearbeid språk og struktur, og skriv en selvstendig konklusjon.','Normal'));
+            add(wordP('UTKAST: Sammenlignende elgforvaltningsnotat','Title'));
+            add(wordP('Kommuner: '+names));add(wordP('Dato: '+dato));add(wordP('Gruppemedlemmer: '+authors));
+            sec('1. Innledning og habitat','groupIntro');
+            sec('2. Historisk utvikling','groupHistory');figur('felte',1);
+            sec('3. Reproduksjon, kondisjon og kjønnsrate','groupCondition');
+            figur('kalvPerKu',2);figur('vektKalv',3);figur('kuPerOkse',4);
+            sec('4. Tetthet og arealgrunnlag','groupDensity');
+            sec('5. Kjøttutbytte og avskytingsstrategier','groupMeat');
+            h('6. Sammenlignende nøkkeltall');add(wordTabell());
+            add(wordP('Femårssnitt er basert på de fem siste årgangene i hver kommunes tilgjengelige kondisjonsdata. Periodene kan være forskjellige. Bestandstetthet og kjøttutbytte er beregninger i læringsstien; kontroller årstall og arealgrunnlag.'));
+            h('7. Metodeusikkerhet og datakvalitet');
+            const warnings=gruppeSjekkAar();if(warnings.length)add(wordP('Kontroller før sammenligning: '+warnings.join(' '),'Missing'));
+            add(wordAvsnitt(gruppeSkrivFelt('groupMethods')));
+            h('Felt elg per jegerdag',2);figur('feltPerJegerdag',5);
+            sec('8. Konklusjon og forvaltningsråd','groupConclusion');
+            h('Vedlegg: studentenes opprinnelige kommunale vurderinger');
+            add(wordP('Refleksjonene nedenfor er hentet fra individuelle kommuneresultater og erstatter ikke gruppas selvstendige, sammenlignende drøftinger.'));
+            for(const d of gruppeData){
+                h(d.kommune,2);let any=false;
+                gruppeTextIds.forEach((id,i)=>{
+                    const val=(d.refleksjoner[id]||'').trim();
+                    if(val){any=true;h(gruppeReflectionLabels[i],3);add(wordAvsnitt(val));}
+                });
+                if(!any)add(wordP('Ingen refleksjonstekster er eksportert for denne kommunen.'));
+            }
+            h('Kilder og faglige forbehold',2);
+            add(wordP('Kilder til tall og grafer: SSB og Hjorteviltregisteret, slik dataene er lest inn i læringsstien. Fullstendige kildehenvisninger og uttaksdatoer må fylles inn av gruppa.'));
+            add(wordP('Kommunale bestandsberegninger er modellestimater, ikke direkte tellinger. Modellsimuleringen i oppgave 4B gjelder en standardisert bestand på 1000 vinterdyr.'));
+            add(wordP('UTKAST – dette dokumentet må bearbeides videre og kvalitetssikres før innlevering.','Draft'));
+            const sect='<w:sectPr><w:headerReference w:type="default" r:id="rId2"/>'+ 
+                '<w:footerReference w:type="default" r:id="rId3"/>'+ 
+                '<w:pgSz w:w="11906" w:h="16838"/>'+ 
+                '<w:pgMar w:top="1450" w:right="1150" w:bottom="1450" w:left="1150" w:header="650" w:footer="650" w:gutter="0"/></w:sectPr>';
+            const xml='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+                '<w:document xmlns:w="'+ns+'" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'+
+                ' xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"'+
+                ' xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"'+
+                ' xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><w:body>'+body+sect+'</w:body></w:document>';
+            const relBase='http://schemas.openxmlformats.org/officeDocument/2006/relationships/';
+            const rels='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+
+                '<Relationship Id="rId1" Type="'+relBase+'styles" Target="styles.xml"/>'+ 
+                '<Relationship Id="rId2" Type="'+relBase+'header" Target="header1.xml"/>'+ 
+                '<Relationship Id="rId3" Type="'+relBase+'footer" Target="footer1.xml"/>'+ 
+                imageRels.join('')+'</Relationships>';
+            const header='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:hdr xmlns:w="'+ns+'">'+ 
+                wordP('UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING','Draft')+'</w:hdr>';
+            const footer='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr xmlns:w="'+ns+'">'+ 
+                wordP('Elgforvaltning | Arbeidsutkast – ikke innleveringsklart','Caption')+'</w:ftr>';
+            const types='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'+
+                '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'+ 
+                '<Default Extension="xml" ContentType="application/xml"/>'+ 
+                (media.length?'<Default Extension="png" ContentType="image/png"/>':'')+
+                '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'+ 
+                '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>'+ 
+                '<Override PartName="/word/header1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>'+ 
+                '<Override PartName="/word/footer1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml"/>'+ 
+                '<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>'+ 
+                '<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>';
+            const mainrels='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+ 
+                '<Relationship Id="rId1" Type="'+relBase+'officeDocument" Target="word/document.xml"/>'+ 
+                '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>'+ 
+                '<Relationship Id="rId3" Type="'+relBase+'extended-properties" Target="docProps/app.xml"/></Relationships>';
+            const iso=now.toISOString().replace(/\.\d{3}Z$/,'Z');
+            const core='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"'+ 
+                ' xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'+ 
+                '<dc:title>UTKAST – Sammenlignende elgforvaltningsnotat</dc:title><dc:subject>Arbeidsutkast – må bearbeides</dc:subject>'+ 
+                '<dc:creator>Studentgruppe – elgforvaltning</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">'+iso+'</dcterms:created></cp:coreProperties>';
+            const app='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"><Application>Elgforvaltning læringssti</Application></Properties>';
+            return wordZipBlob([
+                ['[Content_Types].xml',types],['_rels/.rels',mainrels],
+                ['word/document.xml',xml],['word/_rels/document.xml.rels',rels],
+                ['word/styles.xml',wordStylesXml()],['word/header1.xml',header],['word/footer1.xml',footer],
+                ['docProps/core.xml',core],['docProps/app.xml',app],...media
+            ]);
+        }
+        function lastNedGrupperapport(){
+            if(gruppeData.length<2){gruppeMelding('groupReportFeedback','Last inn minst to kommuner før dere lager Word-utkastet.','error');return;}
+            try{
+                const blob=gruppeByggWordUtkast();
+                const namn=gruppeFilnavn(gruppeData.map(d=>d.kommune).join('_'));
+                const filename='UTKAST_grupperapport_elgforvaltning_'+namn+'.docx';
+                gruppeLastNedBlob(filename,blob,'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+                gruppeMelding('groupReportFeedback','Word-utkastet er lastet ned: '+filename+'. Dokumentet må kontrolleres, utfylles og bearbeides videre før innlevering.','success');
+            }catch(err){gruppeMelding('groupReportFeedback','Kunne ikke lage Word-utkast: '+err.message,'error');console.error(err);}
+        }
+        async function kopierGrupperapport(){
+            if(!gruppeRapportTekst)return;
+            try{
+                if(navigator.clipboard && window.isSecureContext)await navigator.clipboard.writeText(gruppeRapportTekst);
+                else{
+                    const t=document.createElement('textarea');t.value=gruppeRapportTekst;
+                    t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();
+                    if(!document.execCommand('copy'))throw Error('Kopiering støttes ikke her.');t.remove();
+                }
+                gruppeMelding('groupReportFeedback','Utkaststeksten er kopiert. Last ned Word-filen (.docx) for å få med redigerbar tabell og figurer.','success');
+            }catch(e){gruppeMelding('groupReportFeedback','Nettleseren kunne ikke kopiere automatisk. Marker tekst i forhåndsvisningen og kopier manuelt.','error');}
+        }
+
         lastInnVedlegg1(); updateBank();
     </script>
+
+<script>
+// === AUTOMATISK LAGRING / GJENOPPRETTING (kun lokalt, ingen server) ===
+// Prosjektfilene inneholder bearbeidede tidsserier og skriftlig arbeid,
+// ikke selve .xlsx/.csv-filene studentene hentet fra eksterne registre.
+const arbeidSchema='elg-laeringssti-fullt-arbeid';
+const arbeidVersion=2;
+const arbeidLocalKey='elg-laeringssti-fullt-arbeid-v2';
+const kommuneProsjektSchema='elg-laeringssti-kommuneprosjekt';
+let arbeidSkriver=false;
+let arbeidTimer=null;
+let arbeidLagringsstotte=false;
+
+function arbeidStatus(message, warning=false){
+    for(const id of ['saveStatusTop','groupAutoSaveStatus',...Array.from({length:6},(_,i)=>'saveStatusStep'+i)]){
+        const el=document.getElementById(id);
+        if(el){el.textContent=message;el.classList.toggle('warning',warning);}
+    }
+}
+function arbeidTid(iso){
+    const d=new Date(iso);
+    return Number.isNaN(d.getTime())?'':d.toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});
+}
+function arbeidKontrollerLokalLagring(){
+    try{
+        const key=arbeidLocalKey+'_test';
+        localStorage.setItem(key,'1');
+        localStorage.removeItem(key);
+        arbeidLagringsstotte=true;
+    }catch(e){
+        arbeidLagringsstotte=false;
+        arbeidStatus('Automatisk lagring er ikke tilgjengelig her. Last ned prosjektfil etter hvert trinn.',true);
+    }
+    return arbeidLagringsstotte;
+}
+function arbeidHentInputVerdier(){
+    const result={};
+    document.querySelectorAll('.step-container input[id]:not([type="file"]),.step-container select[id],.step-container textarea[id]').forEach(el=>{
+        if(el.id && el.type!=='password')result[el.id]={
+            value:el.type==='checkbox'?Boolean(el.checked):String(el.value),
+            raw:String(el.dataset.raw??''),source:String(el.dataset.source??'')
+        };
+    });
+    return result;
+}
+function arbeidHentBrikker(selector){
+    return Array.from(document.querySelectorAll(selector)).map(el=>({
+        accept:el.dataset.accept,value:el.dataset.value||'',raw:el.dataset.raw||''
+    }));
+}
+function arbeidHentStatus(){
+    return {
+        simBeregnet:document.getElementById('resSimulering').style.display!=='none',
+        kjottBeregnet:document.getElementById('resKjottA').style.display!=='none',
+        tetthetBeregnet:document.getElementById('resTetthet').style.display!=='none',
+        rapportVist:document.getElementById('printArea').style.display!=='none'
+    };
+}
+function arbeidTaSnapshot(){
+    const active=document.querySelector('.step-container.active-step');
+    const step=active?Number(active.id.replace('step','')):0;
+    return {
+        schema:arbeidSchema,version:arbeidVersion,lagret:new Date().toISOString(),
+        trinn:Number.isInteger(step)&&step>=0&&step<=6?step:0,
+        kommune:String(globalKommune||'Ikke lastet inn enda'),
+        inputs:arbeidHentInputVerdier(),
+        oppg3Data:globalOppg3Data.map(x=>({...x})),
+        oppg3AllData:globalOppg3AllData.map(x=>({...x})),
+        drag1:arbeidHentBrikker('.dz'),drag2:arbeidHentBrikker('.dz2'),
+        beregnet:{fasitKalv,fasitRef,fjorBestand,tetthetRes,fjorBestandYear,kjottAKm2,kjottBText,kjottFjorYear},
+        vist:arbeidHentStatus(),
+        gruppedata:gruppeData,
+        gruppenavn:document.getElementById('groupProjectName').value,
+        gruppeIndikator:document.getElementById('groupMetric').value
+    };
+}
+function arbeidSjekkSnapshot(obj){
+    if(!obj||typeof obj!=='object'||Array.isArray(obj)||obj.schema!==arbeidSchema||obj.version!==arbeidVersion)
+        throw new Error('Dette er ikke en gyldig prosjektkopi fra denne versjonen av læringsstien.');
+    if(!obj.inputs||typeof obj.inputs!=='object'||Array.isArray(obj.inputs))throw new Error('Prosjektfilen mangler skjemadata.');
+    if(!Array.isArray(obj.oppg3Data)||!Array.isArray(obj.oppg3AllData)||!Array.isArray(obj.gruppedata))
+        throw new Error('Prosjektfilen mangler dataserier.');
+    if(obj.gruppedata.length>3)throw new Error('Maksimalt tre kommuner kan sammenlignes.');
+    if(obj.oppg3Data.length>200||obj.oppg3AllData.length>300)throw new Error('For mange referanseår i prosjektfilen.');
+    if(Object.keys(obj.inputs).length>150)throw new Error('For mange skjemafelter i prosjektfilen.');
+    return obj;
+}
+function arbeidPlanleggLagring(){
+    if(arbeidSkriver||!arbeidLagringsstotte)return;
+    arbeidStatus('Endringer registrert – lagrer automatisk …');
+    clearTimeout(arbeidTimer);
+    arbeidTimer=setTimeout(arbeidLagreLokalt,600);
+}
+function arbeidLagreLokalt(){
+    if(!arbeidLagringsstotte||arbeidSkriver)return false;
+    clearTimeout(arbeidTimer);
+    try{
+        const obj=arbeidTaSnapshot();
+        localStorage.setItem(arbeidLocalKey,JSON.stringify(obj));
+        arbeidStatus('Lagret automatisk lokalt kl. '+arbeidTid(obj.lagret)+'. Last ned en prosjektfil som ekstra sikkerhetskopi.');
+        return true;
+    }catch(err){
+        console.error('Automatisk lagring feilet:',err);
+        arbeidStatus('Automatisk lagring feilet (mulig full nettleserlagring). Last ned prosjektfil manuelt nå.',true);
+        return false;
+    }
+}
+function arbeidGjenopprettBrikker(selector,rows){
+    if(!Array.isArray(rows))return;
+    Array.from(document.querySelectorAll(selector)).forEach((el,i)=>{
+        const v=rows[i];
+        if(!v||v.accept!==el.dataset.accept)return;
+        const val=String(v.value??'').slice(0,50);
+        const raw=String(v.raw??'').slice(0,50);
+        if(!val||!Number.isFinite(Number(val)))return;
+        el.dataset.value=val;
+        el.dataset.raw=raw||val;
+        el.textContent=val;
+        el.classList.add('filled');
+        el.classList.remove('error');
+    });
+}
+function arbeidSettInputVerdier(inputs){
+    for(const [id,entry] of Object.entries(inputs)){
+        const el=document.getElementById(id);
+        if(!el||!el.closest('.step-container')||el.type==='file')continue;
+        const v=entry&&typeof entry==='object'?entry:{value:entry};
+        if(el.type==='checkbox')el.checked=Boolean(v.value);
+        else if(el.tagName==='SELECT'){
+            if(Array.from(el.options).some(o=>o.value===v.value))el.value=v.value;
+        } else if(typeof v.value==='string'&&v.value.length<=500000)el.value=v.value;
+        if(v.raw!==undefined)el.dataset.raw=String(v.raw).slice(0,120);
+        if(v.source!==undefined)el.dataset.source=String(v.source).slice(0,120);
+    }
+}
+function arbeidGjenopprett(obj,stepOverride){
+    arbeidSjekkSnapshot(obj);
+    arbeidSkriver=true;
+    try{
+        // Gjenopprett tabeller og tall; grafene tegnes om fra de bearbeidede dataene.
+        globalKommune=String(obj.kommune||'Ikke lastet inn enda').slice(0,150);
+        document.querySelectorAll('.kommune-navn').forEach(x=>x.textContent=globalKommune);
+        const rowOk=rows=>rows.filter(x=>x&&Number.isInteger(Number(x.year))&&Number(x.year)>=1900&&Number(x.year)<=2200).slice(0,300)
+            .map(x=>{
+                const row={year:Number(x.year)};
+                for(const key of ['ku1','ku2','settTot','feltTot','settDag','feltDag']){
+                    const n=Number(x[key]);
+                    row[key]=(x[key]===null||x[key]===undefined||x[key]===''||!Number.isFinite(n))?0:n;
+                }
+                return row;
+            });
+        globalOppg3Data=rowOk(obj.oppg3Data);
+        globalOppg3AllData=rowOk(obj.oppg3AllData);
+        arbeidSettInputVerdier(obj.inputs);
+        // Verifiser kommunedataserier med den samme kontrollen som vanlig import.
+        gruppeData=obj.gruppedata.map(gruppeValiderFil);
+        if(document.getElementById('dataOppg1').value.trim())tegnGraf1();
+        if(document.getElementById('dataOppg2').value.trim())tegnGraf2();
+        if(globalOppg3Data.length>=3){
+            document.getElementById('oppg3Interactive').style.display='block';
+            const slider=document.getElementById('oppg3Slider');
+            slider.max=globalOppg3Data.length-3;
+            const before=Number(obj.inputs?.oppg3Slider?.value);
+            slider.value=Number.isFinite(before)?Math.max(0,Math.min(before,Number(slider.max))):0;
+            tegnOppg3Graf();
+            oppdaterOppg3Valg();
+        }
+        // Graftegning fyller beregnede felt; originaldata får korrekt råverdi tilbake her.
+        arbeidSettInputVerdier(obj.inputs);
+        arbeidGjenopprettBrikker('.dz2',obj.drag2);
+        calculateFormulas2();
+        arbeidGjenopprettBrikker('.dz',obj.drag1);
+        calculateFormulas();
+        const b=obj.beregnet||{};
+        const safeNum=x=>x!==null&&x!==undefined&&Number.isFinite(Number(x))?Number(x):null;
+        fasitKalv=safeNum(b.fasitKalv);
+        fasitRef=safeNum(b.fasitRef);
+        fjorBestand=safeNum(b.fjorBestand);
+        tetthetRes=safeNum(b.tetthetRes);
+        fjorBestandYear=safeNum(b.fjorBestandYear);
+        kjottAKm2=b.kjottAKm2===null?'':String(b.kjottAKm2??'').slice(0,50);
+        kjottBText=String(b.kjottBText??'').slice(0,10000);
+        kjottFjorYear=safeNum(b.kjottFjorYear);
+        if(fasitRef!==null&&fasitRef>0)document.getElementById('sisteDelOppg3').style.display='block';
+        if(obj.vist?.tetthetBeregnet&&fasitRef>0)beregnTetthet();
+        if(obj.vist?.kjottBeregnet)beregnKjottA();
+        if(obj.vist?.simBeregnet)simulerOppg4();
+        if(obj.vist?.rapportVist)genererRapport();
+        document.getElementById('groupProjectName').value=String(obj.gruppenavn??'').slice(0,120);
+        const metric=String(obj.gruppeIndikator??'');
+        if(gruppeMetricKeys.includes(metric))document.getElementById('groupMetric').value=metric;
+        gruppeOppdaterVisning();
+        // OppdaterVisning påvirker bare resultatvisningen, ikke studentens innskrevne gruppefelt.
+        const step=stepOverride!==undefined?stepOverride:obj.trinn;
+        showStep(Number.isInteger(Number(step))&&Number(step)>=0&&Number(step)<=6?Number(step):0);
+        setTimeout(()=>{
+            for(const c of [chart1,chart2a,chart2b,chart2c,chart3,gruppeChart]){
+                if(c && typeof c.resize==='function')c.resize();
+            }
+        },120);
+    }finally{arbeidSkriver=false;}
+    arbeidPlanleggLagring();
+}
+function lastNedKommuneProsjekt(step){
+    try{
+        // Laster ned et FULLT arbeidsprosjekt; kan åpnes senere uten original regnearkfil.
+        const snapshot=arbeidTaSnapshot();
+        snapshot.trinn=Number.isInteger(Number(step))?Number(step):snapshot.trinn;
+        const innpakning={schema:kommuneProsjektSchema,version:1,lagret:snapshot.lagret,arbeid:snapshot};
+        const name=globalKommune&&globalKommune!=='Ikke lastet inn enda'?globalKommune:'min_analyse';
+        const filename='elg_prosjekt_'+gruppeFilnavn(name)+'_trinn'+snapshot.trinn+'.json';
+        gruppeLastNedBlob(filename,JSON.stringify(innpakning,null,2),'application/json;charset=utf-8');
+        arbeidStatus('Prosjektfilen «'+filename+'» er sendt til nedlasting. Lokal lagring fortsetter automatisk.');
+        arbeidLagreLokalt();
+    }catch(e){console.error(e);arbeidStatus('Kunne ikke lage prosjektfil: '+e.message,true);}
+}
+function apneKommuneProsjekt(){document.getElementById('kommuneProjectOpen').click();}
+document.getElementById('kommuneProjectOpen').addEventListener('change',async e=>{
+    const f=e.target.files?.[0];if(!f)return;
+    try{
+        if(f.size>8*1024*1024)throw Error('Prosjektfilen er for stor. Maksimum 8 MB.');
+        const contents=JSON.parse(await f.text());
+        if(!contents||contents.schema!==kommuneProsjektSchema||contents.version!==1)
+            throw Error('Velg en individuell prosjektfil fra læringsstien, ikke en kommuneresultatfil eller en grupperapport.');
+        const snapshot=arbeidSjekkSnapshot(contents.arbeid);
+        const harArbeid=Boolean(document.querySelector('.step-container textarea:not(#dataOppg2)')?.value.trim())||
+            document.getElementById('dataOppg1').value.trim()||gruppeData.length;
+        if(harArbeid&&!confirm('Åpning erstatter arbeidet som nå er åpent, inkludert gruppearbeidet. Vil du fortsette?'))return;
+        arbeidGjenopprett(snapshot);
+        arbeidStatus('Prosjekt åpnet fra «'+f.name+'» og lagret automatisk lokalt.');
+    }catch(err){console.error(err);arbeidStatus('Kunne ikke åpne prosjektfil: '+err.message,true);}
+    finally{e.target.value='';}
+});
+const originalShowStep=showStep;
+showStep=function(stepNumber){
+    const res=originalShowStep(stepNumber);
+    arbeidPlanleggLagring();
+    return res;
+};
+function slettLokaltArbeid(){
+    if(!confirm('Vil du starte helt på nytt? Det fjerner lokalt lagret kommuneanalyse og gruppearbeid fra denne nettleseren. Last ned prosjektkopier først dersom du vil beholde arbeidet.'))return;
+    clearTimeout(arbeidTimer);
+    try{localStorage.removeItem(arbeidLocalKey);}catch(e){}
+    // Hindre at pagehide handleren lagrer gammelt arbeid på vei ut.
+    arbeidSkriver=true;
+    location.reload();
+}
+document.addEventListener('input',e=>{
+    if(e.target.closest('.step-container'))arbeidPlanleggLagring();
+},true);
+document.addEventListener('change',e=>{
+    if(e.target.closest('.step-container')){
+        arbeidPlanleggLagring();
+        // FileReader kan fullføre etter at change-hendelsen er ferdig.
+        if(e.target.type==='file')setTimeout(arbeidPlanleggLagring,2500);
+    }
+},true);
+document.addEventListener('click',e=>{
+    if(e.target.closest('.step-container') && !e.target.closest('.autosave-clear')){
+        setTimeout(arbeidPlanleggLagring,50);
+    }
+},true);
+document.addEventListener('drop',()=>setTimeout(arbeidPlanleggLagring,100),true);
+document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='hidden')arbeidLagreLokalt();
+});
+window.addEventListener('pagehide',()=>arbeidLagreLokalt());
+window.addEventListener('load',()=>{
+    if(!arbeidKontrollerLokalLagring())return;
+    const stored=localStorage.getItem(arbeidLocalKey);
+    if(!stored){arbeidStatus('Automatisk lokal lagring er aktiv. Ingen tidligere økt funnet.');return;}
+    try{
+        const data=arbeidSjekkSnapshot(JSON.parse(stored));
+        arbeidGjenopprett(data);
+        arbeidStatus('Forrige arbeidsøkt gjenopprettet (lagret '+arbeidTid(data.lagret)+'). Automatisk lagring er aktiv.');
+    }catch(e){console.error('Kunne ikke gjenopprette lokal økt:',e);
+        arbeidStatus('En tidligere lokal lagring kunne ikke leses. Last inn en prosjektfil, eller start på nytt.',true);
+    }
+});
+</script>
 </body>
 </html>
