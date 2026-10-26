@@ -521,6 +521,16 @@
     color: #1e40af;
 }
 
+    
+        .kjott-vektkort { margin:1rem 0; padding:1rem; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+        .kjott-vektkort h4 { margin:0 0 .75rem; color:#0f172a; }
+        .kjott-vektknapper { display:flex; flex-wrap:wrap; gap:.6rem; }
+        .kjott-vektknapper button { flex:1 1 240px; min-width:0; min-height:4.75rem; height:auto; max-width:100%; white-space:normal; overflow-wrap:anywhere; text-align:left; background:#f1f5f9; color:#0f172a; border:1px solid #94a3b8; padding:.7rem; border-radius:6px; font:inherit; line-height:1.4; cursor:pointer; }
+        .kjott-vektknapper button[aria-pressed="true"] { border:2px solid #0369a1; background:#e0f2fe; }
+        .kjott-vektknapper button:disabled { opacity:.6; cursor:not-allowed; }
+        .kjott-vektknapper button:focus-visible,.kjott-nullstill:focus-visible { outline:3px solid #0284c7; outline-offset:2px; }
+        .kjott-valgstatus,.kjott-metodenotat { font-size:.9rem; line-height:1.5; }
+        .kjott-nullstill { background:transparent; border:0; color:#075985; text-decoration:underline; cursor:pointer; padding:.3rem 0; font:inherit; }
     </style>
 </head>
 <body>
@@ -617,6 +627,7 @@
         
         <div class="info-box theory-box">
             <strong>Mål:</strong> Kartlegge trender over lang tid.
+            <br><br><strong>Datakrav:</strong> Velg en kommune med minst 20 års «Sett elg»-data og omtrent 500 observerte elger eller mer i de fleste år. Ved svakere datagrunnlag skal dere velge en annen kommune, slik oppgaveinstruksen beskriver.
             <br><br>Gå helt tilbake til 1980-tallet (før "Sett elg" er tilgjengelig). For å få et inntrykk av bestandsutviklingen de siste ca. 40 årene benytter vi totalt antall felte dyr fra 1986 frem til i fjor.
             <button class="fact-btn" onclick="openModal('Hva forteller fellingstallene oss?', 'Antall felte elg er en <b>indeks</b> på bestandsstørrelsen. Hvis det skytes mange elg over flere år, betyr det vanligvis at det er mange elg i skogen.<br><br>MEN: Fellingstall påvirkes også av kvoter, jaktinnsats og lokale prioriteringer. Derfor er ikke fellingstall et eksakt mål på antall dyr, men de er nyttige når vi skal tolke <b>langsiktige trender</b>.')">💡 Fakta: Fellingstall som indeks</button>
         </div>
@@ -810,7 +821,7 @@
         <div class="kommune-tittel">📍 Datasett hentet fra: <span class="kommune-navn">Ikke lastet inn enda</span></div>
         
         <div class="info-box theory-box">
-            <strong>Mål:</strong> Finn tallene for et stabilt <strong>referanseår</strong> (mellom 2005 og 2017) på Hjorteviltregisteret. En stabil periode betyr at "Sett elg per jegerdag" har vært noenlunde uendret over 2-3 år.
+            <strong>Mål:</strong> Velg en stabil <strong>referanseperiode på tre sammenhengende år mellom 2005 og 2017</strong>. Bruk grafen til å vurdere om "Sett elg per jegerdag" er noenlunde uendret. Læringsstien bruker treårssnittet for å redusere tilfeldige årsutslag. Begrunn periodevalget i vurderingen; et gjennomsnitt gjør ikke en bestand i vekst eller nedgang stabil.
             <button class="fact-btn" onclick="openModal('Hvorfor bruke et referanseår?', 'Modellen vi bruker for å regne ut bestanden fungerer best dersom bestanden er noenlunde stabil: det skytes omtrent like mange dyr som det fødes. <br><br>Siden vi ikke vet om dagens bestand er stabil, finner vi en tidligere periode der indeksen var rolig. Da kan vi beregne en referansebestand og bruke <b>Felt elg per jegerdag</b> til å skalere den til fjoråret.')">💡 Fakta: Referanseår</button>
         </div>
 
@@ -886,7 +897,7 @@
         </div>
         
         <div class="info-box success-box" style="margin-top: 2.5rem;">
-            <strong>Del 1: ditt referanseår (utregnet automatisk snitt av din valgte periode)</strong><br><br>
+            <strong>Del 1: din referansebestand (treårssnitt av valgt stabil periode)</strong><br><br>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                 <div class="input-group"><label>Sett ku m/ 1 kalv:</label><input type="number" id="ku1" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
                 <div class="input-group"><label>Sett ku m/ 2 kalver:</label><input type="number" id="ku2" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
@@ -901,9 +912,9 @@
 
         <div id="dragDropArea" class="info-box action-box" style="margin-top:1.5rem; background: #fff; border-left: 4px solid var(--student);">
             <strong style="color: #0f172a; font-size: 1.1rem; display:block; text-align:center; margin-bottom:0.5rem;">🎓 Bygg formelen for referansebestand (dra og slipp)</strong>
-            <p style="text-align:center; color:#64748b; font-size:0.9rem; margin-top:0;">For å regne ut hvor mange elg det var totalt i referanseåret, må vi regne oss baklengs via kalveproduksjonen. Dra boksene for å plassere dem i riktig tomrom.<br><br><span style="font-size:0.85rem;"><b>Tips:</b> Hold boksen rolig nær nederste eller øverste kant av vinduet hvis du må flytte den til et felt som ligger utenfor skjermen. Siden ruller da sakte. Du kan også klikke på en boks og deretter klikke i riktig tomrom.</span></p>
+            <p style="text-align:center; color:#64748b; font-size:0.9rem; margin-top:0;">For å regne ut hvor mange elg det var totalt i referanseperioden, må vi regne oss baklengs via kalveproduksjonen. Dra boksene for å plassere dem i riktig tomrom.<br><br><span style="font-size:0.85rem;"><b>Tips:</b> Hold boksen rolig nær nederste eller øverste kant av vinduet hvis du må flytte den til et felt som ligger utenfor skjermen. Siden ruller da sakte. Du kan også klikke på en boks og deretter klikke i riktig tomrom.</span></p>
             <div class="mini-roadmap" style="justify-content:center;">
-                <span>1. Finn fødte kalver</span>
+                <span>1. Finn kalveobservasjoner</span>
                 <span>2. Finn kalv per kalvku</span>
                 <span>3. Finn produktive kuer</span>
                 <span>4. Skaler til hele bestanden</span>
@@ -931,7 +942,7 @@
             <div class="formula-box">
                 <h3>Steg 1: kalveproduksjon</h3>
                 <div class="equation">
-                    Fødte kalver = 
+                    Kalveobservasjoner fra kalveførende kyr = 
                     <div class="dz" data-accept="ku1" data-name="Ku 1 kalv">Ku 1 kalv</div> 
                     + ( <div class="dz" data-accept="ku2" data-name="Ku 2 kalv">Ku 2 kalv</div> × 2 ) 
                     = <span class="result-val" id="res-fodte">?</span>
@@ -943,7 +954,7 @@
                     = <span class="result-val" id="res-kuer">?</span>
                 </div>
                 <div class="equation" style="background:#e0f2fe; border-left:4px solid var(--primary);">
-                    Kalv pr. kalvku = Fødte kalver ÷ Totalt kalvkuer = <span class="result-val" id="res-kalvprku">?</span>
+                    Kalv pr. kalvku = Kalveobservasjoner ÷ Totalt kalvkuer = <span class="result-val" id="res-kalvprku">?</span>
                 </div>
             </div>
 
@@ -976,7 +987,7 @@
                 <strong>Del 2: dagens tetthet</strong><br>
                 <p style="font-size: 0.9rem;">Siden "Sett elg per jegerdag" ikke er direkte sammenlignbar før og etter 2018 (ny instruks), bruker vi "Felt elg per jegerdag" for å oppjustere/nedjustere referansebestanden til fjorårets nivå.<br><br>
                 <em>NB! Indeksene under har nå blitt automatisk fylt ut for deg basert på datagrunnlaget fra filene du lastet opp øverst.</em></p>
-                <button class="fact-btn" onclick="openModal('Sett / Felt elg per jegerdag', '<b>Jegerdag:</b> Dette er mål på jaktinnsats. Ved å dele antall skutte eller observerte elg på antall jegerdager (f.eks. Felt elg per jegerdag), får vi en rettferdig indeks som tar høyde for at innsatsen varierer fra år til år.')" style="margin-left: 0;">💡 Begrep: Jegerdag og indeks</button>
+                <button class="fact-btn" onclick="openModal('Sett / Felt elg per jegerdag', '<b>Jegerdag:</b> Dette er et mål på jaktinnsats. Antall felte eller observerte elg deles på antall jegerdager for å ta hensyn til registrert jaktinnsats.<br><br>Deling på jegerdager fjerner ikke nødvendigvis alle effekter av endret innsats. Indeksen må derfor tolkes sammen med utviklingen i jaktinnsats og hvor lett dyrene oppdages.')" style="margin-left: 0;">💡 Begrep: Jegerdag og indeks</button>
                 <br><br>
                 
                 <div class="input-group">
@@ -987,7 +998,7 @@
                 </div>
 
                 <div class="input-group"><label>Felt elg pr jegerdag i din valgte 3-års referanseperiode:</label><input type="number" step="0.001" id="feltRef" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
-                <div class="input-group"><label>Felt elg pr jegerdag i fjoråret <span id="feltFjorAarLabel"></span> (siste år i filen):</label><input type="number" step="0.001" id="feltFjor" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
+                <div class="input-group"><label>Felt elg pr jegerdag i analyseåret <span id="feltFjorAarLabel"></span> (siste avsluttede jaktår i filen):</label><input type="number" step="0.001" id="feltFjor" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
                 <div class="input-group"><label>Tellende areal for elgavskyting (dekar):</label><input type="number" id="arealDaa" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
 
                 <button class="action-btn" style="background-color: var(--text-main); margin-top: 1.5rem;" onclick="beregnTetthet()">Beregn tetthet</button>
@@ -1024,16 +1035,17 @@
         
         <div class="viltet-note">
             <h3>🎯 Læringsmål for denne delen</h3>
-            <p>Her skal dere skille mellom to spørsmål: <strong>A)</strong> hvor mye kjøtt kommunen faktisk fikk ut i fjor, og <strong>B)</strong> hvordan kjøttutbyttet kan endre seg når samme modellbestand forvaltes med lavt, middels eller høyt kalveuttak. Del B er en modelløvelse, ikke en direkte beregning av kommunens faktiske bestand.</p>
+            <p>Her skal dere skille mellom to spørsmål: <strong>A)</strong> hvor stort slakteutbyttet var i analyseåret, med tydelig skille mellom registrerte vekter og beregnede tillegg, og <strong>B)</strong> hvordan kjøttutbyttet kan endre seg når samme modellbestand forvaltes med lavt, middels eller høyt kalveuttak. Del B er en modelløvelse, ikke en direkte beregning av kommunens faktiske bestand.</p>
         </div>
 
         <div class="info-box success-box">
-            <strong>A) Kjøttutbytte i fjor <span id="kjottAarOverskrift"></span></strong><br><br>
+            <strong>A) Totalt slakteutbytte med oppgitt vektgrunnlag <span id="kjottAarOverskrift"></span></strong><br><br>
             <div class="input-group">
-                <label>Totalt kg kjøtt fra jakt <span id="totalkgAarLabel"></span> (beregnet automatisk fra data i oppgave 2):</label>
+                <label>Registrert slaktevekt i kg <span id="totalkgAarLabel"></span> (beregnet automatisk fra data i oppgave 2):</label>
                 <input type="number" id="totalkg" placeholder="Venter på filen Slaktevekt per alder og kjønn i Oppgave 2..." readonly style="background-color: #e2e8f0; cursor: not-allowed;">
             </div>
             
+            <div id="kjottVektvalg" aria-label="Velg vektgrunnlag for dyr uten vekt"><p>Last opp vekter i oppgave 2 og fellingstall i oppgave 3. Manglende vekter erstattes først når du velger grunnlaget.</p></div>
             <div id="resKjottA" class="info-box action-box" style="display:none; margin-top:1rem; margin-bottom: 0;"></div>
             
             <button class="math-toggle-btn" id="btnToggleCalcA" onclick="toggleDisplay('calcDetailsA')" style="display: none;">
@@ -1069,9 +1081,10 @@
             </div>
 
             <p style="margin-top: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem;">
-                Kalkulatoren har automatisk hentet inn og låst <strong>gjennomsnittlig kalv per ku, kalv per kalvku, ku per okse og slaktevekter for de siste 5 årene</strong> basert på filene dine fra oppgave 2. <strong>Kalv per ku</strong> brukes i selve 4B-modellen. <strong>Kalv per kalvku</strong> vises som støtte for tolkning av reproduksjon og tvillingrate.
+                Kalkulatoren har automatisk hentet inn og låst <strong>gjennomsnittlig kalv per ku, kalv per kalvku, ku per okse og slaktevekter innen de siste fem avsluttede jaktårene i filene</strong> basert på filene dine fra oppgave 2. <strong>Kalv per ku</strong> brukes i selve 4B-modellen. <strong>Kalv per kalvku</strong> vises som støtte for tolkning av reproduksjon og tvillingrate.
             </p>
             
+            <p id="simDataInfo" role="status" style="font-size:0.9rem; color:#92400e;">Last opp kondisjonsdata i oppgave 2 for å kontrollere femårsgrunnlaget.</p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="input-group"><label>Kalv per ku (r, brukes i modellen):</label><input type="number" step="0.01" id="simKalvPerKu" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
                 <div class="input-group"><label>Kalv per kalvku (til tolkning):</label><input type="number" step="0.01" id="simKalvPerKalvku" value="" readonly style="background-color: #e2e8f0; cursor: not-allowed;"></div>
@@ -1096,6 +1109,7 @@
                 <div class="sim-card" id="cardLav"></div>
                 <div class="sim-card" id="cardMed"></div>
                 <div class="sim-card" id="cardHoy"></div>
+                <p style="grid-column:1 / -1; margin:0; font-size:0.85rem; color:var(--text-muted);">Dyretall og kilo er avrundet til hele tall i resultatkortene. Beregningene bruker uavrundede verdier. Avrundede delverdier kan derfor avvike litt fra totalsummen.</p>
             </div>
             
             <button class="math-toggle-btn" id="btnToggleCalcB" onclick="toggleDisplay('calcDetailsB')" style="display: none;">
@@ -1221,7 +1235,7 @@
         </div>
         <div id="groupComparison" style="display:none;">
             <h3>1. Nøkkeltall side om side</h3>
-            <p class="group-caption">Snitt for kondisjon og kjønnsrate: de fem siste tilgjengelige årene for hver kommune (periodene kan være ulike). Tetthet og kjøttutbytte vises med egne årstall. «Mangler» betyr at studenten ikke har beregnet eller lastet inn verdien.</p>
+            <p class="group-caption">Snitt for kondisjon og kjønnsrate: tilgjengelige årsverdier innen de siste fem avsluttede jaktårene i hver kommunes filer. Tabellen viser periode og antall gyldige år; periodene kan være ulike. Tetthet og kjøttutbytte vises med egne årstall. «Mangler» betyr at studenten ikke har beregnet eller lastet inn verdien.</p>
             <div class="group-table-scroll"><table id="groupKeyTable" class="group-table"></table></div>
             <div id="groupYearWarning" class="model-warning" style="display:none;"></div>
             <h3>2. Sammenlign utviklingen i en felles graf</h3>
@@ -1256,7 +1270,7 @@
             <div class="input-group"><label for="groupMethods">Datakvalitet, årstall og feilkilder</label><textarea id="groupMethods" rows="4" placeholder="Kommenter om måleår, datagrunnlag, oppdagbarhet og usikkerhet er sammenlignbare."></textarea></div>
             <div class="input-group"><label for="groupConclusion">Felles konklusjon og differensierte forvaltningsråd</label><textarea id="groupConclusion" rows="5" placeholder="Hvilke råd vil dere gi for hver av kommunene? Forklar forskjellene."></textarea></div>
             <h3>4. Generer Word-utkast til felles rapport</h3>
-            <div class="group-draft-notice"><strong>UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING</strong><p>Word-dokumentet er en automatisk sammenstilling, ikke en ferdig faglig rapport. Gruppa må selv kontrollere tall og figurer, supplere faglige drøftinger, vurdere usikkerhet, fullføre kildehenvisninger og bearbeide språk, struktur og konklusjoner.</p></div>
+            <div class="group-draft-notice"><strong>UTKAST – MÅ BEARBEIDES VIDERE FØR INNLEVERING</strong><p>Word-dokumentet er en automatisk sammenstilling, ikke en ferdig faglig rapport. Gruppa må selv kontrollere tall og figurer, supplere faglige drøftinger, vurdere usikkerhet, fullføre kildehenvisninger og bearbeide språk, struktur og konklusjoner. Kontroller at også kalv per kalvku og åringsvekter er presentert, og legg ved egne utregninger til oppgave 3 og 4 (ett scenario er tilstrekkelig i 4B).</p></div>
             <p class="group-caption">Generer en forhåndsvisning og last deretter ned et <strong>redigerbart Word-dokument (.docx)</strong> med nøkkeltall, fem sammenligningsfigurer der data finnes, gruppetekster og individuelle refleksjoner som vedlegg. Dokumentet er tydelig merket <strong>UTKAST</strong> både på forsiden og i toppteksten på hver side.</p>
             <div class="group-report-actions">
                 <button class="action-btn btn-success" type="button" onclick="genererGrupperapport()">📄 Generer rapportutkast</button>
@@ -1691,6 +1705,8 @@
         }
 
         function oppdaterAreal(oppdaterGlobal = true) {
+            nullstillTetthet();
+            nullstillKjottA();
             const knavn = document.getElementById('kommuneInput').value;
             if (knavn && kommuneData[knavn]) {
                 if(oppdaterGlobal) oppdaterValgtKommune(knavn);
@@ -1751,6 +1767,8 @@
         async function behandleHjorteviltKondisjonFiler(filesObjects) {
             let byYear = {};
             let fb = document.getElementById('hjortFeedback');
+            document.getElementById('dataOppg2').value = '';
+            tegnGraf2();
             fb.innerText = "Leter etter data i filene..."; fb.style.color = "var(--text-main)";
 
             const parseNum = (value) => {
@@ -1806,39 +1824,38 @@
                         let vv_k = parseNum(parts[11]); let av_k = parseNum(parts[12]);
                         
                         let snittK = '';
-                        if(!isNaN(vk_o) && !isNaN(vk_k) && (ak_o+ak_k)>0) snittK = ((vk_o*ak_o + vk_k*ak_k)/(ak_o+ak_k)).toFixed(1);
-                        else if(!isNaN(vk_o)) snittK = vk_o.toFixed(1);
-                        else if(!isNaN(vk_k)) snittK = vk_k.toFixed(1);
+                        if(!isNaN(vk_o) && !isNaN(vk_k) && (ak_o+ak_k)>0) snittK = (vk_o*ak_o + vk_k*ak_k)/(ak_o+ak_k);
+                        else if(!isNaN(vk_o)) snittK = vk_o;
+                        else if(!isNaN(vk_k)) snittK = vk_k;
                         
                         let snittU = '';
-                        if(!isNaN(vu_o) && !isNaN(vu_k) && (au_o+au_k)>0) snittU = ((vu_o*au_o + vu_k*au_k)/(au_o+au_k)).toFixed(1);
-                        else if(!isNaN(vu_o)) snittU = vu_o.toFixed(1);
-                        else if(!isNaN(vu_k)) snittU = vu_k.toFixed(1);
+                        if(!isNaN(vu_o) && !isNaN(vu_k) && (au_o+au_k)>0) snittU = (vu_o*au_o + vu_k*au_k)/(au_o+au_k);
+                        else if(!isNaN(vu_o)) snittU = vu_o;
+                        else if(!isNaN(vu_k)) snittU = vu_k;
                         
                         if(snittK !== '') byYear[year].vK = snittK;
                         if(snittU !== '') byYear[year].vU = snittU;
                         if(!isNaN(vv_o)) byYear[year].vV_o = vv_o;
                         if(!isNaN(vv_k)) byYear[year].vV_k = vv_k;
 
-                        // Total sum kjøtt
-                        let tMeat = 0;
-                        if(!isNaN(vk_o) && !isNaN(ak_o)) tMeat += vk_o * ak_o;
-                        if(!isNaN(vk_k) && !isNaN(ak_k)) tMeat += vk_k * ak_k;
-                        if(!isNaN(vu_o) && !isNaN(au_o)) tMeat += vu_o * au_o;
-                        if(!isNaN(vu_k) && !isNaN(au_k)) tMeat += vu_k * au_k;
-                        if(!isNaN(vv_o) && !isNaN(av_o)) tMeat += vv_o * av_o;
-                        if(!isNaN(vv_k) && !isNaN(av_k)) tMeat += vv_k * av_k;
-                        
-                        if(tMeat > 0) byYear[year].totKjott = tMeat;
-                        
+                        // Slaktevektsfilens antall er vektregistrerte dyr, ikke nødvendigvis alle felte.
+                        const classes = [[vk_o, ak_o], [vk_k, ak_k], [vu_o, au_o], [vu_k, au_k], [vv_o, av_o], [vv_k, av_k]];
+                        byYear[year].vektKlasser = classes.map(([v,n]) => [Number.isFinite(v) ? v : null, Number.isFinite(n) ? n : null]);
+                        const valid = classes.filter(([v, n]) => Number.isFinite(v) && v > 0 && Number.isFinite(n) && n >= 0);
+                        const tMeat = valid.reduce((sum, [v, n]) => sum + v * n, 0);
+                        if (tMeat > 0) {
+                            byYear[year].totKjott = tMeat;
+                            byYear[year].antallVeid = valid.reduce((sum, [, n]) => sum + n, 0);
+                        }
+
                     } else if(isVektKalv || isVektUng) {
                         let v1 = parseNum(parts[1]); let a1 = parseNum(parts[2]);
                         let v2 = parseNum(parts[3]); let a2 = parseNum(parts[4]);
                         let snitt = '';
                         
-                        if(!isNaN(v1) && !isNaN(v2) && (a1+a2)>0) snitt = ((v1*a1 + v2*a2)/(a1+a2)).toFixed(1);
-                        else if(!isNaN(v1)) snitt = v1.toFixed(1);
-                        else if(!isNaN(v2)) snitt = v2.toFixed(1);
+                        if(!isNaN(v1) && !isNaN(v2) && (a1+a2)>0) snitt = (v1*a1 + v2*a2)/(a1+a2);
+                        else if(!isNaN(v1)) snitt = v1;
+                        else if(!isNaN(v2)) snitt = v2;
                         
                         if(isVektKalv && snitt !== '') byYear[year].vK = snitt;
                         if(isVektUng && snitt !== '') byYear[year].vU = snitt;
@@ -1849,8 +1866,8 @@
             let outRows = [];
             Object.keys(byYear).sort().forEach(y => {
                 let d = byYear[y];
-                if(d.kKu !== '' || d.kKalvku !== '' || d.vK !== '' || d.vU !== '' || d.kO !== '') {
-                    outRows.push(`${y}, ${d.kKu}, ${d.kKalvku}, ${d.vK}, ${d.vU}, ${d.kO}, ${d.vV_k || ''}, ${d.vV_o || ''}, ${d.totKjott || ''}`);
+                if(d.kKu !== '' || d.kKalvku !== '' || d.vK !== '' || d.vU !== '' || d.kO !== '' || d.vektKlasser) {
+                    outRows.push(`${y}, ${d.kKu}, ${d.kKalvku}, ${d.vK}, ${d.vU}, ${d.kO}, ${d.vV_k || ''}, ${d.vV_o || ''}, ${d.totKjott ?? ''}, ${d.antallVeid ?? ''}, ${(d.vektKlasser || Array.from({length:6},()=>[null,null])).flat().map(v=>v??'').join(', ')}`);
                 }
             });
             
@@ -1877,6 +1894,7 @@
         let globalOppg3Data = [];
         let globalOppg3AllData = [];
         let fjorBestandYear = null;
+        let oppg3PeriodeGyldig = false;
         let chart3;
 
 
@@ -1941,16 +1959,21 @@
             };
             const inputId = inputMap[type];
             const el = document.getElementById(inputId);
-            if (!el) return { display: '0', raw: '0' };
+            if (!el) return { display: '', raw: '' };
             return {
-                display: el.value || '0',
-                raw: el.dataset.raw !== undefined && el.dataset.raw !== '' ? el.dataset.raw : (el.value || '0')
+                display: el.value || '',
+                raw: el.dataset.raw !== undefined && el.dataset.raw !== '' ? el.dataset.raw : (el.value || '')
             };
         }
 
         async function behandleOppg3Filer(filesObjects) {
             let byYear = {};
             let fb = document.getElementById('hjortFeedback3');
+            nullstillReferanseGrunnlag();
+            globalOppg3Data = []; globalOppg3AllData = []; kjottValg = {};
+            beregnKjottA();
+            document.getElementById('oppg3Interactive').style.display = 'none';
+            document.getElementById('oppg3SliderLabel').textContent = '-';
             fb.innerText = "Leter etter data i filene...";
             fb.style.color = "var(--text-main)";
 
@@ -1992,7 +2015,10 @@
                         if (k1 !== null) byYear[y].ku1 = k1;
                         if (k2 !== null) byYear[y].ku2 = k2;
                         if (st !== null) byYear[y].settTot = st;
-                        if (ft !== null) byYear[y].feltTot = ft;
+                        if (ft !== null) {
+                            byYear[y].feltTot = ft;
+                            byYear[y].feltKlasser = Object.fromEntries(kjottKlasser.map(k => [k.key, oppg3GetExactVal(headers, parts, k.kolonne)]));
+                        }
                         if (sd !== null) byYear[y].settDag = sd;
                         if (fd !== null) byYear[y].feltDag = fd;
                     }
@@ -2002,7 +2028,7 @@
                 // Bare 2005-2017 brukes som mulig referanseperiode, fordi "Sett elg per jegerdag" ikke er sammenlignbar etter instruksjonsendringen i 2018.
                 globalOppg3AllData = Object.keys(byYear)
                     .map(k => ({ year: parseInt(k), ...byYear[k] }))
-                    .filter(d => d.feltDag > 0)
+                    .filter(d => d.year <= sisteAvsluttedeJaktAar() && ((Number.isFinite(d.feltDag) && d.feltDag > 0) || kjottAntall(d.feltTot)))
                     .sort((a, b) => a.year - b.year);
 
                 globalOppg3Data = globalOppg3AllData
@@ -2021,6 +2047,7 @@
                     fb.innerText = "Fant ikke nok referansedata for 2005-2017. Pass på at du har lastet opp alle de 4 filene nevnt ovenfor.";
                     fb.style.color = "var(--error)";
                 }
+                beregnKjottA();
             } catch (err) {
                 fb.innerText = "En feil oppstod ved lesing av filer.";
                 fb.style.color = "var(--error)";
@@ -2122,11 +2149,223 @@
         // --- GRAFER OG DATA ---
         let chart1, chart2a, chart2b, chart2c;
         
+
+        // Avrunding brukes bare til visning. Manglende verdier forblir manglende.
+        function sisteAvsluttedeJaktAar() { return new Date().getFullYear() - 1; }
+        function femAarsGrunnlag(serie, labels) {
+            const years = (labels || []).map(Number).filter(y => Number.isInteger(y) && y <= sisteAvsluttedeJaktAar());
+            if (!years.length) return { fra: null, til: null, n: 0, snitt: null };
+            const til = Math.max(...years), fra = til - 4;
+            const values = new Map();
+            for (const p of serie) if (p.year >= fra && p.year <= til && Number.isFinite(p.value)) values.set(Number(p.year), p.value);
+            const nums = [...values.values()];
+            return { fra, til, n: nums.length, snitt: nums.length ? nums.reduce((a, b) => a + b, 0) / nums.length : null };
+        }
+        function nullstillVisning(resultat, detaljer, knapp) {
+            for (const id of [resultat, detaljer, knapp]) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+                if (id !== knapp && id !== 'resSimulering') el.innerHTML = '';
+                el.style.display = id === detaljer ? '' : 'none';
+                el.classList.remove('show');
+            }
+        }
+        function nullstillRapport() { nullstillVisning('printArea'); }
+        function nullstillTetthet() {
+            fjorBestand = null; tetthetRes = null;
+            nullstillVisning('resTetthet', 'calcDetails3', 'btnToggleCalc3');
+            nullstillRapport();
+        }
+        function nullstillKjottA() {
+            kjottAKm2 = ''; kjottATotalKg = null; kjottAMetode = '';
+            nullstillVisning('resKjottA', 'calcDetailsA', 'btnToggleCalcA');
+            nullstillRapport();
+        }
+        function nullstillSimulering() {
+            kjottBText = '';
+            nullstillVisning('resSimulering', 'calcDetailsB', 'btnToggleCalcB');
+            for (const id of ['cardLav', 'cardMed', 'cardHoy']) document.getElementById(id).innerHTML = '';
+            nullstillRapport();
+        }
+        function nullstillReferanseGrunnlag() {
+            oppg3PeriodeGyldig = false;
+            fjorBestandYear = null;
+            for (const id of ['ku1', 'ku2', 'settTotalt', 'feltTotalt', 'feltRef', 'feltFjor']) {
+                const el = document.getElementById(id); el.value = ''; delete el.dataset.raw;
+            }
+            document.getElementById('feltFjorAarLabel').textContent = '';
+            document.getElementById('calcDetails3a').innerHTML = '';
+            updateBank();
+        }
+        function simGrunnlagTekst() {
+            const fields = [['simKalvPerKu', 'kalv per ku'], ['simKuPrOkse', 'ku per okse'], ['simVektKalv', 'kalvevekt'], ['simVektUng', 'åringsvekt']];
+            const el = document.getElementById('simKalvPerKu');
+            if (!el.dataset.periode) return 'Datagrunnlag: last opp kondisjonsdata i oppgave 2.';
+            const counts = fields.map(([id, name]) => name + ' ' + (document.getElementById(id).dataset.antall || '0') + '/5 år');
+            const komplett = fields.every(([id]) => document.getElementById(id).dataset.antall === '5');
+            return 'Datagrunnlag ' + el.dataset.periode + ': ' + counts.join('; ') + '. ' +
+                (komplett ? 'Fem årsverdier er tilgjengelige for alle modellparameterne.' : 'Foreløpig beregning: gjennomsnittene bruker tilgjengelige årsverdier. Oppgaven krever fem år; suppler manglende data før innlevering.');
+        }
+
+        const kjottKlasser = [
+            {key:'oksekalv', navn:'Oksekalv', kolonne:'Oksekalv'},
+            {key:'kukalv', navn:'Kukalv', kolonne:'Kukalv'},
+            {key:'aringsokse', navn:'Åringsokse', kolonne:'Okse 1 ½ år'},
+            {key:'aringsku', navn:'Åringsku', kolonne:'Ku 1 ½ år'},
+            {key:'voksenokse', navn:'Voksen okse', kolonne:'Okse 2 ½ år og eldre'},
+            {key:'voksenku', navn:'Voksen ku', kolonne:'Ku 2 ½ år og eldre'}
+        ];
+        let kjottVektData = {}, kjottValg = {}, kjottATotalKg = null, kjottAMetode = '';
+        function kjottFmt(n, decimals=2) {
+            return Number.isFinite(n) ? n.toLocaleString('nb-NO', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) : 'Mangler';
+        }
+        function kjottAntall(n) { return Number.isInteger(n) && n >= 0; }
+        function kjottAnalyseAar() {
+            const felt = globalOppg3AllData.filter(d => d.year <= sisteAvsluttedeJaktAar() && kjottAntall(d.feltTot));
+            if (felt.length) return Math.max(...felt.map(d => d.year));
+            const years = Object.keys(kjottVektData).map(Number).filter(y => y <= sisteAvsluttedeJaktAar());
+            return years.length ? Math.max(...years) : null;
+        }
+        function kjottVektKilde(key, mode, year) {
+            if (!['aaret','forrige','femaar'].includes(mode) || !Number.isInteger(year)) return null;
+            const fra = mode === 'forrige' ? year - 1 : mode === 'femaar' ? year - 4 : year;
+            const til = mode === 'forrige' ? year - 1 : year;
+            let n = 0, kg = 0;
+            const years = [];
+            for (let y = fra; y <= til; y++) {
+                const data = kjottVektData[y]?.[key];
+                if (!data || !kjottAntall(data.antall) || data.antall === 0 || !Number.isFinite(data.vekt) || data.vekt <= 0) continue;
+                n += data.antall; kg += data.antall * data.vekt; years.push(y);
+            }
+            return {mode, fra, til, antall:n, aar:years, vekt:n ? kg/n : null};
+        }
+        function kjottHentGrunnlag() {
+            const year = kjottAnalyseAar();
+            const result = {year, klasser:[], feil:[], mangler:[], felte:null, veide:0, registrertKg:0, beregnetKg:0, beregnetAntall:0, komplett:false};
+            if (!year) { result.feil.push('Last opp slaktevektdata i oppgave 2 og fellingstall i oppgave 3.'); return result; }
+            const felt = globalOppg3AllData.find(d => d.year === year && kjottAntall(d.feltTot));
+            const hasDetails = Object.keys(kjottVektData).length > 0;
+            const weights = kjottVektData[year] || (hasDetails ? Object.fromEntries(kjottKlasser.map(k => [k.key, {vekt:null, antall:0}])) : null);
+            if (!weights) result.feil.push('Slaktevektfilen mangler detaljerte vekter og antall per dyregruppe. Last inn slaktevektfilen på nytt i oppgave 2.');
+            if (!felt?.feltKlasser) result.feil.push('Last inn «Felte elg» i oppgave 3. Antall felte dyr per kjønn og aldersklasse i ' + year + ' trengs til totalanslaget.');
+            if (felt) result.felte = felt.feltTot;
+            for (const def of kjottKlasser) {
+                const data = weights?.[def.key];
+                const felte = felt?.feltKlasser?.[def.key];
+                const antall = data && kjottAntall(data.antall) ? data.antall : null;
+                const validVekt = data && Number.isFinite(data.vekt) && data.vekt > 0;
+                const veide = antall === 0 ? 0 : antall !== null && validVekt ? antall : 0;
+                const registrertKg = veide ? veide * data.vekt : 0;
+                const mangler = kjottAntall(felte) ? Math.max(0, felte - veide) : null;
+                if (weights && (!data || antall === null || (antall > 0 && !validVekt))) result.feil.push(def.navn + ': ufullstendige eller ugyldige vektdata. Kontroller slaktevektfilen.');
+                if (felt?.feltKlasser && !kjottAntall(felte)) result.feil.push(def.navn + ': mangler gyldig antall felte dyr.');
+                if (kjottAntall(felte) && veide > felte) result.feil.push(def.navn + ': flere vektregistrerte dyr enn felte dyr. Kontroller at år og område er like.');
+                const choice = kjottValg[def.key];
+                const kilde = choice?.year === year ? kjottVektKilde(def.key, choice.mode, year) : null;
+                const brukt = mangler > 0 && kilde?.antall > 0 && Number.isFinite(kilde.vekt);
+                const beregnetKg = brukt ? mangler * kilde.vekt : 0;
+                result.klasser.push({...def, felte, veide, registrertKg, mangler, kilde:brukt ? kilde : null, beregnetKg});
+                result.veide += veide; result.registrertKg += registrertKg;
+                result.beregnetKg += beregnetKg;
+                if (brukt) result.beregnetAntall += mangler;
+                if (mangler > 0 && !brukt) result.mangler.push(def.navn);
+            }
+            if (felt?.feltKlasser) {
+                const numbers = kjottKlasser.map(k => felt.feltKlasser[k.key]);
+                if (numbers.every(kjottAntall) && numbers.reduce((a,b)=>a+b,0) !== felt.feltTot)
+                    result.feil.push('Summen av dyregruppene er ulikt totalt antall felte dyr. Kontroller kjønn, alder og fellingstall.');
+            }
+            result.komplett = result.felte !== null && !result.feil.length && !result.mangler.length;
+            return result;
+        }
+        function kjottKildeBeskrivelse(kilde) {
+            if (!kilde) return 'vektgrunnlag er ikke valgt';
+            const periode = kilde.fra === kilde.til ? String(kilde.fra) : `${kilde.fra}–${kilde.til}`;
+            const dekning = kilde.mode === 'femaar' ? `, ${kilde.aar.length}/5 år med vektdata` : '';
+            return `${kjottFmt(kilde.vekt)} kg fra ${periode}, basert på ${kilde.antall} veide dyr${dekning}`;
+        }
+        function kjottDekningTekst(grunnlag = kjottHentGrunnlag()) {
+            if (!grunnlag.year) return 'Vektgrunnlag er ikke lastet inn.';
+            if (grunnlag.feil.length) return grunnlag.feil.join(' ');
+            let tekst = `${grunnlag.veide} av ${grunnlag.felte} dyr har vektgrunnlag i de importerte filene for ${grunnlag.year}. `;
+            if (grunnlag.komplett && grunnlag.beregnetAntall === 0) return 'Datadekning: ' + tekst + 'Ingen dyr har fått beregnet vekt.';
+            tekst += `${grunnlag.beregnetAntall} dyr har fått beregnet vekt etter brukerens valg. `;
+            for (const k of grunnlag.klasser.filter(k => k.mangler > 0))
+                tekst += `${k.navn}: ${k.mangler} dyr uten vekt; ${kjottKildeBeskrivelse(k.kilde)}. `;
+            if (grunnlag.mangler.length) tekst += 'Velg vektgrunnlag for ' + grunnlag.mangler.join(', ') + ' før et fullstendig totalanslag beregnes.';
+            return tekst.trim();
+        }
+        function visKjottVektvalg(g) {
+            const panel = document.getElementById('kjottVektvalg');
+            panel.replaceChildren();
+            const forklaring = document.createElement('p');
+            forklaring.textContent = g.year ? `Analyseåret er ${g.year}. Antall felte dyr og kjente vekter beholdes fra dette året. Velg selv gjennomsnittsvekt for dyr uten vekt. Ved få veide dyr kan du velge året før eller femårsperioden; antall dyr og tilgjengelige år vises før valget.` : 'Last opp data i oppgave 2 og 3 for å velge vektgrunnlag.';
+            panel.appendChild(forklaring);
+            for (const k of g.klasser.filter(k => k.mangler > 0)) {
+                const card = document.createElement('section'); card.className = 'kjott-vektkort';
+                const head = document.createElement('h4'); head.textContent = `${k.navn}: ${k.felte} felte, ${k.veide} med vekt, ${k.mangler} uten vekt`;
+                const buttons = document.createElement('div'); buttons.className = 'kjott-vektknapper';
+                for (const [mode, label] of [['aaret',`Bruk ${g.year}`], ['forrige',`Bruk ${g.year-1}`], ['femaar',`Bruk ${g.year-4}–${g.year}`]]) {
+                    const kilde = kjottVektKilde(k.key, mode, g.year);
+                    const button = document.createElement('button'); button.type = 'button';
+                    button.dataset.kjottKlasse = k.key; button.dataset.kjottKilde = mode;
+                    const title = document.createElement('strong'); title.textContent = label;
+                    let detail = kilde.antall ? `${kjottFmt(kilde.vekt)} kg · ${kilde.antall} veide` : 'Mangler vektdata';
+                    if (mode === 'femaar' && kilde.antall) detail += ` · ${kilde.aar.length}/5 år`;
+                    button.append(title, document.createElement('br'), document.createTextNode(detail));
+                    button.disabled = !kilde.antall || g.feil.length > 0;
+                    button.setAttribute('aria-pressed', k.kilde?.mode === mode ? 'true' : 'false');
+                    button.addEventListener('click', () => velgKjottVekt(k.key, mode));
+                    buttons.appendChild(button);
+                }
+                const info = document.createElement('p'); info.className = 'kjott-valgstatus';
+                info.textContent = k.kilde ? 'Valgt: ' + kjottKildeBeskrivelse(k.kilde) + '.' : 'Ingen erstatningsvekt er valgt. Programmet bytter ikke år automatisk.';
+                card.append(head, buttons, info);
+                if (k.kilde) {
+                    const reset = document.createElement('button'); reset.type = 'button'; reset.className = 'kjott-nullstill'; reset.textContent = 'Fjern valget';
+                    reset.addEventListener('click', () => { delete kjottValg[k.key]; beregnKjottA(); document.querySelector(`[data-kjott-klasse="${k.key}"]:not(:disabled)`)?.focus({preventScroll:true}); }); card.appendChild(reset);
+                }
+                panel.appendChild(card);
+            }
+            if (g.klasser.some(k => k.mangler > 0)) {
+                const note = document.createElement('p'); note.className = 'kjott-metodenotat';
+                note.textContent = 'Tidligere års vekter kan avvike fra analyseåret. Vurder om de veide dyrene er representative. Femårssnittet vektes etter antall veide dyr: sum(gjennomsnittsvekt × antall veide) / sum(antall veide). Valget brukes bare i 4A og lagres i prosjektet og rapportgrunnlaget.';
+                panel.appendChild(note);
+            }
+        }
+        function velgKjottVekt(key, mode) {
+            const g = kjottHentGrunnlag();
+            const k = g.klasser.find(k => k.key === key && k.mangler > 0);
+            const kilde = k && kjottVektKilde(key, mode, g.year);
+            if (g.feil.length || !kilde?.antall || !Number.isFinite(kilde.vekt)) return;
+            kjottValg[key] = {mode, year:g.year};
+            beregnKjottA();
+            document.querySelector(`[data-kjott-klasse="${key}"][data-kjott-kilde="${mode}"]`)?.focus({preventScroll:true});
+        }
+        function kjottGjenopprettValg(value) {
+            kjottValg = {};
+            if (!value || typeof value !== 'object' || Array.isArray(value)) return;
+            const year = kjottAnalyseAar();
+            for (const def of kjottKlasser) {
+                const v = value[def.key];
+                if (v?.year === year && ['aaret','forrige','femaar'].includes(v.mode) && kjottVektKilde(def.key, v.mode, year)?.antall > 0)
+                    kjottValg[def.key] = {mode:v.mode, year};
+            }
+        }
+
+        function analyseAarMerknad() {
+            if (fjorBestandYear && kjottFjorYear && fjorBestandYear !== kjottFjorYear)
+                return `Ulike analyseår: tetthet gjelder ${fjorBestandYear}, mens slakteutbyttet gjelder ${kjottFjorYear}. Oppgave 3 og 4A skal gjelde samme avsluttede jaktår; suppler dataene.`;
+            return '';
+        }
+
         function tegnGraf1() {
             let text = document.getElementById('dataOppg1').value; let rows = text.trim().split('\n');
             let years = [], counts = [];
             rows.forEach(row => {
-                let cols = row.split(','); if(cols.length >= 2) { years.push(cols[0].trim()); counts.push(parseFloat(cols[1].trim())); }
+                let cols = row.split(',');
+                const year = Number(cols[0]), count = parseFloat(cols[1]);
+                if (cols.length >= 2 && year >= 1986 && year <= sisteAvsluttedeJaktAar() && Number.isFinite(count) && count >= 0) { years.push(String(year)); counts.push(count); }
             });
             if(chart1) chart1.destroy();
             chart1 = new Chart(document.getElementById('chartOppg1').getContext('2d'), {
@@ -2151,8 +2390,21 @@
         }
 
         function tegnGraf2() {
+            nullstillSimulering(); nullstillKjottA();
+            kjottVektData = {}; kjottValg = {};
+            document.getElementById('kjottVektvalg').replaceChildren();
+            document.getElementById('calcDetails2').innerHTML = '';
+            document.getElementById('btnToggleCalc2').style.display = 'none';
+            kjottFjorYear = null;
+            const meatInput = document.getElementById('totalkg');
+            meatInput.value = ''; delete meatInput.dataset.raw; delete meatInput.dataset.antall;
+            for (const id of ['kjottAarOverskrift', 'totalkgAarLabel']) document.getElementById(id).textContent = '';
+            for (const id of ['simKalvPerKu', 'simKalvPerKalvku', 'simKuPrOkse', 'simVektKalv', 'simVektUng', 'simVektVoksenKu', 'simVektVoksenOkse']) {
+                const el = document.getElementById(id); el.value = ''; delete el.dataset.raw; delete el.dataset.periode; delete el.dataset.antall;
+            }
+            document.getElementById('simDataInfo').textContent = simGrunnlagTekst();
             let text = document.getElementById('dataOppg2').value; let rows = text.trim().split('\n');
-            let years = [], kalvPrKu = [], kalvPrKalvku = [], vektKalv = [], vektUng = [], kuPrOkse = [], vVoksenKu = [], vVoksenOkse = [], totKjott = [];
+            let years = [], kalvPrKu = [], kalvPrKalvku = [], vektKalv = [], vektUng = [], kuPrOkse = [], vVoksenKu = [], vVoksenOkse = [], totKjott = [], antallVeid = [];
             const toNumOrNull = (value) => {
                 if(value === undefined || value === null) return null;
                 const num = parseFloat(String(value).trim());
@@ -2161,7 +2413,7 @@
 
             rows.forEach(row => {
                 let cols = row.split(',');
-                if(cols.length >= 5) {
+                if(cols.length >= 5 && Number.isInteger(Number(cols[0])) && Number(cols[0]) <= sisteAvsluttedeJaktAar()) {
                     years.push(cols[0].trim()); 
                     kalvPrKu.push(toNumOrNull(cols[1]));
                     kalvPrKalvku.push(toNumOrNull(cols[2]));
@@ -2170,7 +2422,13 @@
                     if(cols.length >= 6) kuPrOkse.push(toNumOrNull(cols[5]));
                     if(cols.length >= 7) vVoksenKu.push(toNumOrNull(cols[6]));
                     if(cols.length >= 8) vVoksenOkse.push(toNumOrNull(cols[7]));
-                    if(cols.length >= 9) totKjott.push(toNumOrNull(cols[8]));
+                    totKjott.push(toNumOrNull(cols[8]));
+                    antallVeid.push(toNumOrNull(cols[9]));
+                    if (cols.length >= 22) {
+                        const data = {};
+                        kjottKlasser.forEach((k, i) => { data[k.key] = {vekt:toNumOrNull(cols[10 + 2*i]), antall:toNumOrNull(cols[11 + 2*i])}; });
+                        kjottVektData[Number(cols[0])] = data;
+                    }
                 }
             });
             
@@ -2197,12 +2455,15 @@
 
             if(years.length > 0) {
                 const getAvg = arr => { let v = arr.filter(x => x !== null && !isNaN(x)); return v.length ? v.reduce((a,b)=>a+b,0)/v.length : null; };
-                const getLast5 = arr => getAvg(arr.slice(-5));
+                const info = arr => femAarsGrunnlag(arr.map((value, i) => ({year: Number(years[i]), value})), years);
+                const getLast5 = arr => info(arr).snitt;
                 const fmt = (val, dec) => (val !== null && !isNaN(val)) ? val.toFixed(dec) : 'Mangler';
-                const setReadonlyValue = (id, value, source) => {
+                const setReadonlyValue = (id, value, source, grunnlag, decimals = 2) => {
                     const el = document.getElementById(id);
                     if(!el) return;
-                    el.value = value !== null && !isNaN(value) ? value : '';
+                    el.value = Number.isFinite(value) ? value.toFixed(decimals) : '';
+                    el.dataset.raw = Number.isFinite(value) ? String(value) : '';
+                    if (grunnlag) { el.dataset.periode = `${grunnlag.fra}–${grunnlag.til}`; el.dataset.antall = String(grunnlag.n); }
                     el.dataset.source = source || '';
                 };
 
@@ -2215,23 +2476,23 @@
                 let sisteVektVoksenOkse = getLast5(vVoksenOkse);
                 let voksenKuStandard = sisteVektVoksenKu === null || isNaN(sisteVektVoksenKu);
                 let voksenOkseStandard = sisteVektVoksenOkse === null || isNaN(sisteVektVoksenOkse);
-                let voksenKuVerdi = voksenKuStandard ? 170 : Math.round(sisteVektVoksenKu);
-                let voksenOkseVerdi = voksenOkseStandard ? 200 : Math.round(sisteVektVoksenOkse);
+                let voksenKuVerdi = voksenKuStandard ? 170 : sisteVektVoksenKu;
+                let voksenOkseVerdi = voksenOkseStandard ? 200 : sisteVektVoksenOkse;
                 
                 let html = `
                     <div style="font-family: 'Inter', sans-serif;">
                         <strong style="color: #38bdf8;">BAKENFORLIGGENDE MATEMATIKK & VEID SNITT:</strong><br>
-                        Når datamaskinen nå har regnet ut snittet for alle disse årene i grafen, har den brukt akkurat den samme formelen for veid snitt som du nettopp øvde deg på!
+                        Slaktevekten for hvert år er veid etter antall vektregistrerte dyr av hvert kjønn. Femårsgrunnlaget er deretter et vanlig gjennomsnitt av de tilgjengelige årsverdiene; hvert år teller likt.
                         <div class="formula-highlight" style="font-size: 0.85rem;">Veid snitt = ((VektOkse × AntallOkse) + (VektKu × AntallKu)) / (AntallOkse + AntallKu)</div>
                         <br><br>
                         <strong>TIPS TIL OPPGAVESKRIVINGEN:</strong><br>
-                        Disse utregnede 5-års snittene overføres nå helt automatisk direkte til simulatoren i oppgave 4:<br>
+                        Gjennomsnitt av tilgjengelige årsverdier innen ${info(kalvPrKu).fra}–${info(kalvPrKu).til} overføres til simulatoren i oppgave 4:<br>
                         <ul>
-                            <li>Kalv/Ku siste 5 år: <strong>${fmt(sisteKalvPrKu, 2)}</strong> <em>(brukes som r i 4B)</em></li>
-                            <li>Kalv/Kalvku siste 5 år: <strong>${fmt(sisteKalvPrKalvku, 2)}</strong> <em>(brukes til tolkning, ikke som r i 4B)</em></li>
-                            <li>Vekt Kalv siste 5 år: <strong>${fmt(sisteVektKalv, 1)}</strong></li>
-                            <li>Vekt 1.5 år siste 5 år: <strong>${fmt(sisteVektUng, 1)}</strong></li>
-                            <li>Ku/Okse siste 5 år: <strong>${fmt(sisteKuOkse, 2)}</strong></li>
+                            <li>Kalv/Ku i valgt femårsperiode: <strong>${fmt(sisteKalvPrKu, 2)}</strong> <em>(brukes som r i 4B)</em></li>
+                            <li>Kalv/Kalvku i valgt femårsperiode: <strong>${fmt(sisteKalvPrKalvku, 2)}</strong> <em>(brukes til tolkning, ikke som r i 4B)</em></li>
+                            <li>Vekt Kalv i valgt femårsperiode: <strong>${fmt(sisteVektKalv, 1)}</strong></li>
+                            <li>Vekt 1.5 år i valgt femårsperiode: <strong>${fmt(sisteVektUng, 1)}</strong></li>
+                            <li>Ku/Okse i valgt femårsperiode: <strong>${fmt(sisteKuOkse, 2)}</strong></li>
                             <li>Voksen ku: <strong>${voksenKuStandard ? '170 kg standardverdi' : Math.round(sisteVektVoksenKu) + ' kg lokalt snitt'}</strong></li>
                             <li>Voksen okse: <strong>${voksenOkseStandard ? '200 kg standardverdi' : Math.round(sisteVektVoksenOkse) + ' kg lokalt snitt'}</strong></li>
                         </ul>
@@ -2242,35 +2503,19 @@
                 document.getElementById('btnToggleCalc2').style.display = 'inline-flex';
                 
                 // POPULERER FELTENE I OPPGAVE 4 AUTOMATISK:
-                setReadonlyValue('simKalvPerKu', sisteKalvPrKu ? sisteKalvPrKu.toFixed(2) : '', 'lokal');
-                setReadonlyValue('simKalvPerKalvku', sisteKalvPrKalvku ? sisteKalvPrKalvku.toFixed(2) : '', 'lokal');
-                setReadonlyValue('simKuPrOkse', sisteKuOkse ? sisteKuOkse.toFixed(2) : '', 'lokal');
-                setReadonlyValue('simVektKalv', sisteVektKalv ? Math.round(sisteVektKalv) : '', 'lokal');
-                setReadonlyValue('simVektUng', sisteVektUng ? Math.round(sisteVektUng) : '', 'lokal');
-                setReadonlyValue('simVektVoksenKu', voksenKuVerdi, voksenKuStandard ? 'standard' : 'lokal');
-                setReadonlyValue('simVektVoksenOkse', voksenOkseVerdi, voksenOkseStandard ? 'standard' : 'lokal');
+                setReadonlyValue('simKalvPerKu', sisteKalvPrKu, 'lokal', info(kalvPrKu), 2);
+                setReadonlyValue('simKalvPerKalvku', sisteKalvPrKalvku, 'lokal', info(kalvPrKalvku), 2);
+                setReadonlyValue('simKuPrOkse', sisteKuOkse, 'lokal', info(kuPrOkse), 2);
+                setReadonlyValue('simVektKalv', sisteVektKalv, 'lokal', info(vektKalv), 1);
+                setReadonlyValue('simVektUng', sisteVektUng, 'lokal', info(vektUng), 1);
+                setReadonlyValue('simVektVoksenKu', voksenKuVerdi, voksenKuStandard ? 'standard' : 'lokal', info(vVoksenKu), 1);
+                setReadonlyValue('simVektVoksenOkse', voksenOkseVerdi, voksenOkseStandard ? 'standard' : 'lokal', info(vVoksenOkse), 1);
 
-                // Kjøttutbytte fjor (henter siste år med gyldig kjøttdata i slaktevektsfilen)
-                let lastKjottObj = null;
-                for (let i = 0; i < totKjott.length; i++) {
-                    if (totKjott[i] !== null && !isNaN(totKjott[i])) {
-                        lastKjottObj = { year: years[i], kg: totKjott[i] };
-                    }
-                }
-                if(lastKjottObj) {
-                    kjottFjorYear = lastKjottObj.year;
-                    document.getElementById('totalkg').value = Math.round(lastKjottObj.kg);
-                    const kjottAarTekst = kjottFjorYear ? `(${kjottFjorYear})` : '';
-                    const overskrift = document.getElementById('kjottAarOverskrift');
-                    const label = document.getElementById('totalkgAarLabel');
-                    if (overskrift) overskrift.innerText = kjottAarTekst;
-                    if (label) label.innerText = kjottAarTekst;
-                    // Regner ut med en gang dersom arealet allerede er fylt ut
-                    if(document.getElementById('arealDaa').value) {
-                        beregnKjottA();
-                    }
-                }
+                document.getElementById('simDataInfo').textContent = simGrunnlagTekst();
+                document.getElementById('calcDetails2').insertAdjacentHTML('beforeend', '<p>' + escapeHtml(simGrunnlagTekst()) + '</p>');
+
             }
+            beregnKjottA();
         }
 
 
@@ -2324,8 +2569,9 @@
 
         function oppdaterOppg3Valg() {
             let idx = parseInt(document.getElementById('oppg3Slider').value);
-            if (isNaN(idx) || !globalOppg3Data[idx]) return;
+            if (isNaN(idx) || !globalOppg3Data[idx]) { nullstillReferanseGrunnlag(); return; }
 
+            nullstillReferanseGrunnlag();
             let y1 = globalOppg3Data[idx], y2 = globalOppg3Data[idx + 1], y3 = globalOppg3Data[idx + 2];
             if (!y2 || !y3) return;
 
@@ -2350,7 +2596,20 @@
 
             // Uavrundede 3-årssnitt brukes videre i beregningene.
             // Avrundede tall vises i inputfeltene og på byggeklossene.
-            const avg3 = (a, b, c) => ((a || 0) + (b || 0) + (c || 0)) / 3;
+            const fb = document.getElementById('hjortFeedback3');
+            const chosen = [y1, y2, y3];
+            const required = ['ku1', 'ku2', 'settTot', 'feltTot', 'settDag', 'feltDag'];
+            const sammenhengende = y2.year === y1.year + 1 && y3.year === y2.year + 1;
+            const mangler = chosen.filter(d => required.some(key => !Number.isFinite(d[key]) || d[key] < 0));
+            const positiv = chosen.every(d => d.settTot > 0 && d.feltTot > 0 && d.settDag > 0 && d.feltDag > 0 && d.ku1 + 2 * d.ku2 > 0);
+            if (!sammenhengende || mangler.length || !positiv) {
+                fb.textContent = !sammenhengende ? 'Velg tre sammenhengende kalenderår. Den valgte bolken har hull i årrekken.' :
+                    'Referansen kan ikke beregnes: manglende eller ugyldige råtall i ' + (mangler.length ? mangler.map(d => d.year).join(', ') : 'valgt periode') + '. Manglende verdier erstattes ikke med null. Velg en annen periode eller suppler filene.';
+                fb.style.color = 'var(--error)';
+                return;
+            }
+            oppg3PeriodeGyldig = true;
+            const avg3 = (a, b, c) => (a + b + c) / 3;
 
             let avgKu1Raw = avg3(y1.ku1, y2.ku1, y3.ku1);
             let avgKu2Raw = avg3(y1.ku2, y2.ku2, y3.ku2);
@@ -2358,7 +2617,6 @@
             let avgFeltRaw = avg3(y1.feltTot, y2.feltTot, y3.feltTot);
             let avgFeltDagRaw = avg3(y1.feltDag, y2.feltDag, y3.feltDag);
 
-            let fb = document.getElementById('hjortFeedback3');
             if (avgSettRaw === 0 || avgFeltRaw === 0) {
                 fb.innerText = "⚠️ Graf tegnet, men mangler absolutte tall. Har du husket å laste opp 'Sette elg' og 'Felling'?";
                 fb.style.color = "var(--error)";
@@ -2374,7 +2632,7 @@
             oppg3SetDisplayAndRaw('feltTotalt', avgFeltRaw, Math.round(avgFeltRaw));
             oppg3SetDisplayAndRaw('feltRef', avgFeltDagRaw, avgFeltDagRaw.toFixed(3));
 
-            let lastYear = globalOppg3AllData.filter(d => d.feltDag > 0).slice(-1)[0] || globalOppg3Data[globalOppg3Data.length - 1];
+            let lastYear = globalOppg3AllData.filter(d => d.feltDag > 0 && d.year <= sisteAvsluttedeJaktAar()).slice(-1)[0];
             fjorBestandYear = lastYear ? lastYear.year : null;
             if (lastYear) {
                 oppg3SetDisplayAndRaw('feltFjor', lastYear.feltDag, lastYear.feltDag.toFixed(3));
@@ -2390,7 +2648,7 @@
                     Tallene over er avrundet i visningen, men kalkulatoren bruker uavrundede 3-årssnitt videre i beregningene.<br><br>
                     Eksempel, totalt antall felte dyr:
                     <div class="formula-highlight" style="font-size: 0.85rem;">Felt snitt = (Felt År1 + Felt År2 + Felt År3) / 3</div>
-                    Beregning: (${y1.feltTot || 0} + ${y2.feltTot || 0} + ${y3.feltTot || 0}) / 3 = <strong>${avgFeltRaw.toFixed(2)} elg</strong><br>
+                    Beregning: (${y1.feltTot} + ${y2.feltTot} + ${y3.feltTot}) / 3 = <strong>${avgFeltRaw.toFixed(2)} elg</strong><br>
                     Vist avrundet i feltet over: <strong>${Math.round(avgFeltRaw)} elg</strong>
                 </div>
             `;
@@ -2404,6 +2662,7 @@
             });
 
             updateBank();
+            beregnKjottA();
         }
 
 
@@ -2541,8 +2800,8 @@
                 if (!tile || !input) return;
 
                 // Vis avrundet verdi på byggeklossen, men behold råverdien som data-attributt.
-                tile.innerText = input.value || 0;
-                tile.dataset.raw = input.dataset.raw !== undefined && input.dataset.raw !== '' ? input.dataset.raw : (input.value || '0');
+                tile.innerText = input.value || '?';
+                tile.dataset.raw = input.dataset.raw !== undefined && input.dataset.raw !== '' ? input.dataset.raw : (input.value || '');
             };
 
             updateTile('t-ku1', 'ku1');
@@ -2565,6 +2824,7 @@
         }
 
         function visFasitDragDrop() {
+            if (!oppg3PeriodeGyldig) { document.getElementById('hjortFeedback3').textContent = 'Last opp komplette data og velg tre sammenhengende referanseår først.'; return; }
             const acceptMap = { 'ku1': 'ku1', 'ku2': 'ku2', 'sett': 'settTotalt', 'felt': 'feltTotalt' };
             document.querySelectorAll('.dz').forEach(dz => {
                 const input = document.getElementById(acceptMap[dz.dataset.accept]);
@@ -2599,6 +2859,7 @@
         });
 
         function processDrop(dz, type, val) {
+            if (!oppg3PeriodeGyldig) return;
             if (type === dz.dataset.accept) {
                 const valueObj = oppg3GetDisplayAndRawForType(type);
 
@@ -2614,17 +2875,20 @@
                 dz.classList.remove('filled');
                 dz.dataset.value = "";
                 dz.dataset.raw = "";
+                calculateFormulas();
                 setTimeout(() => { dz.classList.remove('error'); dz.innerHTML = dz.dataset.name; }, 800);
             }
         }
 
         function calculateFormulas() {
+            fasitKalv = null; fasitRef = null;
+            nullstillTetthet();
             const dz_ku1_f = document.querySelectorAll('.dz[data-accept="ku1"]')[0], dz_ku2_f = document.querySelectorAll('.dz[data-accept="ku2"]')[0];
             const dz_ku1_k = document.querySelectorAll('.dz[data-accept="ku1"]')[1], dz_ku2_k = document.querySelectorAll('.dz[data-accept="ku2"]')[1];
             const dz_felt = document.querySelector('.dz[data-accept="felt"]'), dz_sett = document.querySelector('.dz[data-accept="sett"]');
 
             const readDzRaw = (dz) => {
-                if (!dz) return null;
+                if (!dz || !oppg3PeriodeGyldig) return null;
                 const value = dz.dataset.raw !== undefined && dz.dataset.raw !== '' ? dz.dataset.raw : dz.dataset.value;
                 const num = parseFloat(value);
                 return isNaN(num) ? null : num;
@@ -2691,6 +2955,7 @@
         }
 
         function beregnTetthet() {
+            nullstillTetthet();
             let refDag = oppg3ReadRawOrDisplay('feltRef');
             let fjorDag = oppg3ReadRawOrDisplay('feltFjor');
             let arealKm2 = parseFloat(document.getElementById('arealDaa').value) / 1000;
@@ -2700,19 +2965,19 @@
                 tetthetRes = fjorBestand / arealKm2;
 
                 const fjorBestandAarTekst = fjorBestandYear ? ` (${fjorBestandYear})` : '';
-                document.getElementById('resTetthet').innerHTML = `<strong style="color:#0f172a;">Resultat:</strong><br>Bestand fjor${fjorBestandAarTekst}: ${Math.round(fjorBestand)} dyr.<br>Tetthet${fjorBestandAarTekst}: <strong>${tetthetRes.toFixed(2)} elg / km²</strong>.`;
+                document.getElementById('resTetthet').innerHTML = `<strong style="color:#0f172a;">Resultat:</strong><br>Bestand i analyseåret${fjorBestandAarTekst}: ${Math.round(fjorBestand)} dyr.<br>Tetthet${fjorBestandAarTekst}: <strong>${tetthetRes.toFixed(2)} elg / km²</strong>.`;
                 document.getElementById('resTetthet').style.display = 'block';
 
                 document.getElementById('calcDetails3').innerHTML = `
                     <div style="font-family: 'Inter', sans-serif;">
                         <strong style="color: #38bdf8;">BAKENFORLIGGENDE MATEMATIKK (OPPGAVE 3):</strong><br>
                         Tallene som vises i feltene er avrundet, men beregningen bruker uavrundede verdier internt.<br><br>
-                        Korreksjonsfaktor for å oppjustere bestanden til fjorårets nivå${fjorBestandAarTekst}:
-                        <div class="formula-highlight" style="font-size: 0.85rem;">Bestand fjor = (Referansebestand / IndeksReferanse) × IndeksFjorår</div>
+                        Korreksjonsfaktor for å oppjustere bestanden til nivået i analyseåret${fjorBestandAarTekst}:
+                        <div class="formula-highlight" style="font-size: 0.85rem;">Bestand i analyseåret = (Referansebestand / IndeksReferanse) × IndeksAnalyseår</div>
                         Beregning: (${fasitRef.toFixed(2)} / ${refDag.toFixed(6)}) × ${fjorDag.toFixed(6)} = <strong>${fjorBestand.toFixed(2)} elg</strong>
                         <br><br>
                         Tetthetsberegningen deles på arealet i km²:
-                        <div class="formula-highlight" style="font-size: 0.85rem;">Tetthet = Bestand fjor / Areal i km²</div>
+                        <div class="formula-highlight" style="font-size: 0.85rem;">Tetthet = Bestand i analyseåret / Areal i km²</div>
                         Beregning: ${fjorBestand.toFixed(2)} / ${arealKm2.toFixed(3)} = <strong>${tetthetRes.toFixed(2)} elg per km²</strong>
                     </div>
                 `;
@@ -2726,32 +2991,52 @@
         let kjottAKm2 = "", kjottBText = "", kjottFjorYear = null;
         
         function beregnKjottA() {
-            let totalKg = parseFloat(document.getElementById('totalkg').value); let arealKm2 = parseFloat(document.getElementById('arealDaa').value) / 1000;
-            if(totalKg > 0 && arealKm2 > 0) {
-                kjottAKm2 = (totalKg / arealKm2).toFixed(2);
-                const kjottAarTekst = kjottFjorYear ? ` (${kjottFjorYear})` : '';
-                document.getElementById('resKjottA').innerHTML = `<strong style="color:#0f172a;">Utbytte${kjottAarTekst}:</strong> ${kjottAKm2} kg/km²`;
-                document.getElementById('resKjottA').style.display = 'block';
-                document.getElementById('calcDetailsA').innerHTML = `
-                    <div style="font-family: 'Inter', sans-serif;">
-                        <strong style="color: #38bdf8;">AUTOMATISK BEREGNING AV TOTALT KJØTTUTBYTTE${kjottAarTekst}:</strong><br>
-                        "Totalt kg kjøtt fra jakt" er her hentet og beregnet automatisk av kalkulatoren fra slaktevekts-filen du lastet opp i Oppgave 2. Koden bruker siste år med gyldig kjøttdata${kjottAarTekst} og summerer (snittvekt × antall) for hver kategori av elg.<br><br>
-                        <em>Fjoråret tolkes altså som siste tilgjengelige jaktår i slaktevektsfilen. Årstallet vises i parentes slik at dere kan kontrollere at riktig år er brukt.</em><br><br>
-                        
-                        <strong style="color: #38bdf8;">BAKENFORLIGGENDE MATEMATIKK (TETTHET):</strong><br>
-                        <div class="formula-highlight">Kjøttutbytte (kg/km²) = Totalt kg kjøtt / (Areal i dekar / 1000)</div><br>
-                        Din utregning${kjottAarTekst}: ${totalKg} kg totalt / ${arealKm2} km² = <strong>${kjottAKm2} kg pr. km²</strong>
-                    </div>
-                `;
+            nullstillKjottA();
+            const g = kjottHentGrunnlag();
+            kjottFjorYear = g.year;
+            const arealKm2 = parseFloat(document.getElementById('arealDaa').value) / 1000;
+            const yearText = g.year ? `(${g.year})` : '';
+            for (const id of ['kjottAarOverskrift','totalkgAarLabel']) document.getElementById(id).textContent = yearText;
+            const input = document.getElementById('totalkg');
+            if (g.year && Object.keys(kjottVektData).length) {
+                oppg3SetDisplayAndRaw('totalkg', g.registrertKg, g.registrertKg.toFixed(2));
+                input.dataset.antall = String(g.veide);
+            } else { input.value = ''; delete input.dataset.raw; delete input.dataset.antall; }
+            visKjottVektvalg(g);
+            kjottAMetode = kjottDekningTekst(g);
+            const output = document.getElementById('resKjottA');
+            if (!g.year) return;
+            const areaOk = Number.isFinite(arealKm2) && arealKm2 > 0;
+            let headline = `Registrert slaktevekt ${g.year}: ${kjottFmt(g.registrertKg)} kg`;
+            if (areaOk) headline += ` (${kjottFmt(g.registrertKg/arealKm2)} kg/km²)`;
+            if (g.komplett && areaOk) {
+                kjottATotalKg = g.registrertKg + g.beregnetKg;
+                kjottAKm2 = (kjottATotalKg / arealKm2).toFixed(2);
+                headline = `${g.beregnetAntall ? 'Anslått totalt' : 'Registrert totalt'} slakteutbytte ${g.year}: ${kjottFmt(Number(kjottAKm2))} kg/km²`;
+            }
+            output.innerHTML = '<strong>' + escapeHtml(headline) + '</strong><p>' + escapeHtml(kjottAMetode) + '</p>' +
+                (areaOk ? '' : '<p>Velg kommune og tellende areal i oppgave 3 for å beregne kg/km².</p>') +
+                (analyseAarMerknad() ? '<p>' + escapeHtml(analyseAarMerknad()) + '</p>' : '');
+            output.style.display = 'block';
+            if (!g.feil.length) {
+                const details = g.klasser.filter(k => k.felte > 0).map(k => {
+                    const observed = `${k.navn}: ${k.veide} vektregistrerte dyr, til sammen ${kjottFmt(k.registrertKg)} kg.`;
+                    return observed + (k.mangler ? ` ${k.mangler} uten vekt × ${k.kilde ? kjottFmt(k.kilde.vekt) + ' kg' : 'ikke valgt vekt'}${k.kilde ? ' = ' + kjottFmt(k.beregnetKg) + ' kg beregnet tillegg. Kilde: ' + kjottKildeBeskrivelse(k.kilde) + '.' : '.'}` : '');
+                });
+                document.getElementById('calcDetailsA').innerHTML = '<strong>Utregning for oppgave 4A, ' + g.year + '</strong>' +
+                    '<p>Slaktevekt for vektregistrerte dyr + beregnet slaktevekt for øvrige dyr = anslått totalt slakteutbytte. Gjennomsnittsvekt × antall vektregistrerte gir det registrerte bidraget fra hver gruppe.</p>' +
+                    details.map(x => '<p>' + escapeHtml(x) + '</p>').join('') +
+                    (kjottATotalKg !== null ? `<p>${kjottFmt(g.registrertKg)} + ${kjottFmt(g.beregnetKg)} = ${kjottFmt(kjottATotalKg)} kg. ${kjottFmt(kjottATotalKg)} kg / ${kjottFmt(arealKm2,3)} km² = ${kjottFmt(Number(kjottAKm2))} kg/km².</p>` : '<p>Fullstendig totalanslag avventer vektvalg og gyldig areal.</p>');
                 document.getElementById('btnToggleCalcA').style.display = 'inline-flex';
             }
         }
 
         function simulerOppg4() {
+            nullstillSimulering();
             const readNum = (id) => {
                 const el = document.getElementById(id);
                 if(!el) return NaN;
-                const num = parseFloat(el.value);
+                const num = parseFloat(el.dataset.raw !== undefined && el.dataset.raw !== '' ? el.dataset.raw : el.value);
                 return isNaN(num) ? NaN : num;
             };
 
@@ -2767,13 +3052,16 @@
 
             if(!vvKu || isNaN(vvKu)) { vvKu = 170; vvKuSource = 'standard'; }
             if(!vvOkse || isNaN(vvOkse)) { vvOkse = 200; vvOkseSource = 'standard'; }
-            if(!kuPrOkse || isNaN(kuPrOkse)) kuPrOkse = 1.5;
+            if (!Number.isFinite(kuPrOkse) || kuPrOkse <= 0) {
+                alert("Mangler gyldig 'Sett ku per okse'. Last opp denne filen i oppgave 2. Kjønnsforholdet erstattes ikke med en standardverdi.");
+                return;
+            }
 
             if(!r || isNaN(r) || r <= 0) {
                 alert("Mangler 'Sett kalv per ku'. Last opp filen 'Sett kalv per ku' i Oppgave 2. Kalv per kalvku kan ikke brukes som r i 4B-modellen.");
                 return;
             }
-            if(!vk || !vu || isNaN(vk) || isNaN(vu)) {
+            if(!Number.isFinite(vk) || !Number.isFinite(vu) || vk <= 0 || vu <= 0) {
                 alert("Pass på at du har lastet inn filen 'Slaktevekt per alder og kjønn' i Oppgave 2, slik at vi får snittvekter for kalv og 1,5-åring.");
                 return;
             }
@@ -2787,7 +3075,10 @@
             }
 
             let resultater = [];
-            kjottBText = `Modellbestand: 1000 vinterdyr\nKalv per ku (r): ${r.toFixed(2)}\nKalv per kalvku (til tolkning): ${!isNaN(kalvPerKalvku) ? kalvPerKalvku.toFixed(2) : 'mangler'}\nKu per okse (p): ${kuPrOkse.toFixed(2)}\nAvskyting voksne: 15% av kuer og 15% av okser\nVekter: kalv ${vk} kg, 1,5-åring ${vu} kg, voksen ku ${vvKu} kg (${vvKuSource}), voksen okse ${vvOkse} kg (${vvOkseSource})\n\n`;
+            const vis = n => oppg3FormatCount(n, 1);
+            const visKort = n => Math.round(n).toLocaleString('nb-NO');
+            const visKg = visKort;
+            kjottBText = `${simGrunnlagTekst()}\nBeregninger bruker uavrundede tall. Resultatsammendraget viser dyretall og kilo avrundet til hele tall. Avrundede delverdier kan avvike litt fra totalsummen.\nModellbestand: 1000 vinterdyr\nKalv per ku (r): ${r.toFixed(2)}\nKalv per kalvku (til tolkning): ${!isNaN(kalvPerKalvku) ? kalvPerKalvku.toFixed(2) : 'mangler'}\nKu per okse (p): ${kuPrOkse.toFixed(2)}\nAvskyting voksne: 15% av kuer og 15% av okser\nVekter: kalv ${vk} kg, 1,5-åring ${vu} kg, voksen ku ${vvKu} kg (${vvKuSource}), voksen okse ${vvOkse} kg (${vvOkseSource})\n\n`;
             
             let htmlFormler = `
                 <div style="font-family: 'Inter', sans-serif;">
@@ -2802,6 +3093,7 @@
                     <br>
                     Her brukes <strong>r = kalv per ku = ${r.toFixed(2)}</strong> og <strong>p = ku per okse = ${kuPrOkse.toFixed(2)}</strong>.
                     ${!isNaN(kalvPerKalvku) ? `<br>Kalv per kalvku = ${kalvPerKalvku.toFixed(2)} vises bare som tolkning av tvillingrate og brukes ikke direkte i formelen.` : ''}
+                    <br>Beregningen bruker uavrundede tall hele veien; viste dyretall er omtrentlige modellverdier.
                     <br>Voksenvekter: ku ${vvKu} kg (${vvKuSource}), okse ${vvOkse} kg (${vvOkseSource}).<br><br>
             `;
 
@@ -2809,55 +3101,56 @@
                 let c = pct / 100;
                 let b = 1 - c;
                 let A = 1000 / (1 + (1 / kuPrOkse) + (r * b));
-                let kuer = Math.round(A);
-                let okser = Math.round(kuer / kuPrOkse);
-                let vinterKalver = 1000 - kuer - okser;
-                let fodteKalver = Math.round(kuer * r);
-                let kuSkutt = Math.round(kuer * 0.15);
-                let okseSkutt = Math.round(okser * 0.15);
-                let kalvSkutt = Math.round(fodteKalver * c);
+                let kuer = A;
+                let okser = kuer / kuPrOkse;
+                let vinterKalver = kuer * r * b;
+                let fodteKalver = kuer * r;
+                let kuSkutt = kuer * 0.15;
+                let okseSkutt = okser * 0.15;
+                let kalvSkutt = fodteKalver * c;
                 let aringSkutt = fodteKalver - kuSkutt - okseSkutt - kalvSkutt;
+                if (Math.abs(aringSkutt) < 1e-9) aringSkutt = 0;
                 let title = index === 0 ? "LAV" : index === 1 ? "MIDDELS" : "HØY";
                 let kortTekst = "";
                 let tolkning = pct < 15 ? "Lavt kalveuttak: mange kalver beholdes og blir potensielle åringer i neste års uttak." : (pct > 30 ? "Høyt kalveuttak: flere felte kalver, men færre åringer i modellen." : "Middels kalveuttak: et kompromiss mellom kalv og åring i uttaket.");
 
                 if(aringSkutt < 0 || vinterKalver < 0) {
                     kortTekst = `<span style='color:var(--error); font-size: 0.9rem;'>For høy kalveandel i forhold til reproduksjonen. Modellen gir negativt åringuttak.</span>`;
-                    htmlFormler += `<strong style="color:var(--error);">[Scenario ${title} - ${pct}% kalveuttak]: Ugyldig. Fødte kalver (${fodteKalver}) er lavere enn summen av voksne skutt (${kuSkutt + okseSkutt}) og kalver skutt (${kalvSkutt}). Åringer skutt = ${aringSkutt}.</strong><br><br>`;
-                    kjottBText += `Scenario ${title} (${pct}% kalveuttak): Ugyldig. Åringer skutt = ${aringSkutt}.\n`;
+                    htmlFormler += `<strong style="color:var(--error);">[Scenario ${title} - ${pct}% kalveuttak]: Ugyldig. Fødte kalver (${vis(fodteKalver)}) er lavere enn summen av voksne skutt (${vis(kuSkutt + okseSkutt)}) og kalver skutt (${vis(kalvSkutt)}). Åringer skutt = ${vis(aringSkutt)}.</strong><br><br>`;
+                    kjottBText += `Scenario ${title} (${pct}% kalveuttak): Ugyldig. Åringer skutt = ${vis(aringSkutt)}.\n`;
                 } else {
                     let kgKu = kuSkutt * vvKu;
                     let kgOkse = okseSkutt * vvOkse;
                     let kgAring = aringSkutt * vu;
                     let kgKalv = kalvSkutt * vk;
-                    let sumKg = Math.round(kgKu + kgOkse + kgAring + kgKalv);
+                    let sumKg = kgKu + kgOkse + kgAring + kgKalv;
                     kortTekst = `<div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">${pct}% av fødte kalver skytes</div>
-                                 <div class="yield">${sumKg} kg</div>
+                                 <div class="yield">${visKg(sumKg)} kg</div>
                                  <div style="font-size: 0.8rem; margin-top: 0.5rem; text-align: left; background: #f8fafc; padding: 0.5rem; border-radius: 4px;">
-                                    Vinterstamme: ${kuer} kuer, ${okser} okser, ${vinterKalver} kalver<br>
-                                    Totalt uttak: ${fodteKalver} dyr<br>
-                                    Felt: ${kalvSkutt} kalv, ${aringSkutt} åring, ${kuSkutt} ku, ${okseSkutt} okse<br>
+                                    Vinterstamme: ${visKort(kuer)} kuer, ${visKort(okser)} okser, ${visKort(vinterKalver)} kalver<br>
+                                    Totalt uttak: ${visKort(fodteKalver)} dyr<br>
+                                    Felt: ${visKort(kalvSkutt)} kalv, ${visKort(aringSkutt)} åring, ${visKort(kuSkutt)} ku, ${visKort(okseSkutt)} okse<br>
                                     <em>${tolkning}</em>
                                  </div>`;
                     
                     htmlFormler += `
                         <strong>[Scenario ${title} - ${pct}% kalveuttak]:</strong><br>
                         b = 1 - ${c.toFixed(2)} = ${b.toFixed(2)}<br>
-                        A = 1000 / (1 + 1/${kuPrOkse.toFixed(2)} + ${r.toFixed(2)} × ${b.toFixed(2)}) = ${A.toFixed(1)} ≈ ${kuer} kuer<br>
-                        Okser = ${kuer} / ${kuPrOkse.toFixed(2)} ≈ ${okser}<br>
-                        Kalver i vinterstammen = 1000 - ${kuer} - ${okser} = ${vinterKalver}<br>
-                        Fødte kalver, z = ${kuer} × ${r.toFixed(2)} ≈ ${fodteKalver}. Dette er også totalt mulig jaktuttak i stabil bestand.<br>
-                        Ku skutt = ${kuer} × 0.15 ≈ ${kuSkutt}<br>
-                        Okse skutt = ${okser} × 0.15 ≈ ${okseSkutt}<br>
-                        Kalv skutt = ${fodteKalver} × ${c.toFixed(2)} ≈ ${kalvSkutt}<br>
-                        Åring skutt = ${fodteKalver} - (${kuSkutt} + ${okseSkutt} + ${kalvSkutt}) = ${aringSkutt}<br><br>
-                        Kuer: ${kuSkutt} stk × ${vvKu} kg = ${Math.round(kgKu)} kg<br>
-                        Okser: ${okseSkutt} stk × ${vvOkse} kg = ${Math.round(kgOkse)} kg<br>
-                        Åringer: ${aringSkutt} stk × ${vu} kg = ${Math.round(kgAring)} kg<br>
-                        Kalver: ${kalvSkutt} stk × ${vk} kg = ${Math.round(kgKalv)} kg<br>
-                        <span style="color:var(--success); font-weight:bold;">Sum kjøttutbytte = ${sumKg} kg</span><br><br>
+                        A = 1000 / (1 + 1/${kuPrOkse.toFixed(2)} + ${r.toFixed(2)} × ${b.toFixed(2)}) = ${A.toFixed(1)} ≈ ${vis(kuer)} kuer<br>
+                        Okser = ${vis(kuer)} / ${kuPrOkse.toFixed(2)} ≈ ${vis(okser)}<br>
+                        Kalver i vinterstammen = 1000 - ${vis(kuer)} - ${vis(okser)} = ${vis(vinterKalver)}<br>
+                        Fødte kalver, z = ${vis(kuer)} × ${r.toFixed(2)} ≈ ${vis(fodteKalver)}. Dette er også totalt mulig jaktuttak i stabil bestand.<br>
+                        Ku skutt = ${vis(kuer)} × 0.15 ≈ ${vis(kuSkutt)}<br>
+                        Okse skutt = ${vis(okser)} × 0.15 ≈ ${vis(okseSkutt)}<br>
+                        Kalv skutt = ${vis(fodteKalver)} × ${c.toFixed(2)} ≈ ${vis(kalvSkutt)}<br>
+                        Åring skutt = ${vis(fodteKalver)} - (${vis(kuSkutt)} + ${vis(okseSkutt)} + ${vis(kalvSkutt)}) = ${vis(aringSkutt)}<br><br>
+                        Kuer: ${vis(kuSkutt)} stk × ${vvKu} kg = ${Math.round(kgKu)} kg<br>
+                        Okser: ${vis(okseSkutt)} stk × ${vvOkse} kg = ${Math.round(kgOkse)} kg<br>
+                        Åringer: ${vis(aringSkutt)} stk × ${vu} kg = ${Math.round(kgAring)} kg<br>
+                        Kalver: ${vis(kalvSkutt)} stk × ${vk} kg = ${Math.round(kgKalv)} kg<br>
+                        <span style="color:var(--success); font-weight:bold;">Sum kjøttutbytte = ${visKg(sumKg)} kg</span><br><br>
                     `;
-                    kjottBText += `Scenario ${title} (${pct}% kalveuttak): ${sumKg} kg. Vinterstamme: ${kuer} kuer, ${okser} okser, ${vinterKalver} kalver. Totalt uttak: ${fodteKalver} dyr (felt: ${kalvSkutt} kalv, ${aringSkutt} åring, ${kuSkutt} ku, ${okseSkutt} okse).\n`;
+                    kjottBText += `Scenario ${title} (${pct}% kalveuttak): ${visKg(sumKg)} kg. Vinterstamme: ${visKort(kuer)} kuer, ${visKort(okser)} okser, ${visKort(vinterKalver)} kalver. Totalt uttak: ${visKort(fodteKalver)} dyr (felt: ${visKort(kalvSkutt)} kalv, ${visKort(aringSkutt)} åring, ${visKort(kuSkutt)} ku, ${visKort(okseSkutt)} okse).\n`;
                 }
                 resultater.push({title: title, html: kortTekst});
             });
@@ -2873,6 +3166,8 @@
             document.getElementById('btnToggleCalcB').style.display = 'inline-flex';
         }
 
+
+        for (const id of ['simKalvLav', 'simKalvMed', 'simKalvHoy']) document.getElementById(id).addEventListener('input', nullstillSimulering);
 
         // --- Eksport av figurer i rapportvennlig oppløsning ---
         // Gjengir Chart.js-seriene i en egen stor, hvit PNG, med full tittel, akser og kilde.
@@ -2998,17 +3293,20 @@ ${getRefText('ref2b')}
 
 5. BESTANDSTETTHET
 Følgende nøkkeltall er beregnet for ${visningsKommune}:
-- Kalv per kalvku i referanseår: ${fasitKalv ? fasitKalv.toFixed(2) : "Mangler"}
+- Kalv per kalvku i referanseperioden: ${fasitKalv ? fasitKalv.toFixed(2) : "Mangler"}
 - Beregnet referansebestand: ${fasitRef ? Math.round(fasitRef) : "Mangler"} dyr
-- Estimert bestand i fjor${fjorBestandYear ? ` (${fjorBestandYear})` : ""}: ${fjorBestand ? Math.round(fjorBestand) : "Mangler"} dyr
-- Bestandstetthet i fjor${fjorBestandYear ? ` (${fjorBestandYear})` : ""}: ${tetthetRes ? tetthetRes.toFixed(2) : 'Mangler'} elg pr km²
+- Estimert bestand i analyseåret${fjorBestandYear ? ` (${fjorBestandYear})` : ""}: ${fjorBestand ? Math.round(fjorBestand) : "Mangler"} dyr
+- Bestandstetthet i analyseåret${fjorBestandYear ? ` (${fjorBestandYear})` : ""}: ${tetthetRes ? tetthetRes.toFixed(2) : 'Mangler'} elg pr km²
 
 Vurdering av tetthet:
 ${getRefText('ref3')}
 
 6. KJØTTUTBYTTE OG AVSKYTINGSREGIME
-Beregnet kjøttutbytte i fjor${kjottFjorYear ? ` (${kjottFjorYear})` : ""}: ${kjottAKm2 ? kjottAKm2 + ' kg/km²' : 'Mangler'}
+Totalt slakteutbytte i analyseåret${kjottFjorYear ? ` (${kjottFjorYear})` : ""}: ${kjottAKm2 ? kjottAKm2 + ' kg/km²' : 'Mangler'}
+${kjottAMetode}
+${analyseAarMerknad()}
 
+${simGrunnlagTekst()}
 Vurdering av ulike avskytingsregimer (Lav, Middels og Høy kalveavskyting):
 ${getRefText('ref4')}
 
@@ -3023,6 +3321,9 @@ ${getRefText('ref6')}
 ---------------------------------------------------------
 VEDLEGG: UTREGNING AV MODELLBESTAND (OPPGAVE 4)
 ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
+
+VEDLEGG: VEKTGRUNNLAG FOR OPPGAVE 4A
+${kjottAMetode || 'Vektgrunnlag ikke valgt.'}
 `;
             document.getElementById('printArea').style.display = 'block';
         }
@@ -3075,12 +3376,11 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
                 return (y>=1900 && y<=2200) ? {year:y,value:gruppeNum(dataset[i])} : null;
             }).filter(Boolean);
         }
-        function gruppeFiveYearAvg(series, labels) {
-            // Bruker siste 5 kalenderår/oppføringer i kondisjonsgrafen, samme metode som oppgave 4.
-            if(!labels || !labels.length) return null;
-            const recentYears=labels.slice(-5).map(y=>parseInt(y,10));
-            const values=series.filter(p=>recentYears.includes(p.year) && p.value !== null).map(p=>p.value);
-            return values.length ? values.reduce((a,b)=>a+b,0)/values.length : null;
+        function gruppeFiveYearAvg(series, labels) { return femAarsGrunnlag(series, labels).snitt; }
+        function gruppeSnittVisning(d, key, dec = 2) {
+            const labels = ['kalvPerKu', 'kalvPerKalvku', 'vektKalv', 'vektUng', 'kuPerOkse'].flatMap(k => (d.serier[k] || []).map(p => p.year));
+            const info = femAarsGrunnlag(d.serier[key] || [], labels);
+            return gruppeFmt(info.snitt, dec) + (info.til ? ` (${info.fra}–${info.til}; ${info.n}/5 år)` : '');
         }
         function gruppeHentLokaleResultater() {
             const kommune = (globalKommune || '').trim();
@@ -3120,7 +3420,11 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
                     bestandAar: fjorBestandYear===null ? null : String(fjorBestandYear),
                     tetthet:gruppeNum(tetthetRes),
                     arealDaa:gruppeInputNum('arealDaa'),
-                    totalKjottKg:gruppeInputNum('totalkg'),
+                    totalKjottKg:gruppeNum(kjottATotalKg),
+                    registrertKjottKg:gruppeNum(oppg3ReadRawOrDisplay('totalkg')),
+                    kjottType:kjottATotalKg === null ? 'avventer' : kjottHentGrunnlag().beregnetAntall ? 'anslått total' : 'registrert total',
+                    kjottMerknad:kjottAMetode,
+                    dataMerknad:simGrunnlagTekst() + (analyseAarMerknad() ? ' ' + analyseAarMerknad() : ''),
                     kjottKgPerKm2:gruppeNum(kjottAKm2),
                     kjottAar:kjottFjorYear===null ? null : String(kjottFjorYear),
                     modellSimulering:kjottBText || ''
@@ -3178,10 +3482,10 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
             }
             for(const key of ['kalvPerKu','kalvPerKalvku','vektKalv','vektUng','kuPerOkse'])
                 cleaned.snitt[key]=gruppeNum(data.snitt?.[key]);
-            for(const key of ['kalvPerKalvkuReferanse','referanseBestand','estimertBestand','tetthet','arealDaa','totalKjottKg','kjottKgPerKm2'])
+            for(const key of ['kalvPerKalvkuReferanse','referanseBestand','estimertBestand','tetthet','arealDaa','totalKjottKg','registrertKjottKg','kjottKgPerKm2'])
                 cleaned.beregnet[key]=gruppeNum(data.beregnet[key]);
-            for(const key of ['bestandAar','kjottAar','referansePeriode','modellSimulering'])
-                cleaned.beregnet[key]=String(data.beregnet[key]??'').slice(0,key==='modellSimulering'?8000:100);
+            for(const key of ['bestandAar','kjottAar','referansePeriode','modellSimulering','kjottMerknad','dataMerknad','kjottType'])
+                cleaned.beregnet[key]=String(data.beregnet[key]??'').slice(0,key==='modellSimulering'?8000:(key==='kjottMerknad'?6000:key==='dataMerknad'?2000:100));
             for(const key of gruppeTextIds)
                 cleaned.refleksjoner[key]=String(data.refleksjoner?.[key]??'').slice(0,10000);
             return cleaned;
@@ -3306,17 +3610,18 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
         }
         function gruppeTabellModell() {
             return [
-                ['Kalv per ku, siste 5 år',d=>gruppeFmt(d.snitt.kalvPerKu)],
-                ['Kalv per kalvku, siste 5 år',d=>gruppeFmt(d.snitt.kalvPerKalvku)],
-                ['Slaktevekt kalv (kg), siste 5 år',d=>gruppeFmt(d.snitt.vektKalv,1)],
-                ['Slaktevekt 1,5-åring (kg), siste 5 år',d=>gruppeFmt(d.snitt.vektUng,1)],
-                ['Ku per okse, siste 5 år',d=>gruppeFmt(d.snitt.kuPerOkse)],
+                ['Kalv per ku, siste 5 år',d=>gruppeSnittVisning(d,'kalvPerKu')],
+                ['Kalv per kalvku, siste 5 år',d=>gruppeSnittVisning(d,'kalvPerKalvku')],
+                ['Slaktevekt kalv (kg), siste 5 år',d=>gruppeSnittVisning(d,'vektKalv',1)],
+                ['Slaktevekt 1,5-åring (kg), siste 5 år',d=>gruppeSnittVisning(d,'vektUng',1)],
+                ['Ku per okse, siste 5 år',d=>gruppeSnittVisning(d,'kuPerOkse')],
                 ['Valgt referanseperiode',d=>d.beregnet.referansePeriode||'Mangler'],
                 ['Estimert bestand (dyr)',d=>gruppeFmt(d.beregnet.estimertBestand,0)+' ('+(d.beregnet.bestandAar||'?')+')'],
                 ['Bestandstetthet (elg/km²)',d=>gruppeFmt(d.beregnet.tetthet)+' ('+(d.beregnet.bestandAar||'?')+')'],
                 ['Tellende elgareal (km²)',d=>gruppeFmt(d.beregnet.arealDaa===null?null:d.beregnet.arealDaa/1000,1)],
-                ['Samlet kjøttutbytte (kg)',d=>gruppeFmt(d.beregnet.totalKjottKg,0)+' ('+(d.beregnet.kjottAar||'?')+')'],
-                ['Kjøttutbytte (kg/km²)',d=>gruppeFmt(d.beregnet.kjottKgPerKm2)+' ('+(d.beregnet.kjottAar||'?')+')']
+                ['Slakteutbytte: beregningsgrunnlag',d=>d.beregnet.kjottType||'Eldre resultatfil – kontroller datadekning'],
+                ['Totalt slakteutbytte (kg)',d=>gruppeFmt(d.beregnet.totalKjottKg,0)+' ('+(d.beregnet.kjottAar||'?')+')'],
+                ['Totalt slakteutbytte (kg/km²)',d=>gruppeFmt(d.beregnet.kjottKgPerKm2)+' ('+(d.beregnet.kjottAar||'?')+')']
             ];
         }
         function gruppeTabellHtml(){
@@ -3334,6 +3639,10 @@ ${kjottBText ? kjottBText : 'Simulering ikke kjørt.'}
             }
             const refYears=gruppeData.map(d=>d.beregnet.referansePeriode).filter(Boolean);
             if(new Set(refYears).size>1)issue.push('Referanseperiodene er ikke like; tetthetsestimatene bygger på ulike perioder.');
+            for (const d of gruppeData) {
+                if (d.beregnet.kjottMerknad && !d.beregnet.kjottMerknad.startsWith('Datadekning:')) issue.push(d.kommune + ': ' + d.beregnet.kjottMerknad);
+                if (/(Foreløpig|Ulike analyseår|last opp)/.test(d.beregnet.dataMerknad || '')) issue.push(d.kommune + ': ' + d.beregnet.dataMerknad);
+            }
             return issue;
         }
         function gruppeOppdaterVisning(){
@@ -3779,6 +4088,7 @@ function arbeidTaSnapshot(){
         trinn:Number.isInteger(step)&&step>=0&&step<=6?step:0,
         kommune:String(globalKommune||'Ikke lastet inn enda'),
         inputs:arbeidHentInputVerdier(),
+        kjottValg:JSON.parse(JSON.stringify(kjottValg)),
         oppg3Data:globalOppg3Data.map(x=>({...x})),
         oppg3AllData:globalOppg3AllData.map(x=>({...x})),
         drag1:arbeidHentBrikker('.dz'),drag2:arbeidHentBrikker('.dz2'),
@@ -3825,8 +4135,10 @@ function arbeidGjenopprettBrikker(selector,rows){
     Array.from(document.querySelectorAll(selector)).forEach((el,i)=>{
         const v=rows[i];
         if(!v||v.accept!==el.dataset.accept)return;
-        const val=String(v.value??'').slice(0,50);
-        const raw=String(v.raw??'').slice(0,50);
+        if(selector==='.dz'&&!oppg3PeriodeGyldig)return;
+        const current=selector==='.dz'?oppg3GetDisplayAndRawForType(v.accept):null;
+        const val=String(v.value?(current?current.display:v.value):'').slice(0,50);
+        const raw=String(current?current.raw:(v.raw??'')).slice(0,50);
         if(!val||!Number.isFinite(Number(val)))return;
         el.dataset.value=val;
         el.dataset.raw=raw||val;
@@ -3838,6 +4150,7 @@ function arbeidGjenopprettBrikker(selector,rows){
 function arbeidSettInputVerdier(inputs){
     for(const [id,entry] of Object.entries(inputs)){
         const el=document.getElementById(id);
+        if(['ku1','ku2','settTotalt','feltTotalt','feltRef','feltFjor','totalkg','simKalvPerKu','simKalvPerKalvku','simKuPrOkse','simVektKalv','simVektUng','simVektVoksenKu','simVektVoksenOkse'].includes(id))continue;
         if(!el||!el.closest('.step-container')||el.type==='file')continue;
         const v=entry&&typeof entry==='object'?entry:{value:entry};
         if(el.type==='checkbox')el.checked=Boolean(v.value);
@@ -3860,17 +4173,26 @@ function arbeidGjenopprett(obj,stepOverride){
                 const row={year:Number(x.year)};
                 for(const key of ['ku1','ku2','settTot','feltTot','settDag','feltDag']){
                     const n=Number(x[key]);
-                    row[key]=(x[key]===null||x[key]===undefined||x[key]===''||!Number.isFinite(n))?0:n;
+                    row[key]=(x[key]===null||x[key]===undefined||x[key]===''||!Number.isFinite(n))?null:n;
+                }
+                if(x.feltKlasser && typeof x.feltKlasser==='object' && !Array.isArray(x.feltKlasser)) {
+                    row.feltKlasser={};
+                    for(const def of kjottKlasser){
+                        const v=x.feltKlasser[def.key];
+                        row.feltKlasser[def.key]=typeof v==='number'&&kjottAntall(v)?v:null;
+                    }
                 }
                 return row;
             });
-        globalOppg3Data=rowOk(obj.oppg3Data);
-        globalOppg3AllData=rowOk(obj.oppg3AllData);
+        nullstillReferanseGrunnlag();
+        globalOppg3Data=rowOk(obj.oppg3Data).filter(d=>d.year>=2005&&d.year<=2017&&d.settDag>0&&d.feltDag>0);
+        globalOppg3AllData=rowOk(obj.oppg3AllData).filter(d=>d.year<=sisteAvsluttedeJaktAar()&&(d.feltDag>0||kjottAntall(d.feltTot)));
         arbeidSettInputVerdier(obj.inputs);
         // Verifiser kommunedataserier med den samme kontrollen som vanlig import.
         gruppeData=obj.gruppedata.map(gruppeValiderFil);
-        if(document.getElementById('dataOppg1').value.trim())tegnGraf1();
-        if(document.getElementById('dataOppg2').value.trim())tegnGraf2();
+        tegnGraf1();
+        tegnGraf2();
+        resetFormulas2();
         if(globalOppg3Data.length>=3){
             document.getElementById('oppg3Interactive').style.display='block';
             const slider=document.getElementById('oppg3Slider');
@@ -3879,6 +4201,10 @@ function arbeidGjenopprett(obj,stepOverride){
             slider.value=Number.isFinite(before)?Math.max(0,Math.min(before,Number(slider.max))):0;
             tegnOppg3Graf();
             oppdaterOppg3Valg();
+        }else{
+            if(chart3){chart3.destroy();chart3=null;}
+            document.getElementById('oppg3Interactive').style.display='none';
+            document.getElementById('oppg3SliderLabel').textContent='-';
         }
         // Graftegning fyller beregnede felt; originaldata får korrekt råverdi tilbake her.
         arbeidSettInputVerdier(obj.inputs);
@@ -3886,19 +4212,10 @@ function arbeidGjenopprett(obj,stepOverride){
         calculateFormulas2();
         arbeidGjenopprettBrikker('.dz',obj.drag1);
         calculateFormulas();
-        const b=obj.beregnet||{};
-        const safeNum=x=>x!==null&&x!==undefined&&Number.isFinite(Number(x))?Number(x):null;
-        fasitKalv=safeNum(b.fasitKalv);
-        fasitRef=safeNum(b.fasitRef);
-        fjorBestand=safeNum(b.fjorBestand);
-        tetthetRes=safeNum(b.tetthetRes);
-        fjorBestandYear=safeNum(b.fjorBestandYear);
-        kjottAKm2=b.kjottAKm2===null?'':String(b.kjottAKm2??'').slice(0,50);
-        kjottBText=String(b.kjottBText??'').slice(0,10000);
-        kjottFjorYear=safeNum(b.kjottFjorYear);
-        if(fasitRef!==null&&fasitRef>0)document.getElementById('sisteDelOppg3').style.display='block';
+        // Beregn på nytt; lagrede fasitverdier kan stamme fra et eldre datagrunnlag.
         if(obj.vist?.tetthetBeregnet&&fasitRef>0)beregnTetthet();
-        if(obj.vist?.kjottBeregnet)beregnKjottA();
+        kjottGjenopprettValg(obj.kjottValg);
+        beregnKjottA();
         if(obj.vist?.simBeregnet)simulerOppg4();
         if(obj.vist?.rapportVist)genererRapport();
         document.getElementById('groupProjectName').value=String(obj.gruppenavn??'').slice(0,120);
